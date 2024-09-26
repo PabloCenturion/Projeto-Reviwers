@@ -1,4 +1,4 @@
-# Projeto-Reviewerszubumafusad
+# Projeto-Reviewers
 Repositório do Projeto Mensal
 
 ## Participantes
