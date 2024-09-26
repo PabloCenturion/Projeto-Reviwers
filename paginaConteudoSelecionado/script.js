@@ -90,7 +90,6 @@ document.getElementById("like-action").addEventListener("click",function(){
 
 document.getElementById("dislike-action").addEventListener("click",function(){
 
-
     if(this.classList.contains("bi-hand-thumbs-down")){
 
         this.classList.remove("bi-hand-thumbs-down")
