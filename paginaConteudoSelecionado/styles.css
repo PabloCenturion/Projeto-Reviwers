@@ -7,8 +7,8 @@ body{
 
    
     margin:0;
-   /* background-image: url('./imagensSite/fundoSiteReviewers.jpeg');*/
-    background-size: cover;
+   background-image: url('./ImgsPagConteudoSelecionado/fundoSiteReviewers.jpeg');
+    background-size:auto;
 
 }
 
@@ -16,7 +16,6 @@ body{
 .container-main{
 
     border: 1px solid black;
-    background-color: rgb(61, 56, 54);
 
 
     display: flex;
@@ -124,19 +123,67 @@ body{
 }
 
 .dislike-size{
+
     color:white;
-
-
     font-size: 40px;
+
+}
+
+.eye-size:hover{
+
+    color: #3FAEFF;
+}
+
+.bookmark-size:hover{
+
+    color:#04A932;
+}
+
+.star-size:hover{
+
+
+    color:#E5E945;
+}
+
+.like-size:hover{
+
+    color:#B43232;
+}
+
+.watched{
+
+    color: #3FAEFF;
+
+}
+
+.saved-list{
+
+    color:#04A932;
+
+}
+
+.rated{
+
+
+    color:#E5E945;
+
+}
+
+.liked{
+
+    color:#B43232;
+
+}
+
+.disliked{
+
+    color: #836b6b;
 
 }
 
 .review-part h1{
 
     filter: drop-shadow(4px 4px 6px rgba(0, 0, 0, 0.5)); /* Sombra com deslocamento e desfoque */
-
-
-
 
 }
 
@@ -148,6 +195,9 @@ body{
     gap: 25px;
     
 }
+
+
+
 
 .review-part h1{
 
