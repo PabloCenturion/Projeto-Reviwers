@@ -24,9 +24,8 @@ O **Reviewers** é uma plataforma de entretenimento que permite aos usuários ex
 - **Onde Assistir**: Indicação de plataformas de streaming onde o conteúdo está disponível.
 - **Personalização do Perfil do Usuario Cadastrado**
 
-- - ## Tecnologias Utilizadas:
+- ## Tecnologias Utilizadas:
 - **CSS** para estilizar o site.
 - **HTML** para estruturar o site.
 - **JavaScript** para o responder a interações do usuário no site.
 - **GIT** para o desenvolvimento do site em equipe ser mais flexivel.
-
