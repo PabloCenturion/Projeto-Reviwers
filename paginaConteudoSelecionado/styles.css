@@ -570,7 +570,64 @@ footer {
 
 
 
+.container-modal-rate{
 
+font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+
+padding: 30px;
+
+display: flex;
+flex-direction: column;
+
+
+width: 800px;
+height: 300px;
+
+background-color: #402B4F;
+border-radius: 10px;
+border: 5px solid rgb(255, 255, 255);
+
+}
+
+.container-modal-rate h2{
+
+
+    text-decoration: underline #E5E945;
+
+    font-style: italic;
+    font-weight: 600;
+
+    color:#E5E945;
+    font-size: 28px;
+}
+
+.container-modal-rate p{
+
+    color: white;
+    font-size: 24px;
+    font-weight:400;
+
+
+}
+
+.container-modal-rate span{
+
+    font-size: 16px;
+    font-weight: lighter;
+    filter: opacity(100%);
+    text-decoration: underline #acacac;
+
+
+    color:white;
+}
+
+.list-stars-rate{
+
+
+gap:1px;
+
+}
 
 
 
