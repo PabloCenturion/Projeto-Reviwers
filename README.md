@@ -3,7 +3,7 @@ Repositório do Projeto Mensal
 
 ## Participantes
 - **Miguel Grigato Garbo** - Scrum Master
-- **João Victor Izaias** - Product Ownerjujjjuju
+- **João Victor Izaias** - Product Owner
 - **Pablo Alberto Centurion Leguizamon Junior**
 - **Lucas de Oliveira This**
 - **Cristiano Rubens Kerber**
