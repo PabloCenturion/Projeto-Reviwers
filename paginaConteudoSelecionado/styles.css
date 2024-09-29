@@ -44,10 +44,9 @@ body{
     height: 100%;
 
     background-image: url('./ImgsPagConteudoSelecionado/fundoSiteReviewers.jpeg');
+    background-attachment: fixed;
     filter: brightness(50%) contrast(110%);
-
     z-index: -1; 
-
 }
 
 
@@ -56,7 +55,6 @@ body{
 
 
     display: flex;
-
     padding-bottom: 20px;
 
 }
@@ -602,12 +600,10 @@ border: 5px solid rgb(255, 255, 255);
     font-size: 28px;
 }
 
-.container-modal-rate p{
+.container-modal-rate h3{
 
     color: white;
-    font-size: 24px;
     font-weight:400;
-
 
 }
 
@@ -624,9 +620,67 @@ border: 5px solid rgb(255, 255, 255);
 
 .list-stars-rate{
     
-gap:1px;
+    gap:1px;
+}
+
+.container-button{
+    display: flex;
+    justify-content: flex-end;
 
 }
+
+
+.button-color-register{
+
+    height: 38px;
+    width: 103px;
+
+    color: white;
+    background-color: #60155B;
+
+}
+
+#alertsAction{
+
+    width: 332px;
+    height: 48px;
+
+    font-size: 12px;
+
+    position: fixed;
+    top: 5%;
+    left: 38%;
+     z-index: 1050; /* Abaixo do z-index dos modais do Bootstrap */
+
+
+}
+
+.like-Icon-Alert{
+
+    color: #4C0AB9;
+
+    margin-right: 6px;
+
+    width: 16px;
+    height: 16px;
+}
+
+.list-group{
+
+    height: 220;
+    width: 306px;
+}
+
+#listGroupAction{
+
+    position: fixed;
+
+    top: 30%;
+    left: 57%;
+
+
+}
+
 
 
 

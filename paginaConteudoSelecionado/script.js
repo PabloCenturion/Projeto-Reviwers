@@ -38,11 +38,14 @@ document.getElementById("save-list-action").addEventListener("click",function(){
 
     this.classList.toggle("saved-list")
 
+    showListGroups()
+
 
 })
 
 
 document.getElementById("star-action").addEventListener("click", function(){
+
 
     if(this.classList.contains("bi-star")){
 
@@ -74,11 +77,17 @@ document.getElementById("like-action").addEventListener("click",function(){
 
         this.classList.add("bi-heart-fill")
 
+        showAlert("<i class='bi bi-heart like-Icon-Alert'></i>'Título' foi <strong>adicionado</strong> aos seus Filmes Curtidos", 'primary');
+
+
     }else{
 
         this.classList.remove("bi-heart-fill")
 
         this.classList.add("bi-heart")
+
+        showAlert("<i class='bi bi-heart like-Icon-Alert'></i>'Título' foi <strong> excluído </strong> dos seus Filmes Curtidos", 'danger');
+
 
     }
 
@@ -107,6 +116,45 @@ document.getElementById("dislike-action").addEventListener("click",function(){
 
 
 })
+
+//função global para alertas
+
+function showAlert(textAlert,typeAlert){
+
+    const alertsAction = document.getElementById("alertsAction");
+
+    const alert = `
+        <div class="alert alert-${typeAlert} alert-dismissible fade show" role="alert">
+          ${textAlert}
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>`;
+
+        alertsAction.innerHTML = alert;
+
+}
+
+//função para aparecer o list group bootstrap
+
+function showListGroups(){
+
+    const listGroupAction = document.getElementById("listGroupAction");
+
+    const listGroupSintax = `
+
+    <ul class="list-group">
+    <li class="list-group-item">Lista de Observação</li>
+    <li class="list-group-item">Criar Lista +</li>
+    </ul> `
+
+    listGroupAction.innerHTML = listGroupSintax
+
+
+}
+
+
+
+
+
 
 
 
