@@ -9,7 +9,8 @@
 }
 body{
     width: 100%;
-    background-image: url(fundo.jpg);
+    background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(fundo.jpg);
     background-repeat:initial;
     background-attachment: fixed;
     background-size:cover;
@@ -111,6 +112,8 @@ nav ul li a {
     text-align:center;
     justify-content: baseline;
     border: 1px solid white;
+    font-family: 'Aclonica';
+    font-size: 2rem;
 }
 .des2 {
     height: 200px;
@@ -146,11 +149,13 @@ nav ul li a {
     border: 1px solid white;
     color: rgb(255, 255, 255); 
     margin-left: 150px;
+    
 }
 .des3{
     height: 100px;
     width: 100px;
     border: 1px solid white;
+    font-family: 'Aclonica';
 }
 .des4{
     height: 200px;
