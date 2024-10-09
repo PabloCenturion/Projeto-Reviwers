@@ -154,8 +154,51 @@ function openModalRate(){
 
     const modalCorpo = `<section class="container-modal-rate">
 
-        <h2>Avaliação de 'Titulo'</h2>
-        <h3>Dê uma nota de 0 a 10:</h3>
+    <div class="brothers-title">
+    <h2 class="title-rate">Avaliação de 'Titulo'</h2>
+    <div class="button-remove"><i class="bi bi-x-lg x-size"></i></div>
+</div>
+
+    <h3 class="subtitle-rate">Dê uma nota de 0 a 10:</h3>
+
+    <div class="list-stars-rate">
+        <i class="bi bi-star star-size"></i>
+        <i class="bi bi-star star-size"></i>
+        <i class="bi bi-star star-size"></i>
+        <i class="bi bi-star star-size"></i>
+        <i class="bi bi-star star-size"></i>
+        <i class="bi bi-star star-size"></i>
+        <i class="bi bi-star star-size"></i>
+        <i class="bi bi-star star-size"></i>
+        <i class="bi bi-star star-size"></i>
+        <i class="bi bi-star star-size"></i>
+    </div>
+    
+    <a type="button" onclick="openComentModal()"><span>clique aqui e detalhe sua avaliação</span></a>
+
+    <div class="container-button">
+
+    <button type="button" class="btn btn-outline-primary button-color-register">Registrar</button>
+
+</div>
+
+</section>`
+    
+    const divModalRate = document.getElementById("modalRateDiv")
+
+    divModalRate.innerHTML = modalCorpo
+
+}
+
+function openComentModal(){
+
+    const comentModalCorpo = ` <section class="container-modal-coment">
+
+        <div class="brothers-title">
+            <h2 class="title-rate">Avaliação de 'Titulo'</h2>
+            <div class="button-remove"><i class="bi bi-x-lg x-size"></i></div>
+        </div>
+            <h3 class="subtitle-rate">Dê uma nota de 0 a 10:</h3>
 
         <div class="list-stars-rate">
             <i class="bi bi-star star-size"></i>
@@ -169,25 +212,22 @@ function openModalRate(){
             <i class="bi bi-star star-size"></i>
             <i class="bi bi-star star-size"></i>
         </div>
-        
-        <a type="button"><span>clique aqui e detalhe sua avaliação</span></a>
+        <label for="review-coment" class="form-label"></label>
+        <textarea class="form-control" id="review-coment" rows="5" placeholder="Digite aqui sua Crítica"></textarea>
 
         <div class="container-button">
 
-        <button type="button" class="btn btn-outline-primary button-color-register">Registrar</button>
-
-    </div>
-
-    </section>`
+            <button type="button" class="btn btn-outline-primary button-color-register">Registrar</button>
     
-    const divModalRate = document.getElementById("modalRateDiv")
+        </div>
+        
 
-    divModalRate.innerHTML = modalCorpo
+    </section>` 
 
-}
+    const modalComentDiv = document.getElementById("modalComentDiv")
 
-function openComentModal(){
-
+    
+    modalComentDiv.innerHTML = comentModalCorpo
 
 
 
