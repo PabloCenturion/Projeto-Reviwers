@@ -88,7 +88,6 @@ document.getElementById("like-action").addEventListener("click",function(){
 
         showAlert("<i class='bi bi-heart like-Icon-Alert'></i>'Título' foi <strong> excluído </strong> dos seus Filmes Curtidos", 'danger');
 
-
     }
 
     this.classList.toggle("liked")
@@ -139,7 +138,8 @@ function showListGroups(){
 
     const listGroupAction = document.getElementById("listGroupAction");
 
-    const listGroupSintax = `
+    const listGroupSintax = 
+    `
 
     <ul class="list-group">
     <li class="list-group-item">Lista de Observação</li>
@@ -148,8 +148,51 @@ function showListGroups(){
 
     listGroupAction.innerHTML = listGroupSintax
 
+}
+
+function openModalRate(){
+
+    const modalCorpo = `<section class="container-modal-rate">
+
+        <h2>Avaliação de 'Titulo'</h2>
+        <h3>Dê uma nota de 0 a 10:</h3>
+
+        <div class="list-stars-rate">
+            <i class="bi bi-star star-size"></i>
+            <i class="bi bi-star star-size"></i>
+            <i class="bi bi-star star-size"></i>
+            <i class="bi bi-star star-size"></i>
+            <i class="bi bi-star star-size"></i>
+            <i class="bi bi-star star-size"></i>
+            <i class="bi bi-star star-size"></i>
+            <i class="bi bi-star star-size"></i>
+            <i class="bi bi-star star-size"></i>
+            <i class="bi bi-star star-size"></i>
+        </div>
+        
+        <a type="button"><span>clique aqui e detalhe sua avaliação</span></a>
+
+        <div class="container-button">
+
+        <button type="button" class="btn btn-outline-primary button-color-register">Registrar</button>
+
+    </div>
+
+    </section>`
+    
+    const divModalRate = document.getElementById("modalRateDiv")
+
+    divModalRate.innerHTML = modalCorpo
 
 }
+
+function openComentModal(){
+
+
+
+
+}
+
 
 
 
