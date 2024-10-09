@@ -14,6 +14,9 @@ body{
     background-attachment: fixed;
     background-size:cover;
 }
+header{
+    margin-top: 0.5rem;
+}
 .container1{ 
     width: 100%;
     height: 90px;
@@ -29,8 +32,8 @@ nav ul li a {
     text-decoration: none; 
 }
 .Reviewers {
-    margin-left: 100px;
-    font-size: xx-large;
+    margin-left: 1rem;
+    font-size: 3rem;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     color: white;
     text-shadow: 1vw 1vw 1vw #000, 0 0 3vw rgb(129, 24, 226), 0 0 3vw rgb(129, 24, 226), 0 0 3vw rgb(129, 24, 226);
@@ -44,28 +47,27 @@ nav ul li a {
 }
 .Explorar{
     color: white;
-    font-size: x-large;
+    font-size:medium;
     margin-right: 49px;
 }
 .Entrar {
     color: white;
-    font-size: x-large;
+    font-size: medium;
     margin-right: 49px;
 }
 .Cadastrar {
     color: white;
-    font-size: x-large;
+    font-size: medium;
     margin-right: 49px;
 }
 .Início {
     color: white;
-    font-size: x-large;
+    font-size: medium;
     margin-right: 49px;
 }
 
 .Reviewers:hover{
     transition: 0.2s;
-    text-decoration: underline;
     color:rgb(129, 24, 226) ;
 }
 .Início:hover{
