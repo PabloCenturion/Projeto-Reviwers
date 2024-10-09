@@ -1,0 +1,37 @@
+body{
+    background-image: url(fundo.jpg);
+    background-repeat: repeat;
+    background-size: cover;
+}
+
+.container1{
+    font-size: xx-large;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: rgb(129, 24, 226);
+    padding-left: 100px;
+}
+
+.container2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+}
+fieldset{
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+    width: 315px;
+}
+.title1{
+    padding-top: 0,13rem;
+    color: white;
+    padding-left: 34.5rem;
+    font-size: xx-large;
+}
+.title2{
+    padding-top: 1rem;
+    color: white;
+    padding-left: 35rem;
+    font-size: x-large;
+}
