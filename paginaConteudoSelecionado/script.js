@@ -230,7 +230,6 @@ function openComentModal(){
     modalComentDiv.innerHTML = comentModalCorpo
 
 
-
 }
 
 
