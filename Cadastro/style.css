@@ -25,16 +25,17 @@ fieldset{
     width: 315px;
 }
 .title1{
-    padding-top: 0,13rem;
     color: white;
     padding-left: 34.5rem;
     font-size: xx-large;
 }
 .title2{
-    padding-top: 1rem;
+    padding-top: 3rem;
     color: white;
-    padding-left: 36.5rem;
+    padding-left: 33rem;
     font-size: x-large;
+    font-style: italic;
+    font-family: "inter";
 }
 input{
     padding: 0.3rem;
@@ -43,14 +44,19 @@ input{
     
 }
 .Senha{
+    padding-top: 1rem;
     color: white;
 }
 .E-mail{
+    padding-top: 0.5rem;
     color: white;
 }
 .Nome{
+    padding-top: 1rem;
     color: white;
 }
 .botão{
     margin-top: 2rem;
+    border-radius: 1rem;
+    width: 100px;
 }
