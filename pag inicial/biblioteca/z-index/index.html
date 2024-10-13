@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .caixa1 {
+    position: relative;
+    z-index: 2; /* Fica na frente da Caixa 2 */
+    background-color: red;
+    width: 100px;
+    height: 100px;
+}
+
+.caixa2 {
+    position: relative;
+    z-index: 1; /* Fica na frente da Caixa 1 */
+    background-color: green;
+    width: 110px;
+    height: 100px;
+    margin-top: -20px; /* Para demonstrar a sobreposição */
+}
+
+.caixa3 {
+    position: relative;
+    z-index: 0; /* Fica atrás das outras caixas */
+    background-color: blue;
+    width: 120px;
+    height: 100px;
+    margin-top: -20px;
+}
+    </style>
+</head>
+<body>
+    <div class="caixa1">Caixa 1</div>
+    <div class="caixa2">Caixa 2</div>
+    <div class="caixa3">Caixa 3</div>
+
+    
+</body>
+</html>
