@@ -1,122 +1,97 @@
-/////////////////////////////////DOM/////////////////////////////////////////
+///////////////////////////////// DOM /////////////////////////////////////////
 
-document.getElementById("eye-action").addEventListener("click", function(){
 
-    if(this.classList.contains("bi-eye")){
+document.getElementById("eye-action").addEventListener("click", function() {
 
-        this.classList.remove("bi-eye")
+    this.classList.toggle("bi-eye-fill");
 
-        this.classList.add("bi-eye-fill")
+    this.classList.toggle("bi-eye");
 
-    }else{
+    this.classList.toggle("watched");
 
-        this.classList.remove("bi-eye-fill")
+    //se tiver com o olho preenchido(assistido) ele será true
+    let foiAssistido = this.classList.contains("bi-eye-fill");
+    localStorage.setItem("eye-changes", foiAssistido);
 
-        this.classList.add("bi-eye")
+    console.log("Novo valor no localStorage:", localStorage.getItem("eye-changes"));
+});
 
-    }
 
-    this.classList.toggle("watched")
+
+document.getElementById("save-list-action").addEventListener("click", function() {
+
+    this.classList.toggle("bi-bookmark-check-fill");
+
+    this.classList.toggle("bi-bookmark-plus");
+
+    this.classList.toggle("saved-list");
+
+    // Se o item estiver salvo na lista, será true
+    let foiSalvo = this.classList.contains("bi-bookmark-check-fill");
+    localStorage.setItem("list-changes", foiSalvo);
+
+    console.log("Novo valor no localStorage (lista):", localStorage.getItem("list-changes"));
+
+    showListGroups();
 
 });
 
 
-document.getElementById("save-list-action").addEventListener("click",function(){
+document.getElementById("star-action").addEventListener("click", function() {
 
-   if(this.classList.contains("bi-bookmark-plus")){
+    this.classList.toggle("bi-star-fill");
 
+    this.classList.toggle("bi-star");
 
-    this.classList.remove("bi-bookmark-plus")
+    this.classList.toggle("rated");
 
-    this.classList.add("bi-bookmark-check-fill")
+    // Se o item estiver avaliado, será true
+    let foiAvaliado = this.classList.contains("bi-star-fill");
+    localStorage.setItem("star-changes", foiAvaliado);
 
-   }else{
+    console.log("Novo valor no localStorage (avaliação):", localStorage.getItem("star-changes"));
 
-    this.classList.remove("bi-bookmark-check-fill")
-
-    this.classList.add("bi-bookmark-plus")
-
-   }
-
-    this.classList.toggle("saved-list")
-
-    showListGroups()
+});
 
 
-})
+document.getElementById("like-action").addEventListener("click", function() {
 
+    this.classList.toggle("bi-heart-fill");
 
-document.getElementById("star-action").addEventListener("click", function(){
+    this.classList.toggle("bi-heart");
 
+    this.classList.toggle("liked");
 
-    if(this.classList.contains("bi-star")){
+    // Se o item estiver curtido, será true
+    let foiCurtido = this.classList.contains("bi-heart-fill");
+    localStorage.setItem("like-changes", foiCurtido);
 
-        this.classList.remove("bi-star")
+    console.log("Novo valor no localStorage (curtidas):", localStorage.getItem("like-changes"));
 
-        this.classList.add("bi-star-fill")
-
-    }else{
-
-        this.classList.remove("bi-star-fill")
-
-        this.classList.add("bi-star")
-
-    }
-
-    this.classList.toggle("rated")
-
-
-
-
-})
-
-document.getElementById("like-action").addEventListener("click",function(){
-
-
-    if(this.classList.contains("bi-heart")){
-
-        this.classList.remove("bi-heart")
-
-        this.classList.add("bi-heart-fill")
-
+    if (foiCurtido) {
         showAlert("<i class='bi bi-heart like-Icon-Alert'></i>'Título' foi <strong>adicionado</strong> aos seus Filmes Curtidos", 'primary');
-
-
-    }else{
-
-        this.classList.remove("bi-heart-fill")
-
-        this.classList.add("bi-heart")
-
-        showAlert("<i class='bi bi-heart like-Icon-Alert'></i>'Título' foi <strong> excluído </strong> dos seus Filmes Curtidos", 'danger');
-
+    } else {
+        showAlert("<i class='bi bi-heart like-Icon-Alert'></i>'Título' foi <strong>excluído</strong> dos seus Filmes Curtidos", 'danger');
     }
 
-    this.classList.toggle("liked")
+});
 
 
-})
+document.getElementById("dislike-action").addEventListener("click", function() {
 
+    this.classList.toggle("bi-hand-thumbs-down-fill");
 
-document.getElementById("dislike-action").addEventListener("click",function(){
+    this.classList.toggle("bi-hand-thumbs-down");
 
-    if(this.classList.contains("bi-hand-thumbs-down")){
+    this.classList.toggle("disliked");
 
-        this.classList.remove("bi-hand-thumbs-down")
+    // Se o item estiver com dislike, será true
+    let foiDisliked = this.classList.contains("bi-hand-thumbs-down-fill");
+    localStorage.setItem("dislike-changes", foiDisliked);
 
-        this.classList.add("bi-hand-thumbs-down-fill")
+    console.log("Novo valor no localStorage (dislikes):", localStorage.getItem("dislike-changes"));
 
-    }else{
-
-        this.classList.remove("bi-hand-thumbs-fill")
-
-        this.classList.add("bi-hand-thumbs-down")
-    }
-
-    this.classList.toggle("disliked")
-
-
-})
+});
 
 //função global para alertas
 
@@ -252,19 +227,19 @@ function Characters(name, actorName){
 
 }
 
-function Filme(titulo,ano,classification,duracao,genero, sinopse, streaming, director, producer){
+function Filme(title,year,classification,time,genre, synopsis, streaming, director, producer){
 
-    this.titulo = titulo
+    this.title = title
 
-    this.ano = ano
+    this.year = year
 
     this.classification = classification
 
-    this.duracao = duracao
+    this.time = time
 
-    this.genero = genero
+    this.genre = genre
 
-    this.sinopse = sinopse
+    this.synopsis = synopsis
 
     this.streaming = streaming
 
@@ -274,7 +249,7 @@ function Filme(titulo,ano,classification,duracao,genero, sinopse, streaming, dir
 
         this.showInfoMovie = function() {
 
-            return `Título: ${this.titulo}\nAno: ${this.ano}\Classificação: ${this.classification}\nDuração: ${this.duracao} min\nGênero: ${this.genero}\nSinopse: ${this.sinopse}\nStreaming: ${this.streaming}\nDiretor: ${this.director}\nProdutora: ${this.producer}`;
+            return `Título: ${this.title}\nAno: ${this.year}\Classificação: ${this.classification}\nDuração: ${this.time} min\nGênero: ${this.genre}\nSinopse: ${this.sinopse}\nStreaming: ${this.streaming}\nDiretor: ${this.director}\nProdutora: ${this.producer}`;
     }
 }
 
@@ -349,15 +324,19 @@ const filme1 = new Filme(
   filmes.push(filme4)
   filmes.push(filme5)
 
+
+
+
 localStorage.setItem("listaFilmes", JSON.stringify(filmes))
 
   
-  // Exibindo as informações dos filmes
   console.log(filme1.showInfoMovie());
   console.log(filme2.showInfoMovie());
   console.log(filme3.showInfoMovie());
   console.log(filme4.showInfoMovie());
   console.log(filme5.showInfoMovie());
+
+
 
 
 
