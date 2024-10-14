@@ -1,9 +1,17 @@
+*{
+
+    box-sizing: border-box;
+
+}
+
+
+
 body{   
     background-image: url(2.jpg);/*insere a img na pag*/
     background-size: cover;/*faz com que a img se ajuste ao tamanho da pag*/
-    background-position: center;/*centraliza a img com a pag*/
-    background-repeat: no-repeat; /*caso a img for menor q a pag manda n repetir ela para completar*/
+    background-attachment: fixed;
     backdrop-filter: blur(5px) ;
+    margin:0
 }
 header{
     display: flex;/*dx em linha*/
