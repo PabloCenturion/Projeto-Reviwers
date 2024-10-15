@@ -1,6 +1,11 @@
 ///////////////////////////////// DOM /////////////////////////////////////////
 
 const eyeAction = document.getElementById("eye-action");
+const listAction = document.getElementById("save-list-action");
+const starAction = document.getElementById("star-action");
+const likeAction = document.getElementById("like-action");
+const dislikeAction = document.getElementById("dislike-action")
+
 
 eyeAction.addEventListener("click", function() {
 
@@ -17,17 +22,7 @@ eyeAction.addEventListener("click", function() {
     console.log("Foi Assistido:", localStorage.getItem("eye-changes"));
 });
 
-window.onload = function() {
-    //recuperando o estado do eye-changes true ou false, o ls tranforma tudo em string então temos que deixar claro que é "true" ou "false"
-    let foiAssistido = localStorage.getItem("eye-changes") === "true";
-
-    // Usa o valor de 'foiAssistido' para ajustar as classes do ícone
-        eyeAction.classList.toggle("bi-eye-fill", foiAssistido);
-        eyeAction.classList.toggle("bi-eye", !foiAssistido);
-        eyeAction.classList.toggle("watched", foiAssistido);
-};
-
-document.getElementById("save-list-action").addEventListener("click", function() {
+listAction.addEventListener("click", function() {
 
     this.classList.toggle("bi-bookmark-check-fill");
 
@@ -39,14 +34,15 @@ document.getElementById("save-list-action").addEventListener("click", function()
     let foiSalvo = this.classList.contains("bi-bookmark-check-fill");
     localStorage.setItem("list-changes", foiSalvo);
 
-    console.log("Novo valor no localStorage (lista):", localStorage.getItem("list-changes"));
-
-    showListGroups();
+    console.log("Foi Salvo Na Lista:", localStorage.getItem("list-changes"));
+    
+    if(foiSalvo){
+        showListGroups();
+    }
 
 });
 
-
-document.getElementById("star-action").addEventListener("click", function() {
+starAction.addEventListener("click", function() {
 
     this.classList.toggle("bi-star-fill");
 
@@ -58,12 +54,16 @@ document.getElementById("star-action").addEventListener("click", function() {
     let foiAvaliado = this.classList.contains("bi-star-fill");
     localStorage.setItem("star-changes", foiAvaliado);
 
-    console.log("Novo valor no localStorage (avaliação):", localStorage.getItem("star-changes"));
+    console.log("Foi Avaliado:", localStorage.getItem("star-changes"));
+
+    if(foiAvaliado){
+
+        openModalRate();
+    }
 
 });
 
-
-document.getElementById("like-action").addEventListener("click", function() {
+likeAction.addEventListener("click", function() {
 
     this.classList.toggle("bi-heart-fill");
 
@@ -85,8 +85,7 @@ document.getElementById("like-action").addEventListener("click", function() {
 
 });
 
-
-document.getElementById("dislike-action").addEventListener("click", function() {
+dislikeAction.addEventListener("click", function() {
 
     this.classList.toggle("bi-hand-thumbs-down-fill");
 
@@ -101,6 +100,35 @@ document.getElementById("dislike-action").addEventListener("click", function() {
     console.log("Novo valor no localStorage (dislikes):", localStorage.getItem("dislike-changes"));
 
 });
+
+
+//uma função global (para tds os icones) para salvar alteração do localStorage mostrando o status do icone
+
+function changeIconState(idElement, localStorageKey, iconTrue, iconFalse, toggleClass){
+
+    let foiAlterado = localStorage.getItem(localStorageKey) === "true";
+
+    idElement.classList.toggle(iconTrue, foiAlterado)
+    idElement.classList.toggle(iconFalse, !foiAlterado)
+    idElement.classList.toggle(toggleClass, foiAlterado)
+
+}
+
+
+window.onload = function() {
+    
+    changeIconState(eyeAction, "eye-changes", "bi-eye-fill", "bi-eye", "watched")
+
+    changeIconState(listAction, "list-changes", "bi-bookmark-check-fill", "bi-bookmark-plus", "saved-list")
+
+    changeIconState(starAction, "star-changes", "bi-star-fill", "bi-star", "rated");
+
+    changeIconState(likeAction, "like-changes", "bi-heart-fill", "bi-heart", "liked")
+
+    changeIconState(dislikeAction, "dislike-changes", "bi-hand-thumbs-down-fill", "bi-hand-thumbs-down", "disliked")
+};
+
+
 
 //função global para alertas
 
@@ -118,6 +146,58 @@ function showAlert(textAlert,typeAlert){
 
 }
 
+function addNewList() {
+
+
+    const listGroupAction = document.getElementsByClassName("list-group")[0]; 
+
+     // Verifica se já existe um campo de input na lista para evitar que o usuario crie mais de uma lista de uma vez ao mesmo tempo
+
+     const existingInput = listGroupAction.querySelector("input");
+
+     if (existingInput) {
+         alert("Você já está criando uma lista. Complete a lista antes de criar outra."); 
+         return; //saindo da função
+         };
+
+    const itemsExist = document.getElementsByTagName("li");
+
+    const newListInput = document.createElement("input"); //criando o input para o nome da nova lista
+
+    //css
+    newListInput.type = "text"; 
+    newListInput.placeholder = "digite o nome da nova lista";
+    newListInput.classList.add("list-group-item"); //classe da lista do bootstrap
+    //css
+
+    listGroupAction.insertBefore(newListInput, itemsExist[1]); //inserindo elemento novo no indice 1 (segundo) da lista 
+
+    // adicionando funcionalidade na tecla enter quando o usuario digitar o nome da nova lista
+
+    newListInput.addEventListener("keydown", function (evento) {
+        if (evento.key === "Enter") { 
+
+            const listName = newListInput.value.trim(); // pega o que foi digitado com (value) e tira os espaços com trim()
+
+            if (listName !== "") {
+
+                const newListItem = document.createElement("li"); //criando nova lista
+                newListItem.classList.add("list-group-item"); // Adiciona a classe de estilo
+                newListItem.innerText = listName; // Define o texto como o nome digitado
+
+                listGroupAction.insertBefore(newListItem, itemsExist[1]);
+
+                //removendo o input 
+                listGroupAction.removeChild(newListInput);
+            } else {
+                alert("Por favor, insira um nome para a lista.");
+            }
+        }
+    });
+}
+
+
+
 //função para aparecer o list group bootstrap
 
 function showListGroups(){
@@ -129,7 +209,8 @@ function showListGroups(){
 
     <ul class="list-group">
     <li class="list-group-item">Lista de Observação</li>
-    <li class="list-group-item">Criar Lista +</li>
+    <li class="list-group-item" onclick="addNewList()">Criar Lista +</li>
+
     </ul> `
 
     listGroupAction.innerHTML = listGroupSintax
