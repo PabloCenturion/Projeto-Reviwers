@@ -1,7 +1,8 @@
 ///////////////////////////////// DOM /////////////////////////////////////////
 
+const eyeAction = document.getElementById("eye-action");
 
-document.getElementById("eye-action").addEventListener("click", function() {
+eyeAction.addEventListener("click", function() {
 
     this.classList.toggle("bi-eye-fill");
 
@@ -10,13 +11,21 @@ document.getElementById("eye-action").addEventListener("click", function() {
     this.classList.toggle("watched");
 
     //se tiver com o olho preenchido(assistido) ele será true
-    let foiAssistido = this.classList.contains("bi-eye-fill");
+    let foiAssistido = this.classList.contains("bi-eye-fill"); //true
     localStorage.setItem("eye-changes", foiAssistido);
 
-    console.log("Novo valor no localStorage:", localStorage.getItem("eye-changes"));
+    console.log("Foi Assistido:", localStorage.getItem("eye-changes"));
 });
 
+window.onload = function() {
+    //recuperando o estado do eye-changes true ou false, o ls tranforma tudo em string então temos que deixar claro que é "true" ou "false"
+    let foiAssistido = localStorage.getItem("eye-changes") === "true";
 
+    // Usa o valor de 'foiAssistido' para ajustar as classes do ícone
+        eyeAction.classList.toggle("bi-eye-fill", foiAssistido);
+        eyeAction.classList.toggle("bi-eye", !foiAssistido);
+        eyeAction.classList.toggle("watched", foiAssistido);
+};
 
 document.getElementById("save-list-action").addEventListener("click", function() {
 
@@ -133,7 +142,7 @@ function openModalRate(){
 
     <div class="brothers-title">
     <h2 class="title-rate">Avaliação de 'Titulo'</h2>
-    <div class="button-remove"><i class="bi bi-x-lg x-size"></i></div>
+    <div class="button-remove"> <i class="bi bi-x-lg x-size" onclick="closeModal('modalRateDiv')"></i></div>
 </div>
 
     <h3 class="subtitle-rate">Dê uma nota de 0 a 10:</h3>
@@ -169,11 +178,13 @@ function openModalRate(){
 
 function openComentModal(){
 
+    document.getElementById("modalRateDiv").style.display = "none";
+
     const comentModalCorpo = ` <section class="container-modal-coment">
 
         <div class="brothers-title">
             <h2 class="title-rate">Avaliação de 'Titulo'</h2>
-            <div class="button-remove"><i class="bi bi-x-lg x-size"></i></div>
+            <div class="button-remove"><i class="bi bi-x-lg x-size" onclick="closeModal('modalComentDiv')"></i></div>
         </div>
             <h3 class="subtitle-rate">Dê uma nota de 0 a 10:</h3>
 
@@ -207,6 +218,12 @@ function openComentModal(){
 
 
 }
+
+function closeModal(idModal) {
+    document.getElementById(idModal).style.display = "none";
+}
+
+
 
 ///////////////////////////////LOCAL STORAGE E JSON/////////////////////////////
 
