@@ -35,9 +35,17 @@ listAction.addEventListener("click", function() {
     localStorage.setItem("list-changes", foiSalvo);
 
     console.log("Foi Salvo Na Lista:", localStorage.getItem("list-changes"));
+
+    const listGroupAction = document.getElementById("listGroupAction");
+
     
     if(foiSalvo){
         showListGroups();
+        listGroupAction.style.display = "block";  // Mostra o elemento
+
+    }else{
+
+        listGroupAction.style.display = "none"
     }
 
 });
@@ -58,9 +66,17 @@ starAction.addEventListener("click", function() {
 
     console.log("Foi Avaliado:", localStorage.getItem("star-changes"));
 
+    const rateAction = document.getElementById("modalRateDiv");
+
     if(foiAvaliado){
 
         openModalRate();
+        rateAction.style.display = "block"
+
+    }else{
+
+        rateAction.style.display = "none"
+
     }
 
 });
@@ -238,7 +254,7 @@ function showListGroups(){
 
     <ul class="list-group">
     <li class="list-group-item">Lista de Observação</li>
-    <li class="list-group-item" onclick="addNewList()"><em><strong>Criar Lista +</strong></em></li>
+    <li class="list-group-item list-group-item-action" onclick="addNewList()"><em><strong>Criar Lista +</strong></em></li>
 
     </ul> `
 
