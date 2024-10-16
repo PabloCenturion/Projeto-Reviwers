@@ -15,7 +15,6 @@ function cadastro(){
     setTimeout(() => {
         window.location.href = "/Pgn Login/index.html"
     },);
-    
 }
 
 console.log(JSON.parse(localStorage.getItem("usuarios")));
