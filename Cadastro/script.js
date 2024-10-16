@@ -1,22 +1,21 @@
-let email,Nome,Senha;
+let usuarios = [
+    {email: "admin@admin.com", userName: "admin", senha: "admim"}
+]
+let input = {}
 
-function conta(userName, email, senha){
-    this.email = email
-    this.userName = userName
-    this.senha = senha;
+function cadastro(){
+    input.email = document.getElementById("email").value;
+    input.userName = document.getElementById("name").value;
+    input.senha = document.getElementById("senha").value;
 
-    this.mostrarDados = function() {
+    usuarios = JSON.parse(localStorage.getItem("usuarios"));
+    usuarios.push(input);
+    localStorage.setItem("usuarios", JSON.stringify(usuarios));
 
-        return `Nome de Usuário: ${this.userName}\nEmail: ${this.email}\nSenha: ${this.senha}`;
+    setTimeout(() => {
+        window.location.href = "/Pgn Login/index.html"
+    },);
+    
 }
-}
-function Imput(){
-    email = document.getElementById("email").value;
-    Nome = document.getElementById("Nome").value;
-    Senha = document.getElementById("Senha").value;
 
-    localStorage.setItem("email",email);
-    localStorage.setItem("Nome",Nome);
-    localStorage.setItem("Senha",Senha);
-}
-console.log(localStorage.getItem("email"));
+console.log(JSON.parse(localStorage.getItem("usuarios")));
