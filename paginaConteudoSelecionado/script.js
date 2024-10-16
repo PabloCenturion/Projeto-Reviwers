@@ -51,6 +51,8 @@ starAction.addEventListener("click", function() {
     this.classList.toggle("rated");
 
     // Se o item estiver avaliado, será true
+    //a função class.list.contains retorna true ou fake por isso let foiAvaliado é uma variavel bool
+
     let foiAvaliado = this.classList.contains("bi-star-fill");
     localStorage.setItem("star-changes", foiAvaliado);
 
@@ -63,23 +65,31 @@ starAction.addEventListener("click", function() {
 
 });
 
+
+
 likeAction.addEventListener("click", function() {
+
 
     this.classList.toggle("bi-heart-fill");
 
     this.classList.toggle("bi-heart");
 
     this.classList.toggle("liked");
+    
 
     // Se o item estiver curtido, será true
     let foiCurtido = this.classList.contains("bi-heart-fill");
     localStorage.setItem("like-changes", foiCurtido);
 
-    console.log("Novo valor no localStorage (curtidas):", localStorage.getItem("like-changes"));
+    console.log("Foi Like:", localStorage.getItem("like-changes"));
 
     if (foiCurtido) {
+        dislikeAction.disabled = true;  
+
         showAlert("<i class='bi bi-heart like-Icon-Alert'></i>'Título' foi <strong>adicionado</strong> aos seus Filmes Curtidos", 'primary');
     } else {
+        dislikeAction.disabled = false;  
+
         showAlert("<i class='bi bi-heart like-Icon-Alert'></i>'Título' foi <strong>excluído</strong> dos seus Filmes Curtidos", 'danger');
     }
 
@@ -93,29 +103,42 @@ dislikeAction.addEventListener("click", function() {
 
     this.classList.toggle("disliked");
 
+    likeAction.disabled = true;
+
+
     // Se o item estiver com dislike, será true
     let foiDisliked = this.classList.contains("bi-hand-thumbs-down-fill");
     localStorage.setItem("dislike-changes", foiDisliked);
 
-    console.log("Novo valor no localStorage (dislikes):", localStorage.getItem("dislike-changes"));
+    console.log("Foi Dislike:", localStorage.getItem("dislike-changes"));
+
+    if(foiDisliked){
+
+        likeAction.disabled = true;  
+
+    }else{
+
+        likeAction.disabled = false;  
+
+    }
 
 });
 
 
 //uma função global (para tds os icones) para salvar alteração do localStorage mostrando o status do icone
 
-function changeIconState(idElement, localStorageKey, iconTrue, iconFalse, toggleClass){
+function changeIconState(idElement, localStorageKey, iconTrue, iconFalse, classColor){
 
     let foiAlterado = localStorage.getItem(localStorageKey) === "true";
 
     idElement.classList.toggle(iconTrue, foiAlterado)
     idElement.classList.toggle(iconFalse, !foiAlterado)
-    idElement.classList.toggle(toggleClass, foiAlterado)
-
+    idElement.classList.toggle(classColor, foiAlterado)
 }
 
 
 window.onload = function() {
+
     
     changeIconState(eyeAction, "eye-changes", "bi-eye-fill", "bi-eye", "watched")
 
@@ -126,6 +149,8 @@ window.onload = function() {
     changeIconState(likeAction, "like-changes", "bi-heart-fill", "bi-heart", "liked")
 
     changeIconState(dislikeAction, "dislike-changes", "bi-hand-thumbs-down-fill", "bi-hand-thumbs-down", "disliked")
+
+
 };
 
 
@@ -146,19 +171,23 @@ function showAlert(textAlert,typeAlert){
 
 }
 
-function addNewList() {
-
-
-    const listGroupAction = document.getElementsByClassName("list-group")[0]; 
-
-     // Verifica se já existe um campo de input na lista para evitar que o usuario crie mais de uma lista de uma vez ao mesmo tempo
+function validandoSeJaExisteInput(){
 
      const existingInput = listGroupAction.querySelector("input");
 
      if (existingInput) {
          alert("Você já está criando uma lista. Complete a lista antes de criar outra."); 
-         return; //saindo da função
+         return; 
          };
+
+
+}
+
+function addNewList() {
+
+    const listGroupAction = document.getElementsByClassName("list-group")[0]; 
+
+    validandoSeJaExisteInput()
 
     const itemsExist = document.getElementsByTagName("li");
 
@@ -182,12 +211,12 @@ function addNewList() {
             if (listName !== "") {
 
                 const newListItem = document.createElement("li"); //criando nova lista
-                newListItem.classList.add("list-group-item"); // Adiciona a classe de estilo
+                newListItem.classList.add("list-group-item"); // adiciona a classe de estilo do bootstrap
                 newListItem.innerText = listName; // Define o texto como o nome digitado
 
                 listGroupAction.insertBefore(newListItem, itemsExist[1]);
 
-                //removendo o input 
+                //removendo o input apos inserção da nova lista
                 listGroupAction.removeChild(newListInput);
             } else {
                 alert("Por favor, insira um nome para a lista.");
@@ -209,7 +238,7 @@ function showListGroups(){
 
     <ul class="list-group">
     <li class="list-group-item">Lista de Observação</li>
-    <li class="list-group-item" onclick="addNewList()">Criar Lista +</li>
+    <li class="list-group-item" onclick="addNewList()"><em><strong>Criar Lista +</strong></em></li>
 
     </ul> `
 

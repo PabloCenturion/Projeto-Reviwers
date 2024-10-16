@@ -5,6 +5,7 @@
 
 body {
     margin: 0;
+    background-color: #000000;
 }
 
 /* Estilo da .container-main */
@@ -152,6 +153,11 @@ body {
     color:#B43232;
 }
 
+.dislike-size:hover{
+
+    color: #836b6b;
+}
+
 .watched{
 
     color: #3FAEFF;
@@ -241,6 +247,13 @@ body {
     gap:40px;
     padding: 10px;
     padding-left: 50px;
+
+}
+
+.likedis button{
+    border: none;
+    background: none;
+
 
 }
 
@@ -659,10 +672,11 @@ border: 5px solid rgb(255, 255, 255);
 
 #listGroupAction{
 
-    position: fixed;
+    position: absolute;
 
-    top: 30%;
-    left: 57%;
+    top: 10%;
+    left: 56%;
+
     z-index: 1000; 
 
 
@@ -671,8 +685,9 @@ border: 5px solid rgb(255, 255, 255);
 #modalRateDiv{
 
     position: fixed;
-    top: 30%;
-    left: 20%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     z-index: 1000; 
 
 
@@ -681,8 +696,9 @@ border: 5px solid rgb(255, 255, 255);
 #modalComentDiv{
 
     position: fixed;
-    top: 20%;
-    left: 20%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     z-index: 1000; 
 
 
