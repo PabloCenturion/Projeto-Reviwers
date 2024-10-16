@@ -3,7 +3,6 @@ body{
     background-size: cover;/*faz com que a img se ajuste ao tamanho da pag*/
     background-position: center;/*centraliza a img com a pag*/
     background-repeat: no-repeat; /*caso a img for menor q a pag manda n repetir ela para completar*/
-    backdrop-filter: brightness(1.2) blur(1px) contrast(1.5);
 }
 header{
     display: flex;/*dx em linha*/
