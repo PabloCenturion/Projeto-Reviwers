@@ -1,8 +1,22 @@
+*{
+
+    box-sizing: border-box;
+
+}
+
+
+
 body{   
     background-image: url(img/2.jpg);/*insere a img na pag*/
     background-size: cover;/*faz com que a img se ajuste ao tamanho da pag*/
+<<<<<<< HEAD:pag inicial/pag-inicial.css
     background-position: center;/*centraliza a img com a pag*/
     background-repeat: no-repeat; /*caso a img for menor q a pag manda n repetir ela para completar*/
+=======
+    background-attachment: fixed;
+    backdrop-filter: blur(5px) ;
+    margin:0
+>>>>>>> a46c5c2eb6e437e457d217ef0b7a76893eec6e4c:pag inicial/pag-inicial/pag-inicial.css
 }
 header{
     display: flex;/*dx em linha*/
