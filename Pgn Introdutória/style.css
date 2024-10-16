@@ -1,10 +1,6 @@
 *{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    text-decoration: none;
-    border: none;
-    outline: none;
     font-family: 'Poppins', sans-serif;
 }
 body{
@@ -16,7 +12,7 @@ body{
     background-size:cover;
 }
 header{
-    margin-top: 0.5rem;
+    margin-top: 2rem;
 }
 .container1{ 
     width: 100%;
@@ -33,7 +29,7 @@ nav ul li a {
     text-decoration: none; 
 }
 .Reviewers {
-    margin-left: 1rem;
+    margin-left: 4.9rem;
     font-size: 3rem;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     color: white;
@@ -42,8 +38,8 @@ nav ul li a {
 }
 .Início {
     color: rgb(255, 255, 255);
-    font-size: xx-small;
-    margin-left: 16rem;
+    font-size:x-small;
+    margin-left: 18rem;
     text-decoration: underline;
 }
 .Explorar{
@@ -92,6 +88,12 @@ nav ul li a {
     color:rgb(129, 24, 226) ;
 }
 
+
+
+
+
+
+
 .description {
     width: 45%;
     height: 535px;
@@ -99,44 +101,52 @@ nav ul li a {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 1px solid white;
     color: rgb(255, 255, 255);
-    margin-left: 175px ; 
+    margin-left: 5rem; 
 }
-
 .container2{
     display: flex;
     flex-direction: row;
+    padding-left: 2.5rem;
 }
 .des1 {
-    text-align:center;
-    justify-content: baseline;
-    border: 1px solid white;
+    padding-top: 10rem;
+    width: 450px;
+    text-align:left;
     font-family: 'Aclonica';
-    font-size: 2rem;
+    font-size: 2.7rem;
     font-weight: 700;
 }
 .des2 {
     height: 200px;
-    width: 200px;
-    text-align: center;
-    justify-content: center;
-    border: 1px solid white;
+    width: 450px;
+    text-align: left;
+    font-size: 1.3rem;
 }
-
 .tabela {
+    margin-top: 2rem;
     display: flex;
     justify-content: end;
     align-items: end;
     margin-left: 188px;
 }
-
 .item img {
+    padding: 3.5px;
     border-radius: 15%;
     border: 0;
-    filter: drop-shadow(0 0 1rem rgb(129, 24, 226));
-    box-shadow: 1px 1px 1rem rgb(129, 24, 226);
+    filter: drop-shadow(0 0 2rem rgb(65, 1, 124));
+    box-shadow: 1px 1px 2rem rgb(83, 0, 161);
 }
+
+
+
+
+
+
+
+
+
+
 .container3{
     display: flex;
 }
@@ -145,27 +155,40 @@ nav ul li a {
     height: 350px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid white;
     color: rgb(255, 255, 255); 
-    margin-left: 150px;
+    margin-left: 15rem;
     
 }
 .des3{
-    height: 100px;
-    width: 100px;
-    border: 1px solid white;
+    padding-top: 4rem;
+    padding-left: 2rem;
+    height: 250px;
+    width: 600px;
     font-family: 'Aclonica';
+    font-size: 2.7rem;
 }
 .des4{
+    padding-left: 2rem;
     height: 200px;
-    width: 200px;
-    border: 1px solid white;
+    width: 400px;
+    font-size: 1.3rem;
 }
 .Lupa{
-    margin-left:250px  ;
+    margin-left: 25rem;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 .container4{
     display: flex;
     flex-direction: row;
@@ -175,17 +198,33 @@ nav ul li a {
     height: 350px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid white;
     color: rgb(255, 255, 255); 
-    margin-left: 150px;
+    margin-left: 15rem;
+    margin-top: 4rem;
 }
 .des5{
-    border: 1px solid white;
+    padding-top: 1rem;
+    font-size: 2.7rem;
+    font-family: 'Aclonica';
     height: 100px;
-    width: 100px;
+    width: 500px;
 }
+.des6{
+    padding-top: 2rem;
+    font-size: 1.3rem;
+    height: 200px;
+    width: 400px;
+}
+
+
+
+
+
+
+
+
+
+
 .container5{
     display: flex;
     flex-direction: row;
@@ -195,12 +234,40 @@ nav ul li a {
     height: 350px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid white;
+    
     color: rgb(255, 255, 255); 
     margin-left: 150px;
 }
 .pessoas{
-    margin-left: 10rem;
+    margin-left: 25rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.container6{
+    display: flex;
+    flex-direction: row;
+}
+
+.des9{
+    border: 1px solid white;
+    height: 100px;
+    width: 100px;
+}
+.des10{
+    border: 1px solid white;
+    height: 300px;
+    width: 300px;
+}
+.torre{
+    padding-left: 40rem;
 }
