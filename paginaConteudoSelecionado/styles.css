@@ -26,8 +26,10 @@ body {
 }
 
 .container-main::before {
+
     position: absolute;
     content: "";
+    
     top: 0px;
     left: 0px;
     width: 100%;

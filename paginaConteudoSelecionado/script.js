@@ -349,7 +349,32 @@ function closeModal(idModal) {
     document.getElementById(idModal).style.display = "none";
 }
 
+function createComent(){
 
+    const comentBody = `<div class="coment-struct">
+        <article class="header-coment">
+            <img src="./ImgsPagConteudoSelecionado/iconAvatar.png" alt="foto de perfil do usuario" >
+            <p id="userName">UserName</p>
+            <p id="userRate">9.0★</p>
+        </article>
+
+        <article class="coment-content">
+            <p id="comentContent">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus gravida libero ac egestas malesuada. Enean a ipsum a purus consequat dapibus in in magna.</p>
+        </article>
+
+        <article class="coment-interaction">
+            <button type="button"><i class="bi bi-chat-left-dots coment-size"></i></a>
+            <button type="button"><i class="bi bi-hand-thumbs-up coment-size"></i></a>
+            <button type="button"><i class="bi bi-hand-thumbs-down coment-size"></i></a>
+         </article>
+    </section>
+</div>
+
+`
+
+
+
+}
 
 ///////////////////////////////LOCAL STORAGE E JSON/////////////////////////////
 
