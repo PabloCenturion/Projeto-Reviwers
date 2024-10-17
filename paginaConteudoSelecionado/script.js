@@ -441,6 +441,8 @@ function closeModal(idModal) {
 }
 
 
+
+
 //fazer sistema de comentarios de acordo com o usuario cadastrado no JSON 
 function createComent(){
 
@@ -465,9 +467,46 @@ function createComent(){
 
 `
 
-
-
 }
+
+validandoUsuario()
+
+
+function validandoUsuario(){
+
+    const miniNonUserDiv = document.getElementById("miniNonUserDiv")
+
+    const miniDivBody = `
+    
+    <div class="mini-container-nonuser">
+        <div class="display-text">
+            <p>Entre para avaliar, curtir,<br> adicionar a listas e muito mais</p>
+        </div>
+        <div class="buttons-brothers">
+            <div class="button-in">entrar</div>
+            <div class="button-in">cadastrar</div>
+        </div>
+
+    </div>`
+
+    if(localStorage.getItem("estaLogado")==="true"){
+
+        document.getElementById("review-part-body").style.display = "block"
+
+    }else{
+
+        document.getElementById("review-part-body").type = "hidden";
+            miniNonUserDiv.innerHTML = miniDivBody
+
+        }
+
+    }
+
+
+
+
+
+
 
 
 ///////////////////////////////LOCAL STORAGE E JSON/////////////////////////////

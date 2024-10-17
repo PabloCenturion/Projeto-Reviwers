@@ -1,5 +1,9 @@
 body{   
     background-image: url(2.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    
 }
 header{
     backdrop-filter: blur(30px);
@@ -61,8 +65,4 @@ header{
     width: 43px;
     height: 43px;
     border-radius: 50%;
-}
-.estensão{
-    width: 1856px;
-    height: 3000px;
 }
