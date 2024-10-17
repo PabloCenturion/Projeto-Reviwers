@@ -1,6 +1,7 @@
 let usuarios = [
     {email: "admin@admin.com", userName: "admin", senha: "admim"}
 ]
+
 let input = {}
 
 function cadastro(){

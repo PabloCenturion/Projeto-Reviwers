@@ -345,10 +345,127 @@ function openComentModal(){
 
 }
 
+function openModalCast(){
+
+    const modalCastDiv = document.getElementById("modalCastDiv");
+
+    const modalCastSintax = `<section class="container-modal-cast">
+        <div class="brothers-title"><p class="title-modal-cast">Personagens/Elenco</p>
+            <div class="button-remove"><i class="bi bi-x-lg x-size" onclick="closeModal('modalCastDiv')"></i></div>
+        </div>
+        
+        <div class="display-cast">
+
+        <div class="imgs-cast">
+            <img src="./ImgsPagConteudoSelecionado/exemploImg.avif" alt="" width="80px" height="80px">
+            <p class="name-celebrity">lorem 1<br>Phasellus gravida </p>
+            <button type="button"><i class="bi bi-star star-cast-size"></i></button>
+        </div>
+
+        <div class="imgs-cast">
+            <img src="./ImgsPagConteudoSelecionado/exemploImg.avif" alt="" width="80px" height="80px">
+            <p class="name-celebrity">lorem 1<br>Phasellus gravida </p>
+            <button type="button"><i class="bi bi-star star-cast-size"></i></button>
+        </div>
+
+        <div class="imgs-cast">
+            <img src="./ImgsPagConteudoSelecionado/exemploImg.avif" alt="" width="80px" height="80px">
+            <p class="name-celebrity">lorem 1<br>Phasellus gravida </p>
+            <button type="button"><i class="bi bi-star star-cast-size"></i></button>
+        </div>
+
+        <div class="imgs-cast">
+            <img src="./ImgsPagConteudoSelecionado/exemploImg.avif" alt="" width="80px" height="80px">
+            <p class="name-celebrity">lorem 1<br>Phasellus gravida </p>
+            <button type="button"><i class="bi bi-star star-cast-size"></i></button>
+        </div>
+
+        <div class="imgs-cast">
+            <img src="./ImgsPagConteudoSelecionado/exemploImg.avif" alt="" width="80px" height="80px">
+            <p class="name-celebrity">lorem 1<br>Phasellus gravida </p>
+            <button type="button"><i class="bi bi-star star-cast-size"></i></button>
+        </div>
+
+        <div class="imgs-cast">
+            <img src="./ImgsPagConteudoSelecionado/exemploImg.avif" alt="" width="80px" height="80px">
+            <p class="name-celebrity">lorem 1<br>Phasellus gravida </p>
+            <button type="button"><i class="bi bi-star star-cast-size"></i></button>
+        </div>
+
+        <div class="imgs-cast">
+            <img src="./ImgsPagConteudoSelecionado/exemploImg.avif" alt="" width="80px" height="80px">
+            <p class="name-celebrity">lorem 1<br>Phasellus gravida </p>
+            <button type="button"><i class="bi bi-star star-cast-size"></i></button>
+        </div>
+
+        <div class="imgs-cast">
+            <img src="./ImgsPagConteudoSelecionado/exemploImg.avif" alt="" width="80px" height="80px">
+            <p class="name-celebrity">lorem 1<br>Phasellus gravida </p>
+            <button type="button"><i class="bi bi-star star-cast-size"></i></button>
+        </div>
+
+        <div class="imgs-cast">
+            <img src="./ImgsPagConteudoSelecionado/exemploImg.avif" alt="" width="80px" height="80px">
+            <p class="name-celebrity">lorem 1<br>Phasellus gravida </p>
+            <button type="button"><i class="bi bi-star star-cast-size"></i></button>
+        </div>
+
+        <div class="imgs-cast">
+            <img src="./ImgsPagConteudoSelecionado/exemploImg.avif" alt="" width="80px" height="80px">
+            <p class="name-celebrity">lorem 1<br>Phasellus gravida </p>
+            <button type="button"><i class="bi bi-star star-cast-size"></i></button>
+        </div>
+
+
+        <div class="imgs-cast">
+            <img src="./ImgsPagConteudoSelecionado/exemploImg.avif" alt="" width="80px" height="80px">
+            <p class="name-celebrity">lorem 1<br>Phasellus gravida </p>
+            <button type="button"><i class="bi bi-star star-cast-size"></i></button>
+        </div>
+
+        <div class="imgs-cast">
+            <img src="./ImgsPagConteudoSelecionado/exemploImg.avif" alt="" width="80px" height="80px">
+            <p class="name-celebrity">lorem 1<br>Phasellus gravida </p>
+            <button type="button"><i class="bi bi-star star-cast-size"></i></button>
+        </div>
+    </div>
+    </section>
+`
+
+modalCastDiv.innerHTML = modalCastSintax;
+
+}
+
 function closeModal(idModal) {
     document.getElementById(idModal).style.display = "none";
 }
 
+function createComent(){
+
+    const comentBody = `<div class="coment-struct">
+        <article class="header-coment">
+            <img src="./ImgsPagConteudoSelecionado/iconAvatar.png" alt="foto de perfil do usuario" >
+            <p id="userName">UserName</p>
+            <p id="userRate">9.0★</p>
+        </article>
+
+        <article class="coment-content">
+            <p id="comentContent">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus gravida libero ac egestas malesuada. Enean a ipsum a purus consequat dapibus in in magna.</p>
+        </article>
+
+        <article class="coment-interaction">
+            <button type="button"><i class="bi bi-chat-left-dots coment-size"></i></a>
+            <button type="button"><i class="bi bi-hand-thumbs-up coment-size"></i></a>
+            <button type="button"><i class="bi bi-hand-thumbs-down coment-size"></i></a>
+         </article>
+    </section>
+</div>
+
+`
+
+
+
+}
 
 
 ///////////////////////////////LOCAL STORAGE E JSON/////////////////////////////
