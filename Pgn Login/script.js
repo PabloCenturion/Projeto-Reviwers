@@ -16,6 +16,7 @@ function login(){
             if(email.value == usuarios[i].email && senha.value == usuarios[i].senha){   
                 console.log(usuarios[i].value);
                 window.location.href = "/pag inicial/pag-inicial-testes/corpo/index.html"
+                localStorage.setItem("estaLogado", true);
             }
         }
         alert("Usuário ou senha inválidos!");

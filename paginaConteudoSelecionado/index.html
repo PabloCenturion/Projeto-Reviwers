@@ -26,6 +26,8 @@
         <div id="listGroupAction"></div>
         <div id="modalRateDiv"></div>
         <div id="modalComentDiv"></div>
+        <div id="modalCastDiv"></div>
+        <div id="miniNonUserDiv"></div>
 
         <div class="info-movie">
             <img src="./ImgsPagConteudoSelecionado/capaFilme2.jpg" alt="Capa do Filme">
@@ -49,6 +51,7 @@
                 <div class="review-part">
                     <h1>Nota Popular: 7.0 ★</h1>
 
+                    <div id="review-part-body">
                     <section class="button-review">
 
                     <div class="buttons-part">
@@ -79,6 +82,7 @@
                         <button id="dislike-action" class="bi bi-hand-thumbs-down dislike-size"></button>
                     </div>
                     </div>
+                </div>
                 </div> 
              </div>
 
@@ -139,7 +143,7 @@
 
 
                     <div class="button-plus-cast">  
-                    <button class="button-plus" type="button">
+                    <button type="button" class="button-plus" onclick="openModalCast()">
                         <i class="bi bi-plus-lg icon-plus"></i>
                     </button>
                 </div>  
@@ -154,23 +158,20 @@
                 </div>
             
             </article>
-
-
-        
-
         </section>
 
     <section class="container-coment">
-        <p class="CriticaDaGaleraTitulo">Critica Da Galera </p>           
+        <p class="CriticaDaGaleraTitulo">Critica Da Galera </p>
 
+    <div class="coment-struct">
         <article class="header-coment">
             <img src="./ImgsPagConteudoSelecionado/iconAvatar.png" alt="foto de perfil do usuario" >
-            <p>UserName</p>
-            <p>9.0★</p>
+            <p id="userName">UserName</p>
+            <p id="userRate">9.0★</p>
         </article>
 
         <article class="coment-content">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus gravida libero ac egestas malesuada. Enean a ipsum a purus consequat dapibus in in magna.</p>
+            <p id="comentContent">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus gravida libero ac egestas malesuada. Enean a ipsum a purus consequat dapibus in in magna.</p>
         </article>
 
         <article class="coment-interaction">
@@ -179,6 +180,7 @@
             <button type="button"><i class="bi bi-hand-thumbs-down coment-size"></i></a>
          </article>
     </section>
+</div>
 
     <button class="button-more-coments" type="button" onclick="moreComents()">
         <i class="bi bi-plus-lg icon-plus"></i>
