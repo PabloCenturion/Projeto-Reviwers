@@ -858,6 +858,7 @@ border: 5px solid rgb(255, 255, 255);
     justify-content: center;
     align-items: center;
     text-align: center;
+    padding-top: 18px;
 
 width: 260px;
 height: 110px;
@@ -879,12 +880,34 @@ gap: 4px;
     display: flex;
     justify-content: center;
     align-items: center;
+    
+
+    cursor: pointer;
 
 
     background-color: #402B4F;
 
     width: 128px;
     height: 47px;
+
+}
+
+.button-in:hover{
+
+    background-color: #31213b;
+
+
+}
+
+#miniNonUserDiv{
+
+
+    position: absolute;
+    top: 250px;
+    left: 1070px;
+    transform: translate(-50%, -50%);
+    z-index: 1000; 
+
 
 }
 

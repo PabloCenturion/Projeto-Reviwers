@@ -495,7 +495,7 @@ function validandoUsuario(){
 
     }else{
 
-        document.getElementById("review-part-body").type = "hidden";
+        document.getElementById("review-part-body").style.visibility = "hidden";
             miniNonUserDiv.innerHTML = miniDivBody
 
         }

@@ -113,7 +113,6 @@ console.log(`Este é o segundo digito verificador: ${(somatoria2*10)%11}`);*/
    
 function entrarSemLogin(){
 
-
     localStorage.setItem("estaLogado", "false");
 
 
