@@ -101,27 +101,26 @@ nav ul li a {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: rgb(255, 255, 255);
-    margin-left: 5rem; 
+    color: rgb(255, 255, 255); 
 }
 .container2{
     display: flex;
     flex-direction: row;
-    padding-left: 2.5rem;
+    padding-left: 8rem;
 }
 .des1 {
     padding-top: 10rem;
     width: 450px;
     text-align:left;
     font-family: 'Aclonica';
-    font-size: 2.7rem;
+    font-size: 2.2rem;
     font-weight: 700;
 }
 .des2 {
     height: 200px;
     width: 450px;
     text-align: left;
-    font-size: 1.3rem;
+    font-size: 1rem;
 }
 .tabela {
     margin-top: 2rem;
@@ -156,25 +155,25 @@ nav ul li a {
     display: flex;
     flex-direction: column;
     color: rgb(255, 255, 255); 
-    margin-left: 15rem;
+    margin-left: 10rem;
     
 }
 .des3{
     padding-top: 4rem;
     padding-left: 2rem;
     height: 250px;
-    width: 600px;
+    width: 500px;
     font-family: 'Aclonica';
-    font-size: 2.7rem;
+    font-size: 2.2rem;
 }
 .des4{
     padding-left: 2rem;
     height: 200px;
     width: 400px;
-    font-size: 1.3rem;
+    font-size: 1rem;
 }
 .Lupa{
-    margin-left: 25rem;
+    margin-left: 20rem;
 }
 
 
