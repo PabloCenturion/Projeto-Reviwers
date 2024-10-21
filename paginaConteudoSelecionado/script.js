@@ -264,27 +264,52 @@ function showListGroups(){
 
 function openModalRate(){
 
-    const modalCorpo = `<section class="container-modal-rate">
+    const modalCorpo =  
+    
+    `<section class="container-modal-rate">
 
     <div class="brothers-title">
     <h2 class="title-rate">Avaliação de 'Titulo'</h2>
-    <div class="button-remove"> <i class="bi bi-x-lg x-size" onclick="closeModal('modalRateDiv')"></i></div>
+    <div class="button-remove"><i class="bi bi-x-lg x-size" onclick="closeModal('modalRateDiv')"></i></div>
 </div>
 
     <h3 class="subtitle-rate">Dê uma nota de 0 a 10:</h3>
 
-    <div class="list-stars-rate">
-        <i class="bi bi-star star-size"></i>
-        <i class="bi bi-star star-size"></i>
-        <i class="bi bi-star star-size"></i>
-        <i class="bi bi-star star-size"></i>
-        <i class="bi bi-star star-size"></i>
-        <i class="bi bi-star star-size"></i>
-        <i class="bi bi-star star-size"></i>
-        <i class="bi bi-star star-size"></i>
-        <i class="bi bi-star star-size"></i>
-        <i class="bi bi-star star-size"></i>
-    </div>
+    <div class="rating">
+    <input type="radio" name="star" id="star1" value="1">
+    <label for="star1"></label>
+
+    <input type="radio" name="star" id="star2" value="2">
+    <label for="star2"></label>
+
+    <input type="radio" name="star" id="star3" value="3">
+    <label for="star3"></label>
+
+    <input type="radio" name="star" id="star4" value="4">
+    <label for="star4"></label>
+
+    <input type="radio" name="star" id="star5" value="5">
+    <label for="star5"></label>
+
+    <input type="radio" name="star" id="star6" value="6">
+    <label for="star6"></label>
+
+    <input type="radio" name="star" id="star7" value="7">
+    <label for="star7"></label>
+
+    <input type="radio" name="star" id="star8" value="8">
+    <label for="star8"></label>
+
+    <input type="radio" name="star" id="star9" value="9">
+    <label for="star9"></label>
+
+    <input type="radio" name="star" id="star10" value="10">
+    <label for="star10"></label>
+
+</div>
+
+          <div id="star-count"></div>
+
     
     <a type="button" onclick="openComentModal()"><span>clique aqui e detalhe sua avaliação</span></a>
 
@@ -306,7 +331,9 @@ function openComentModal(){
 
     document.getElementById("modalRateDiv").style.display = "none";
 
-    const comentModalCorpo = ` <section class="container-modal-coment">
+    const comentModalCorpo = 
+    
+    ` <section class="container-modal-coment">
 
         <div class="brothers-title">
             <h2 class="title-rate">Avaliação de 'Titulo'</h2>
@@ -314,18 +341,45 @@ function openComentModal(){
         </div>
             <h3 class="subtitle-rate">Dê uma nota de 0 a 10:</h3>
 
-        <div class="list-stars-rate">
-            <i class="bi bi-star star-size"></i>
-            <i class="bi bi-star star-size"></i>
-            <i class="bi bi-star star-size"></i>
-            <i class="bi bi-star star-size"></i>
-            <i class="bi bi-star star-size"></i>
-            <i class="bi bi-star star-size"></i>
-            <i class="bi bi-star star-size"></i>
-            <i class="bi bi-star star-size"></i>
-            <i class="bi bi-star star-size"></i>
-            <i class="bi bi-star star-size"></i>
-        </div>
+            <div class="rating">
+                <input type="radio" name="star" id="star1" value="1">
+                <label for="star1"></label>
+            
+                <input type="radio" name="star" id="star2" value="2">
+                <label for="star2"></label>
+            
+                <input type="radio" name="star" id="star3" value="3">
+                <label for="star3"></label>
+            
+                <input type="radio" name="star" id="star4" value="4">
+                <label for="star4"></label>
+                
+                <input type="radio" name="star" id="star5" value="5">
+                <label for="star5"></label>
+    
+                 
+                <input type="radio" name="star" id="star6" value="6">
+                <label for="star6"></label>
+    
+                 
+                <input type="radio" name="star" id="star7" value="7">
+                <label for="star7"></label>
+    
+                 
+                <input type="radio" name="star" id="star8" value="8">
+                <label for="star8"></label>
+    
+                 
+                <input type="radio" name="star" id="star9" value="9">
+                <label for="star9"></label>
+    
+                 
+                <input type="radio" name="star" id="star10" value="10">
+                <label for="star10"></label>
+              </div>
+    
+              <div id="star-count"></div>
+        
         <label for="review-coment" class="form-label"></label>
         <textarea class="form-control" id="review-coment" rows="5" placeholder="Digite aqui sua Crítica"></textarea>
 
@@ -336,7 +390,8 @@ function openComentModal(){
         </div>
         
 
-    </section>` 
+    </section>
+` 
 
     const modalComentDiv = document.getElementById("modalComentDiv")
 
@@ -344,6 +399,16 @@ function openComentModal(){
 
 
 }
+
+//rasc
+
+function registerComment(){
+
+    let inputComent = document.getElementById("review-coment").value;
+
+}
+
+
 
 function openModalCast(){
 
@@ -441,32 +506,36 @@ function closeModal(idModal) {
 }
 
 
-
-
 //fazer sistema de comentarios de acordo com o usuario cadastrado no JSON 
-function createComent(){
+function createComent() {
 
-    const comentBody = `<div class="coment-struct">
-        <article class="header-coment">
-            <img src="./ImgsPagConteudoSelecionado/iconAvatar.png" alt="foto de perfil do usuario" >
-            <p id="userName">UserName</p>
-            <p id="userRate">9.0★</p>
-        </article>
+    let usuarios = JSON.parse(localStorage.getItem("usuarios")); //transformando para objeto para podermos manipular
+    console.log(usuarios);
 
-        <article class="coment-content">
-            <p id="comentContent">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus gravida libero ac egestas malesuada. Enean a ipsum a purus consequat dapibus in in magna.</p>
-        </article>
+    for (let i = 0; i < usuarios.length; i++) {
+        let userName = usuarios[i].userName; 
 
-        <article class="coment-interaction">
-            <button type="button"><i class="bi bi-chat-left-dots coment-size"></i></a>
-            <button type="button"><i class="bi bi-hand-thumbs-up coment-size"></i></a>
-            <button type="button"><i class="bi bi-hand-thumbs-down coment-size"></i></a>
-         </article>
-    </section>
-</div>
+        // Cria o corpo do comentário
+        const comentBody = `
+            <div class="coment-struct">
+                <article class="header-coment">
+                    <img src="./ImgsPagConteudoSelecionado/iconAvatar.png" alt="foto de perfil do usuario">
+                    <p id="userName">${userName}</p>
+                    <p id="userRate">9.0★</p>
+                </article>
+                <article class="coment-content">
+                    <p id="comentContent">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus gravida libero ac egestas malesuada. Enean a ipsum a purus consequat dapibus in in magna.</p>
+                </article>
+                <article class="coment-interaction">
+                    <button type="button"><i class="bi bi-chat-left-dots coment-size"></i></button>
+                    <button type="button"><i class="bi bi-hand-thumbs-up coment-size"></i></button>
+                    <button type="button"><i class="bi bi-hand-thumbs-down coment-size"></i></button>
+                </article>
+            </div>
+        `;
 
-`
-
+       
+    }
 }
 
 validandoUsuario()
@@ -501,13 +570,14 @@ function validandoUsuario(){
         }
 
     }
+    
 
 
+        
 
 
-
-
-
+      
+      
 
 ///////////////////////////////LOCAL STORAGE E JSON/////////////////////////////
 

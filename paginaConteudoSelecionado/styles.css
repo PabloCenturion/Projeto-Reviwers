@@ -619,6 +619,8 @@ padding: 30px;
 display: flex;
 flex-direction: column;
 
+position: relative;
+
 
 width: 800px;
 height: 300px;
@@ -911,3 +913,60 @@ gap: 4px;
 
 }
 
+/*codigo do site abaixo https://codepen.io/leandrorangel94/pen/wvGrYey*/
+  
+.rating {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: start;
+    position: relative;
+  }
+  
+  .rating input {
+    display: none;
+  }
+  
+  .rating label {
+    display: block;
+    cursor: pointer;
+    width: 50px;
+    position: relative;
+  }
+  
+  /* Estrela cheia */
+  .rating label:before {
+    content: '\f005';  /* Estrela cheia */
+    font-family: FontAwesome;
+    display: block;
+    font-size: 50px;
+    color: #0e1316;
+  }
+  
+  /* Estrela amarela (preenchida) */
+  .rating label:after {
+    content: '\f005';
+    font-family: FontAwesome;
+    position: absolute;
+    font-size: 50px;
+    color: #ffff00;
+    top: 0;
+    opacity: 0;
+    transition: .3s;
+    text-shadow: 0 4px 5px rgba(0, 0, 0, .5);
+  }
+  
+  /* Quando o usuário passa o mouse por cima ou seleciona */
+  .rating label:hover:after,
+  .rating label:hover ~ label:after,
+  .rating input:checked ~ label:after {
+    opacity: 1;
+  }
+  
+  /* Estilos para meia estrela */
+.half:after {
+    width: 50%;  /* Exibe apenas a metade da estrela */
+    overflow: hidden;
+    position: absolute;
+    display: block;
+    z-index: 1;
+  }
