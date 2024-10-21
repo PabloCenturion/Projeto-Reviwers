@@ -13,9 +13,10 @@ function login(){
     }
     else{
         for(var i=0;i<usuarios.length;i++){
-            if(email.value == usuarios[i].email && senha.value == usuarios[i].senha){
+            if(email.value == usuarios[i].email && senha.value == usuarios[i].senha){   
                 console.log(usuarios[i].value);
                 window.location.href = "/pag inicial/pag-inicial-testes/corpo/index.html"
+                localStorage.setItem("estaLogado", true);
             }
         }
         alert("Usuário ou senha inválidos!");
