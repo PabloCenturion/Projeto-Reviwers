@@ -137,3 +137,79 @@ header{
     filter: drop-shadow(10px 10px 5px rgb(0, 0, 0));
 }
 /* FIM DO CORPO*/
+@media (max-width: 1366px) and (max-height: 768px) {
+    /*começo cabeçalho*/
+    header{
+        margin: -170px 0px 0px 100px;
+        padding: 10px;
+    }
+    .logo{
+        margin: 0px 300px 0px 40px;
+        font-size: 30px;
+    }
+    .cab-direita{
+        margin: 0px 0px 0px 10px;
+    }
+    .paginas{
+        margin: 0px 30px 0px 0px;
+        font-size: 15px;
+    }
+    .usuario{
+        margin: 0px 0px 0px 10px;
+        width: 50px;/*largura*/
+        height: 40px;/*altura*/
+    }
+    .fundo-usuario{
+        width: 40px;
+        height: 40px;
+    }
+    .barra{
+        width: 250px;/*largura*/
+        height: 35px;/*altura*/
+        font-size: 15px;/*tamanho da letra*/
+    }
+    /*fim cabeçalho*/
+    /*começo corpo*/
+    .corpo{
+        margin: 200px 150px 100px 150px;
+    }
+    .quadrado1{
+        width: 700px;
+        height: 300px;
+        margin: 0px 0px 0px 310px;
+    }
+    .quadrado2{
+        width: 700px;
+        height: 300px;
+        margin: -300px 0px 0px 155px;
+    }
+    .quadrado3{
+        width: 700px;
+        height: 300px;
+        margin: -300px 0px 0px 0px;
+    }
+    .filme-quadrado{
+        margin: 35px 0px 0px 50px;
+        width: 150px;
+        height: 230px;
+    }
+    .info-filme{
+        padding: 30px;
+        margin: -270px 0px 0px 200px;
+        font-size: 15px;
+    }
+    .genero1{
+        margin: 10px 10px 0px 0px;
+        padding: 5px 10px 5px 10px;
+    }
+    .nota1{
+        font-size:100%; 
+        margin: -270px 0px 0px 500px;
+    }
+    .cat-filmes{
+        margin: 0px 0px 0px 30px;
+        width: 130px;
+        height: 200px;
+    }
+    /*fim corpo*/
+}
