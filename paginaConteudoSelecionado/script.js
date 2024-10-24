@@ -945,7 +945,7 @@ function modificandoFilmeDados(){
 
     for(let i = 0; i < 3; i++){
     
-     scenesImgs[i].src = filmes[0].threeImgs[i]
+     scenesImgs[i].src = filmes[0].threeImgs[i];
 }
 }
 
