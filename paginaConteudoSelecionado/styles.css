@@ -19,7 +19,7 @@ body {
     gap: 20px;
     padding-left: 125px;
     padding-right: 125px;
-    padding-top: 90px;
+    padding-top: 120px;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     color: white;
     position: relative;
@@ -892,6 +892,11 @@ gap: 4px;
     width: 128px;
     height: 47px;
 
+    text-decoration: none;
+
+    color: white;
+
+
 }
 
 .button-in:hover{
@@ -955,18 +960,100 @@ gap: 4px;
     text-shadow: 0 4px 5px rgba(0, 0, 0, .5);
   }
   
-  /* Quando o usuário passa o mouse por cima ou seleciona */
   .rating label:hover:after,
   .rating label:hover ~ label:after,
   .rating input:checked ~ label:after {
     opacity: 1;
   }
   
-  /* Estilos para meia estrela */
-.half:after {
-    width: 50%;  /* Exibe apenas a metade da estrela */
-    overflow: hidden;
-    position: absolute;
-    display: block;
-    z-index: 1;
-  }
+
+  header{
+    margin-top: -100px;
+    margin-bottom: 20px;
+    backdrop-filter: blur(30px);
+    box-shadow: 0px 0px 30px #6802ac6b;
+    border: 2px solid #6802ac6b;
+    border-radius: 30px;
+
+
+    display: flex;/*dx em linha*/
+    justify-content: center;
+
+    align-items: center; /*centraliza tudo em uma linha*/
+    color: white; /*cor das letras*/
+    
+    
+    padding: 10px; /*define o espaçamento do header*/
+    font-family: Arial, sans-serif;/*estilo da letra*/
+    position: relative;
+    z-index: 10;
+
+
+
+
+
+}
+.logo{
+
+    margin-right: 70px;
+    margin-left: 70px;
+    font-size: 30px;/*tamanho da font*/
+    text-decoration: none;/*linha do <a>*/
+    color: white;/*cor da letra*/
+    text-shadow:  0 0 10px purple, 0 0 20px purple, 0 0 40px purple, 0 0 80px purple;/*sombra*/
+    transition: 0.8s;/*tempo para fazer o hover*/
+    
+}
+.logo:hover{
+    scale: 1.05;/*tamanho que vai aumentar*/
+}
+.cab-direita{
+    display: flex;  /*lado a lado*/
+    align-items: center;/*centraliza eles na linha*/
+
+    margin-right: 65px;
+    
+
+}
+.paginas{
+
+    margin-right:20px;
+    text-decoration: none; /*tira linha do <a>*/
+    color: white; /*cor da letra*/
+    transition: 0.5s; /*tempo para fazer o hover*/
+    
+}
+.paginas:hover{
+    color: #6802ac;/*cor da letra*/
+    text-decoration-line: underline;/*coloca linha do <a>*/
+}
+.barra{
+    width: 364px;/*largura*/
+    height: 43px;/*altura*/
+    border-radius: 40px 40px 40px 40px;/*arrendodamento das bordas*/
+    font-size: 18px;/*tamanho da letra*/
+    background-color: transparent;
+    border: 1px solid #6802ac;
+    color: white;
+}
+.usuario{
+    width: 43px;
+    height: 43px;
+    border-radius: 50%;
+    margin-left: 50px; 
+}
+.fundo-usuario{
+    width: 43px;
+    height: 43px;
+    border-radius: 50%;
+    border: 3px solid purple;
+}
+/* FIM DO CABEÇALHO*/
+
+.display-flex{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}

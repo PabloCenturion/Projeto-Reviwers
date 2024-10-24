@@ -1,32 +1,24 @@
-<<<<<<< HEAD
-let usuarios = JSON.parse(localStorage.getItem("usuarios")) || 
-[{email: "admin@admin.com", userName: "admin", senha: "admim"}];
-
 let input = {};
-=======
-let usuarios = [
-    {email: "admin@admin.com", userName: "admin", senha: "admim"}
-]
 
-let input = {}
->>>>>>> 273a6e40968bfbf86351f3eb8cd6e1d72c3c75cc
-
-function cadastro(){
-
+function cadastro() {
     input.email = document.getElementById("email").value;
     input.userName = document.getElementById("name").value;
     input.senha = document.getElementById("senha").value;
 
-<<<<<<< HEAD
-=======
-    usuarios = JSON.parse(localStorage.getItem("usuarios"));
-    
->>>>>>> 273a6e40968bfbf86351f3eb8cd6e1d72c3c75cc
+    // Verifica se já há um array de usuários no localStorage
+    let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+
+    // Adiciona o novo input ao array de usuários
     usuarios.push(input);
+
+    // Salva o array atualizado no localStorage
     localStorage.setItem("usuarios", JSON.stringify(usuarios));
 
+    // Redireciona para a página de login após o cadastro
     setTimeout(() => {
-        window.location.href = "/Pgn Login/index.html"
-    });
+        window.location.href = "/Pgn Login/index.html";
+    }, 1000);
 }
+
+// Exibe os usuários salvos no console para conferência
 console.log(JSON.parse(localStorage.getItem("usuarios")));

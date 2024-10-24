@@ -400,7 +400,7 @@ function openComentModal(){
 
 }
 
-//rasc
+//rascUNHO
 
 function registerComment(){
 
@@ -552,8 +552,8 @@ function validandoUsuario(){
             <p>Entre para avaliar, curtir,<br> adicionar a listas e muito mais</p>
         </div>
         <div class="buttons-brothers">
-            <div class="button-in">entrar</div>
-            <div class="button-in">cadastrar</div>
+            <a class="button-in"  href="/Pgn Login/index.html">entrar</a>
+            <a class="button-in" href="/Cadastro/index.html">cadastrar</a>
         </div>
 
     </div>`
@@ -572,8 +572,6 @@ function validandoUsuario(){
     }
     
 
-
-        
 
 
       
