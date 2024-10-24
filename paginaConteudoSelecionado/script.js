@@ -173,19 +173,22 @@ window.onload = function() {
 
 //função global para alertas
 
-function showAlert(textAlert,typeAlert){
+function showAlert(textAlert, typeAlert) {
 
     const alertsAction = document.getElementById("alertsAction");
 
-    const alert = `
+    alertsAction.innerHTML = `
         <div class="alert alert-${typeAlert} alert-dismissible fade show" role="alert">
           ${textAlert}
           <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>`;
+        </div>
+    `;
 
-        alertsAction.innerHTML = alert;
-
+    // Define o tempo para o alerta desaparecer.
+    setTimeout(function() {
+        alertsAction.innerHTML = '';}, 3500); 
 }
+
 
 function validandoSeJaExisteInput(){
 
@@ -581,14 +584,6 @@ function validandoUsuario(){
 
 //funçao construtora para criação de itens
 
-function Actors (actorName, movies){
-
-    this.actorName = actorName
-    this.movies = movies
-
-}
-
-
 function Characters(name, actorName){
 
     this.name = name
@@ -596,7 +591,7 @@ function Characters(name, actorName){
 
 }
 
-function Filme(title,year,classification,time,genre, synopsis, streaming, director, producer){
+function Filme(title,year,classification,time,genre, synopsis, streaming, director, producer, movieCover, threeImgs){
 
     this.title = title
 
@@ -616,6 +611,11 @@ function Filme(title,year,classification,time,genre, synopsis, streaming, direct
 
     this.producer = producer
 
+    this.movieCover = movieCover
+
+    this.threeImgs = threeImgs
+
+
         this.showInfoMovie = function() {
 
             return `Título: ${this.title}\nAno: ${this.year}\Classificação: ${this.classification}\nDuração: ${this.time} min\nGênero: ${this.genre}\nSinopse: ${this.sinopse}\nStreaming: ${this.streaming}\nDiretor: ${this.director}\nProdutora: ${this.producer}`;
@@ -633,7 +633,10 @@ const filme1 = new Filme(
     "Um ladrão que invade os sonhos das pessoas é contratado para realizar um último trabalho.", 
     "Netflix", 
     "Christopher Nolan", 
-    "Emma Thomas"
+    "Emma Thomas",
+    "https://m.media-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_.jpg",
+    ["https://m.media-amazon.com/images/M/MV5BMTQ1ZmIzOTAtNDcwZi00NDVkLWE4NWItYWNhZGY1MmVlZGU0XkEyXkFqcGdeQWRvb2xpbmhk._V1_.jpg", "https://nextbestpicture-com.b-cdn.net/wp-content/uploads/2024/04/Inception.jpg", "https://p2.trrsf.com/image/fget/cf/774/0/images.terra.com/2023/07/11/1982331528-ecee5869820ff75ac4563dc6bfbf7083.jpg"]
+
   );
   
   const filme2 = new Filme(
@@ -645,7 +648,9 @@ const filme1 = new Filme(
     "Um hacker descobre que o mundo em que vive é uma simulação controlada por máquinas.", 
     "HBO Max", 
     "The Wachowskis", 
-    "Joel Silver"
+    "Joel Silver", 
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfSjSWOCaw5dnDL2GT1zFd9RMCgUGw5Q2Cfg&s",
+    ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3teTqtpY71bwNdc6gUV4TbKiv_IGqkL53FQ&s","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUCQtWJ2CmvrDnAOUSLbFmAdBlKrsg0IAbSA&s", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIgLH336Vh42U-KCOMPrD-lecti2JrL5Az9Q&s"]
   );
   
   const filme3 = new Filme(
@@ -657,7 +662,9 @@ const filme1 = new Filme(
     "Uma família pobre se infiltra na vida de uma família rica com consequências inesperadas.", 
     "Amazon Prime", 
     "Bong Joon-ho", 
-    "Kwak Sin-ae"
+    "Kwak Sin-ae", 
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHHddg8wzW-auuwLxHR2IpH5QP1vqhBMjsMw&s"
+    ["https://jacobin.com.br/wp-content/uploads/2021/02/b2c155b6-de08-495d-a027-78add6cbf06b-1.jpeg", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhV3Qtulu5TKUjK5BdnnmWmxxNhlMLSghZPg&s", "https://cinemacao.com/wp-content/uploads/2019/10/parasita-3-1200x630.jpg"]
   );
   
   const filme4 = new Filme(
@@ -669,7 +676,9 @@ const filme1 = new Filme(
     "Os Vingadores restantes tentam reverter as ações de Thanos e salvar o universo.", 
     "Disney+", 
     "Anthony e Joe Russo", 
-    "Kevin Feige"
+    "Kevin Feige",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaw6QTsDE3d6-qOL5xMa4-JDdBNTa3uspCrg&s",
+    ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSi2B-P00mjghuH0jPXNfTnY-wMU4nlqFuFDQ&s", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-J2MHk9JmW3zVU0Yjxpz84U0yK8JGwhWcGg&s", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_x_KYfwc7uRGwJROQtDA428GjJjv4tOHScw&s"]
   );
   
   const filme5 = new Filme(
@@ -681,7 +690,9 @@ const filme1 = new Filme(
     "Um grupo de astronautas viaja através de um buraco de minhoca para salvar a humanidade.", 
     "Netflix", 
     "Christopher Nolan", 
-    "Emma Thomas"
+    "Emma Thomas",
+    "https://upload.wikimedia.org/wikipedia/pt/3/3a/Interstellar_Filme.png", 
+    ["https://images.squarespace-cdn.com/content/v1/6058f3b0dbb27b03bbd36be9/1616442358480-QB4FPW98SIE28C82E87X/interstellar_ron_burnett_critical_approaches", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0TNR0tbTiYpNHEDjMQGOYk8xRkWwpjXwSJw&s", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbXTYn0SMbQzjnxJ65276KWX2IHgbtAoKA7g&s"]
   );
 
 
@@ -705,33 +716,22 @@ localStorage.setItem("listaFilmes", JSON.stringify(filmes))
   console.log(filme5.showInfoMovie());
 
 
-  function Serie(title,year,classification,seasons,episodes,genre,synopsis,director,producer){
+  function Serie(title, year, classification, genre, synopsis, director, producer, seasons, episodes, streaming) {
+    this.title = title;
+    this.year = year;
+    this.classification = classification;
+    this.genre = genre;
+    this.synopsis = synopsis;
+    this.director = director;
+    this.producer = producer;
+    this.seasons = seasons;
+    this.episodes = episodes;
+    this.streaming = streaming;
 
-    this.title = title
-
-    this.year = year
-
-    this.classification = classification
-
-    this.genre = genre
-
-    this.synopsis = synopsis
-
-    this.director = director
-
-    this.producer = producer
-
-    this.seasons = seasons
-
-    this.episodes = episodes
-
-    
     this.showInfoSerie = function() {
-
-        return `Título: ${this.title}\nAno: ${this.year}\Classificação: ${this.classification}\nDuração: ${this.time} min\nGênero: ${this.genre}\nSinopse: ${this.sinopse}\nStreaming: ${this.streaming}\nDiretor: ${this.director}\nProdutora: ${this.producer} \nTemporadas: ${this.seasons} \nEpisodios: ${this.episodes}`;
+        return `Título: ${this.title}\nAno: ${this.year}\nClassificação: ${this.classification}\nGênero: ${this.genre}\nSinopse: ${this.synopsis}\nStreaming: ${this.streaming}\nDiretor: ${this.director}\nProdutora: ${this.producer}\nTemporadas: ${this.seasons}\nEpisódios: ${this.episodes}`;
+    };
 }
-
-  }
 
 const serie1 = new Serie(
     "Breaking Bad", 
@@ -742,7 +742,8 @@ const serie1 = new Serie(
     "Vince Gilligan", 
     "Mark Johnson", 
     5, 
-    62
+    62, 
+    "Netflix"
 );
 
 const serie2 = new Serie(
@@ -754,7 +755,8 @@ const serie2 = new Serie(
     "David Benioff", 
     "D.B. Weiss", 
     8, 
-    73
+    73, 
+    "HBO"
 );
 
 const serie3 = new Serie(
@@ -766,7 +768,8 @@ const serie3 = new Serie(
     "The Duffer Brothers", 
     "Shawn Levy", 
     4, 
-    34
+    34, 
+    "Netflix"
 );
 
 const serie4 = new Serie(
@@ -778,7 +781,8 @@ const serie4 = new Serie(
     "Peter Morgan", 
     "Andy Harries", 
     5, 
-    50
+    50, 
+    "Netflix"
 );
 
 const serie5 = new Serie(
@@ -790,21 +794,19 @@ const serie5 = new Serie(
     "Jon Favreau", 
     "Kathleen Kennedy", 
     3, 
-    24
+    24, 
+    "Disney+"
 );
 
-const series = []
+const series = [];
+series.push(serie1);
+series.push(serie2);
+series.push(serie3);
+series.push(serie4);
+series.push(serie5);
 
-  series.push(serie1)
-  series.push(serie2)
-  series.push(serie3)
-  series.push(serie4)
-  series.push(serie5)
+localStorage.setItem("listaSeries", JSON.stringify(series));
 
-
-localStorage.setItem("listaFilmes", JSON.stringify(filmes))
-
-// Exibindo informações das séries
 console.log(serie1.showInfoSerie());
 console.log(serie2.showInfoSerie());
 console.log(serie3.showInfoSerie());
@@ -812,30 +814,22 @@ console.log(serie4.showInfoSerie());
 console.log(serie5.showInfoSerie());
 
 
-function Jogo(title,year,classification,genre,synopsis,producer,creator){
+function Jogo(title, year, classification, genre, synopsis, producer, creator, platform) {
 
-    this.title = title
-
-    this.year = year
-
-    this.classification = classification
-
-    this.genre = genre
-
-    this.synopsis = synopsis
-
-    this.producer = producer
-
-    this.creator = creator
+    this.title = title;
+    this.year = year;
+    this.classification = classification;
+    this.genre = genre;
+    this.synopsis = synopsis;
+    this.producer = producer;
+    this.creator = creator;
+    this.platform = platform;
 
     this.showInfoJogo = function() {
-
-        return `título: ${this.title}\nAno: ${this.year}\Classificação: ${this.classification}\nGênero: ${this.genre}\nSinopse: ${this.synopsis}\nProducer: ${this.producer}\nCreator: ${this.creator}`;
+        return `Título: ${this.title}\nAno: ${this.year}\nClassificação: ${this.classification}\nGênero: ${this.genre}\nSinopse: ${this.synopsis}\nProdutor: ${this.producer}\nCriador: ${this.creator}\nPlataformas: ${this.platform}`;
+    };
 }
 
-}
-
-// Criação de 5 jogos
 const jogo1 = new Jogo(
     "The Last of Us Part II", 
     2020, 
@@ -843,7 +837,8 @@ const jogo1 = new Jogo(
     "Ação, Aventura", 
     "Uma sequência de The Last of Us, explorando temas de vingança e sobrevivência.", 
     "Sony Interactive Entertainment", 
-    "Naughty Dog"
+    "Naughty Dog", 
+    "PlayStation"
 );
 
 const jogo2 = new Jogo(
@@ -853,7 +848,8 @@ const jogo2 = new Jogo(
     "Ação, Aventura", 
     "Kratos, o Deus da Guerra, e seu filho Atreus embarcam em uma jornada épica pela mitologia nórdica.", 
     "Sony Interactive Entertainment", 
-    "Santa Monica Studio"
+    "Santa Monica Studio", 
+    "PlayStation, PC"
 );
 
 const jogo3 = new Jogo(
@@ -863,7 +859,8 @@ const jogo3 = new Jogo(
     "Ação, Roguelike", 
     "Zagreus, filho de Hades, tenta escapar do submundo e descobre segredos sobre sua família.", 
     "Supergiant Games", 
-    "Supergiant Games"
+    "Supergiant Games", 
+    "PC, Nintendo Switch, PlayStation, Xbox"
 );
 
 const jogo4 = new Jogo(
@@ -873,7 +870,8 @@ const jogo4 = new Jogo(
     "Sandbox, Aventura", 
     "Um jogo onde você pode construir, explorar e sobreviver em um mundo gerado aleatoriamente.", 
     "Mojang Studios", 
-    "Markus Persson"
+    "Markus Persson", 
+    "PC, Console, Celular"
 );
 
 const jogo5 = new Jogo(
@@ -883,18 +881,19 @@ const jogo5 = new Jogo(
     "RPG, Aventura", 
     "Geralt de Rivia, um caçador de monstros, busca por sua filha adotiva em um mundo aberto cheio de perigos.", 
     "CD Projekt", 
-    "CD Projekt Red"
+    "CD Projekt Red", 
+    "PC, PlayStation, Xbox, Nintendo Switch"
 );
 
-const jogos = []
+const jogos = [];
 
-jogos.push(jogo1)
-jogos.push(jogo2)
-jogos.push(jogo3)
-jogos.push(jogo4)
-jogos.push(jogo5)
+jogos.push(jogo1);
+jogos.push(jogo2);
+jogos.push(jogo3);
+jogos.push(jogo4);
+jogos.push(jogo5);
 
-localStorage.setItem("listaJogos", JSON.stringify(jogos))
+localStorage.setItem("listaJogos", JSON.stringify(jogos));
 
 console.log(localStorage.getItem("listaJogos"));
 
@@ -905,16 +904,56 @@ console.log(jogo4.showInfoJogo());
 console.log(jogo5.showInfoJogo());
 
 
+function modificandoFilmeDados(){
+
+    const titleMovie = document.getElementById("title-movie")
+
+    const infosMovie = document.getElementById("infos-movie")
+
+    const genreMovie = document.getElementById("genre-movie")
+
+    const sinopseMovie = document.getElementById("sinopse-movie")
+
+    const directorMovie = document.getElementById("director-movie")
+
+    const producerMovie = document.getElementById("producer-movie")
+
+    const streamingsMovies = document.getElementById("streamings")
+
+    const coverMovie = document.getElementById("cover-movie")
+
+    const scenesImgs = document.getElementsByClassName("scenes-imgs")
+
+    ////////////////////////////////////////////////////////////////////////////////////////////
+
+    titleMovie.innerText = filmes[0].title
+
+    infosMovie.innerText = `${filmes[0].year} | ${filmes[0].time}m | ${filmes[0].classification}`
+
+    genreMovie.innerText = `Genero: ${filmes[0].genre}`
+
+    sinopseMovie.innerText = filmes[0].synopsis
+
+    directorMovie.innerText = `Diretor: ${filmes[0].director}`
+
+    producerMovie.innerText = `Produtora: ${filmes[0].producer}`
+
+    streamingsMovies.innerHTML = `Aonde Assistir: <strong>${filmes[0].streaming}</strong>`
+
+    coverMovie.src = filmes[0].movieCover
 
 
+    for(let i = 0; i < 3; i++){
+    
+     scenesImgs[i].src = filmes[0].threeImgs[i]
+}
+}
 
+    
 
+console.log(filmes[0].threeImgs)
 
+console.log(filmes[0].coverMovie)
 
-
-
-
-
-
-
+modificandoFilmeDados()
 
