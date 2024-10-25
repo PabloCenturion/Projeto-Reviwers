@@ -318,7 +318,7 @@ function openModalRate(){
 
     <div class="container-button">
 
-    <button type="button" class="btn btn-outline-primary button-color-register">Registrar</button>
+    <button type="button" class="btn button-color-register">Registrar</button>
 
 </div>
 
@@ -591,7 +591,7 @@ function Characters(name, actorName){
 
 }
 
-function Filme(title,year,classification,time,genre, synopsis, streaming, director, producer, movieCover, threeImgs){
+function Filme(title,year,classification,time,genre, synopsis, streaming, director, producer, movieCover, threeImgs, cast){
 
     this.title = title
 
@@ -614,6 +614,8 @@ function Filme(title,year,classification,time,genre, synopsis, streaming, direct
     this.movieCover = movieCover
 
     this.threeImgs = threeImgs
+
+    this.cast = cast
 
 
         this.showInfoMovie = function() {
