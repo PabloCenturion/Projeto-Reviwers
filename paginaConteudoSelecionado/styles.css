@@ -20,6 +20,7 @@ body {
     padding-left: 125px;
     padding-right: 125px;
     padding-top: 120px;
+    
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     color: white;
     position: relative;
@@ -37,7 +38,7 @@ body {
     background-image: url('./ImgsPagConteudoSelecionado/fundoSiteReviewers.jpeg');
     background-attachment: fixed;
     background-size: cover;
-    filter: brightness(50%) contrast(110%);
+    filter: brightness(70%) contrast(110%);
     z-index: -1;
 }
 
@@ -90,7 +91,6 @@ body {
     
     display: flex;
     flex-direction: column;
-    flex:1;
     margin-left: 100px;
 
     gap: 15px;
@@ -1000,11 +1000,11 @@ gap: 4px;
 
     margin-right: 70px;
     margin-left: 70px;
-    font-size: 30px;/*tamanho da font*/
-    text-decoration: none;/*linha do <a>*/
-    color: white;/*cor da letra*/
-    text-shadow:  0 0 10px purple, 0 0 20px purple, 0 0 40px purple, 0 0 80px purple;/*sombra*/
-    transition: 0.8s;/*tempo para fazer o hover*/
+    font-size: 30px;
+    text-decoration: none;
+    color: white;
+    text-shadow:  0 0 10px purple, 0 0 20px purple, 0 0 40px purple, 0 0 80px purple;
+    transition: 0.8s;
     
 }
 .logo:hover{
@@ -1032,8 +1032,10 @@ gap: 4px;
     text-decoration-line: underline;/*coloca linha do <a>*/
 }
 .barra{
-    width: 364px;/*largura*/
-    height: 43px;/*altura*/
+    width: 250px;/*largura*/
+    height: 35px;/*altura*/
+    font-size: 10px;
+    
     border-radius: 40px 40px 40px 40px;/*arrendodamento das bordas*/
     font-size: 18px;/*tamanho da letra*/
     background-color: transparent;

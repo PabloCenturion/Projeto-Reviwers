@@ -922,7 +922,7 @@ function modificandoFilmeDados(){
 
     const coverMovie = document.getElementById("cover-movie")
 
-    const scenesImgs = document.getElementsByClassName("scenes-imgs")
+    const scenesImgs = document.getElementsByClassName("scenes-img")
 
     ////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -942,14 +942,11 @@ function modificandoFilmeDados(){
 
     coverMovie.src = filmes[0].movieCover
 
-
     for(let i = 0; i < 3; i++){
-    
+    console.log(scenesImgs[i])
      scenesImgs[i].src = filmes[0].threeImgs[i];
 }
 }
-
-    
 
 console.log(filmes[0].threeImgs)
 
