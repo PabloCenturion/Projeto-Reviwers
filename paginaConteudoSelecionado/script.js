@@ -1020,6 +1020,8 @@ function modificandoFilmeDados(){
 
     }
 
+    trailer.href = filmes[0].trailer
+
 }
 
 modificandoFilmeDados()
