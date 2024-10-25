@@ -221,14 +221,7 @@ body {
 
 }
 
-#name-celebrity{
 
-    font-size: 16px;
-
-        margin-right: 5px; 
-        display: inline-block;
-
-}
 
 
 .buttons-part{
@@ -350,13 +343,13 @@ width: 50%;
     gap: 10px;
 }
 
-.imgs-cast button{
+.struct-character button{
 
     background: none;
     border: none;
 }
 
-.imgs-cast {
+.struct-character{
     display: flex;
     align-items: center;
     flex-direction: column; 
@@ -366,10 +359,12 @@ width: 50%;
 }
 
 
-.imgs-cast p{
+.struct-character p{
 
     font-size: 14px;
 }
+
+
 
 .button-plus{
     border: none; /* Remove a borda */

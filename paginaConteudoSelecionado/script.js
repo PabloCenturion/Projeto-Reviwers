@@ -424,74 +424,74 @@ function openModalCast(){
         
         <div class="display-cast">
 
-        <div class="imgs-cast">
+        <div class="struct-character">
             <img src="./ImgsPagConteudoSelecionado/exemploImg.avif" alt="" width="80px" height="80px">
             <p class="name-celebrity">lorem 1<br>Phasellus gravida </p>
             <button type="button"><i class="bi bi-star star-cast-size"></i></button>
         </div>
 
-        <div class="imgs-cast">
+        <div class="struct-character">
             <img src="./ImgsPagConteudoSelecionado/exemploImg.avif" alt="" width="80px" height="80px">
             <p class="name-celebrity">lorem 1<br>Phasellus gravida </p>
             <button type="button"><i class="bi bi-star star-cast-size"></i></button>
         </div>
 
-        <div class="imgs-cast">
+        <div class="struct-character">
             <img src="./ImgsPagConteudoSelecionado/exemploImg.avif" alt="" width="80px" height="80px">
             <p class="name-celebrity">lorem 1<br>Phasellus gravida </p>
             <button type="button"><i class="bi bi-star star-cast-size"></i></button>
         </div>
 
-        <div class="imgs-cast">
+        <div class="struct-character">
             <img src="./ImgsPagConteudoSelecionado/exemploImg.avif" alt="" width="80px" height="80px">
             <p class="name-celebrity">lorem 1<br>Phasellus gravida </p>
             <button type="button"><i class="bi bi-star star-cast-size"></i></button>
         </div>
 
-        <div class="imgs-cast">
+        <div class="struct-character">
             <img src="./ImgsPagConteudoSelecionado/exemploImg.avif" alt="" width="80px" height="80px">
             <p class="name-celebrity">lorem 1<br>Phasellus gravida </p>
             <button type="button"><i class="bi bi-star star-cast-size"></i></button>
         </div>
 
-        <div class="imgs-cast">
+        <div class="struct-character">
             <img src="./ImgsPagConteudoSelecionado/exemploImg.avif" alt="" width="80px" height="80px">
             <p class="name-celebrity">lorem 1<br>Phasellus gravida </p>
             <button type="button"><i class="bi bi-star star-cast-size"></i></button>
         </div>
 
-        <div class="imgs-cast">
+        <div class="struct-character">
             <img src="./ImgsPagConteudoSelecionado/exemploImg.avif" alt="" width="80px" height="80px">
             <p class="name-celebrity">lorem 1<br>Phasellus gravida </p>
             <button type="button"><i class="bi bi-star star-cast-size"></i></button>
         </div>
 
-        <div class="imgs-cast">
+        <div class="struct-character">
             <img src="./ImgsPagConteudoSelecionado/exemploImg.avif" alt="" width="80px" height="80px">
             <p class="name-celebrity">lorem 1<br>Phasellus gravida </p>
             <button type="button"><i class="bi bi-star star-cast-size"></i></button>
         </div>
 
-        <div class="imgs-cast">
+        <div class="struct-character">
             <img src="./ImgsPagConteudoSelecionado/exemploImg.avif" alt="" width="80px" height="80px">
             <p class="name-celebrity">lorem 1<br>Phasellus gravida </p>
             <button type="button"><i class="bi bi-star star-cast-size"></i></button>
         </div>
 
-        <div class="imgs-cast">
+        <div class="struct-character">
             <img src="./ImgsPagConteudoSelecionado/exemploImg.avif" alt="" width="80px" height="80px">
             <p class="name-celebrity">lorem 1<br>Phasellus gravida </p>
             <button type="button"><i class="bi bi-star star-cast-size"></i></button>
         </div>
 
 
-        <div class="imgs-cast">
+        <div class="struct-character">
             <img src="./ImgsPagConteudoSelecionado/exemploImg.avif" alt="" width="80px" height="80px">
             <p class="name-celebrity">lorem 1<br>Phasellus gravida </p>
             <button type="button"><i class="bi bi-star star-cast-size"></i></button>
         </div>
 
-        <div class="imgs-cast">
+        <div class="struct-character">
             <img src="./ImgsPagConteudoSelecionado/exemploImg.avif" alt="" width="80px" height="80px">
             <p class="name-celebrity">lorem 1<br>Phasellus gravida </p>
             <button type="button"><i class="bi bi-star star-cast-size"></i></button>
@@ -584,14 +584,60 @@ function validandoUsuario(){
 
 //funçao construtora para criação de itens
 
-function Characters(name, actorName){
+function Characters(name, actorName, imgActor){
 
     this.name = name
     this.actorName = actorName
+    this.imgActor = imgActor
 
 }
 
-function Filme(title,year,classification,time,genre, synopsis, streaming, director, producer, movieCover, threeImgs, cast){
+// Criando os personagens para cada filme
+const cast1 = [
+    new Characters("Dom Cobb", "Leonardo DiCaprio", "https://m.media-amazon.com/images/M/MV5BMjI0MTg3MzI0M15BMl5BanBnXkFtZTcwMzQyODU2Mw@@._V1_FMjpg_UX1000_.jpg"),
+    new Characters("Arthur", "Joseph Gordon-Levitt", "https://static.independent.co.uk/2024/06/28/16/newFile-6.jpg"),
+    new Characters("Ariadne", "Elliot Page", "https://cdn.britannica.com/41/249341-050-E5F7039C/Actor-Elliot-Page-2022.jpg"),
+    new Characters("Eames", "Tom Hardy","https://s2-quem.glbimg.com/cmCoyWGZY90ELNt78lz1rt7CLaw=/0x0:5012x3341/888x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_b0f0e84207c948ab8b8777be5a6a4395/internal_photos/bs/2024/U/3/dIRp9hT1AJOJYOhbiM3w/gettyimages-2157159540.jpg" ),
+    new Characters("Mal Cobb", "Marion Cotillard", "https://www.parismatch.com/lmnr/r/960,640,FFFFFF,forcex,center-middle/img/var/pm/public/styles/paysage/public/media/image/2024/02/23/21/2024-02-23t195328z_43811382_up1ek2n1j92dz_rtrmadp_3_awards-cesar.jpg?VersionId=P1xgpk.pFI_Qi7QyexL4rC8EAxBkEhQ3" )
+];
+
+const cast2 = [
+    new Characters("Neo", "Keanu Reeves"),
+    new Characters("Morpheus", "Laurence Fishburne"),
+    new Characters("Trinity", "Carrie-Anne Moss"),
+    new Characters("Agent Smith", "Hugo Weaving"),
+    new Characters("The Oracle", "Gloria Foster")
+];
+
+const cast3 = [
+    new Characters("Kim Ki-taek", "Song Kang-ho"),
+    new Characters("Park Dong-ik", "Lee Sun-kyun"),
+    new Characters("Kim Ki-woo", "Choi Woo-shik"),
+    new Characters("Kim Ki-jung", "Park So-dam"),
+    new Characters("Chung-sook", "Jang Hye-jin")
+];
+
+const cast4 = [
+    new Characters("Tony Stark / Iron Man", "Robert Downey Jr."),
+    new Characters("Steve Rogers / Captain America", "Chris Evans"),
+    new Characters("Natasha Romanoff / Black Widow", "Scarlett Johansson"),
+    new Characters("Bruce Banner / Hulk", "Mark Ruffalo"),
+    new Characters("Thor", "Chris Hemsworth")
+];
+
+const cast5 = [
+    new Characters("Cooper", "Matthew McConaughey"),
+    new Characters("Brand", "Anne Hathaway"),
+    new Characters("Murph", "Jessica Chastain"),
+    new Characters("Dr. Mann", "Matt Damon"),
+    new Characters("Professor Brand", "Michael Caine")
+];
+
+let casts = [cast1, cast2, cast3, cast4, cast5];
+
+localStorage.setItem("listCasts", JSON.stringify(casts))
+
+function Filme(title,year,classification,time,genre, synopsis, streaming, director, producer, movieCover, threeImgs, cast, trailer){
 
     this.title = title
 
@@ -617,6 +663,8 @@ function Filme(title,year,classification,time,genre, synopsis, streaming, direct
 
     this.cast = cast
 
+    this.trailer = trailer
+
 
         this.showInfoMovie = function() {
 
@@ -637,7 +685,8 @@ const filme1 = new Filme(
     "Christopher Nolan", 
     "Emma Thomas",
     "https://m.media-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_.jpg",
-    ["https://m.media-amazon.com/images/M/MV5BMTQ1ZmIzOTAtNDcwZi00NDVkLWE4NWItYWNhZGY1MmVlZGU0XkEyXkFqcGdeQWRvb2xpbmhk._V1_.jpg", "https://nextbestpicture-com.b-cdn.net/wp-content/uploads/2024/04/Inception.jpg", "https://p2.trrsf.com/image/fget/cf/774/0/images.terra.com/2023/07/11/1982331528-ecee5869820ff75ac4563dc6bfbf7083.jpg"]
+    ["https://m.media-amazon.com/images/M/MV5BMTQ1ZmIzOTAtNDcwZi00NDVkLWE4NWItYWNhZGY1MmVlZGU0XkEyXkFqcGdeQWRvb2xpbmhk._V1_.jpg", "https://nextbestpicture-com.b-cdn.net/wp-content/uploads/2024/04/Inception.jpg", "https://p2.trrsf.com/image/fget/cf/774/0/images.terra.com/2023/07/11/1982331528-ecee5869820ff75ac4563dc6bfbf7083.jpg"],
+    cast1, "https://www.youtube.com/watch?app=desktop&v=LifqWf0BAOA"
 
   );
   
@@ -652,7 +701,8 @@ const filme1 = new Filme(
     "The Wachowskis", 
     "Joel Silver", 
     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfSjSWOCaw5dnDL2GT1zFd9RMCgUGw5Q2Cfg&s",
-    ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3teTqtpY71bwNdc6gUV4TbKiv_IGqkL53FQ&s","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUCQtWJ2CmvrDnAOUSLbFmAdBlKrsg0IAbSA&s", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIgLH336Vh42U-KCOMPrD-lecti2JrL5Az9Q&s"]
+    ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3teTqtpY71bwNdc6gUV4TbKiv_IGqkL53FQ&s","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUCQtWJ2CmvrDnAOUSLbFmAdBlKrsg0IAbSA&s", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIgLH336Vh42U-KCOMPrD-lecti2JrL5Az9Q&s"],
+    cast2, "https://youtu.be/vKQi3bBA1y8?si=lRAFAIM1trJo9JXk"
   );
   
   const filme3 = new Filme(
@@ -666,7 +716,8 @@ const filme1 = new Filme(
     "Bong Joon-ho", 
     "Kwak Sin-ae", 
     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHHddg8wzW-auuwLxHR2IpH5QP1vqhBMjsMw&s"
-    ["https://jacobin.com.br/wp-content/uploads/2021/02/b2c155b6-de08-495d-a027-78add6cbf06b-1.jpeg", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhV3Qtulu5TKUjK5BdnnmWmxxNhlMLSghZPg&s", "https://cinemacao.com/wp-content/uploads/2019/10/parasita-3-1200x630.jpg"]
+    ["https://jacobin.com.br/wp-content/uploads/2021/02/b2c155b6-de08-495d-a027-78add6cbf06b-1.jpeg", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhV3Qtulu5TKUjK5BdnnmWmxxNhlMLSghZPg&s", "https://cinemacao.com/wp-content/uploads/2019/10/parasita-3-1200x630.jpg"],
+    cast3, "https://youtu.be/m4jfE-TxC24?si=OfWDoB9JTpmVFOmp"
   );
   
   const filme4 = new Filme(
@@ -680,7 +731,8 @@ const filme1 = new Filme(
     "Anthony e Joe Russo", 
     "Kevin Feige",
     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaw6QTsDE3d6-qOL5xMa4-JDdBNTa3uspCrg&s",
-    ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSi2B-P00mjghuH0jPXNfTnY-wMU4nlqFuFDQ&s", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-J2MHk9JmW3zVU0Yjxpz84U0yK8JGwhWcGg&s", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_x_KYfwc7uRGwJROQtDA428GjJjv4tOHScw&s"]
+    ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSi2B-P00mjghuH0jPXNfTnY-wMU4nlqFuFDQ&s", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-J2MHk9JmW3zVU0Yjxpz84U0yK8JGwhWcGg&s", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_x_KYfwc7uRGwJROQtDA428GjJjv4tOHScw&s"],
+    cast4, "https://youtu.be/TcMBFSGVi1c?si=XOfaIHrvEogeon97"
   );
   
   const filme5 = new Filme(
@@ -694,7 +746,8 @@ const filme1 = new Filme(
     "Christopher Nolan", 
     "Emma Thomas",
     "https://upload.wikimedia.org/wikipedia/pt/3/3a/Interstellar_Filme.png", 
-    ["https://images.squarespace-cdn.com/content/v1/6058f3b0dbb27b03bbd36be9/1616442358480-QB4FPW98SIE28C82E87X/interstellar_ron_burnett_critical_approaches", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0TNR0tbTiYpNHEDjMQGOYk8xRkWwpjXwSJw&s", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbXTYn0SMbQzjnxJ65276KWX2IHgbtAoKA7g&s"]
+    ["https://images.squarespace-cdn.com/content/v1/6058f3b0dbb27b03bbd36be9/1616442358480-QB4FPW98SIE28C82E87X/interstellar_ron_burnett_critical_approaches", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0TNR0tbTiYpNHEDjMQGOYk8xRkWwpjXwSJw&s", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbXTYn0SMbQzjnxJ65276KWX2IHgbtAoKA7g&s"],
+    cast5, "https://youtu.be/2LqzF5WauAw?si=K7H_3Y-ChNNYZWKS"
   );
 
 
@@ -926,6 +979,13 @@ function modificandoFilmeDados(){
 
     const scenesImgs = document.getElementsByClassName("scenes-img")
 
+    const nameActor = document.getElementsByClassName("name-celebrity")
+
+    const imgsCast = document.getElementsByClassName("character-img")
+
+    const trailer = document.getElementById("trailer-movie")
+
+
     ////////////////////////////////////////////////////////////////////////////////////////////
 
     titleMovie.innerText = filmes[0].title
@@ -945,14 +1005,22 @@ function modificandoFilmeDados(){
     coverMovie.src = filmes[0].movieCover
 
     for(let i = 0; i < 3; i++){
-    console.log(scenesImgs[i])
      scenesImgs[i].src = filmes[0].threeImgs[i];
 }
+
+    for(let i = 0; i < 5; i++){
+
+        nameActor[i].innerHTML = `${filmes[0].cast[i].name}<br>${filmes[0].cast[i].actorName}`
+
 }
 
-console.log(filmes[0].threeImgs)
+    for(let i=0; i<filmes[0].cast.length;i++){
 
-console.log(filmes[0].coverMovie)
+        imgsCast[i].src = filmes[0].cast[i].imgActor
+
+    }
+
+}
 
 modificandoFilmeDados()
 
