@@ -1,90 +1,189 @@
-body{
-    background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url(fundo.jpg);
-    background-repeat: repeat;
-    background-size: cover;
-}
+*{
+    box-sizing: border-box;
+    margin: 0;
+    
+    }
+    
+    body{
+        background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url(fundo.jpg);
+        background-repeat: repeat;
+        background-size: cover;
+    }
+    
+    main{
+    
+    max-width: 1336px;
+    margin: 0 auto;
+    
+    }
+    
+    header{
+    
+        display: flex;
+        flex-direction: row;
+        margin-top: 2rem;
+        font-size: xx-large;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        color: rgb(129, 24, 226);
+        padding-left: 5rem;
+    }
+    nav ul li {
+        display: inline;
+        margin: 15px;
+    }
+    nav ul li a {
+        text-decoration: none; 
+    }
+    .Reviewers {
+        font-size: 2rem;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        color: white;
+        text-shadow: 1vw 1vw 1vw #000, 0 0 2vw rgb(129, 24, 226), 0 0 3vw rgb(129, 24, 226), 0 0 3vw rgb(129, 24, 226);
+        -webkit-text-stroke: 2px #000;
+    }
+    .Reviewers:hover{
+        transition: 0.2s;
+        color:rgb(129, 24, 226) ;
+    }
+    .botãox{
+        display: flex;
+        align-items: flex-start;
+        color:blueviolet
+    }
+    
+    button{
+        
+        width: 120px;
+    
+    }
 
-header{
-    margin-top: 2rem;
-    font-size: xx-large;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    color: rgb(129, 24, 226);
-    padding-left: 5rem;
-}
-nav ul li {
-    display: inline;
-    margin: 15px;
-}
-nav ul li a {
-    text-decoration: none; 
-}
-.Reviewers {
-    font-size: 3rem;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    color: white;
-    text-shadow: 1vw 1vw 1vw #000, 0 0 2vw rgb(129, 24, 226), 0 0 3vw rgb(129, 24, 226), 0 0 3vw rgb(129, 24, 226);
-    -webkit-text-stroke: 2px #000;
-}
-.Reviewers:hover{
-    transition: 0.2s;
-    color:rgb(129, 24, 226) ;
-}
-.botãox{
-    padding-left: 65rem;
-    color:blueviolet
-}
+    .button-color {
+        background-color: #402B4F !important;; 
+        border-color: white !important;; 
+        color: white !important;
+      }
 
-.container2{
+      .button-color:hover {
+        background-color: #31213b !important;; 
+        border-color: rgb(255, 255, 255) !important;; 
+        color: white !important;
+      }
+    
+    .container-button{
+
+        margin-top: 15px;
+    
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 300px;
-}
-fieldset{
-    display: flex;
-    flex-direction: column;
-    height: 300px;
-    width: 315px;
-}
-.title1{
-    color: white;
-    padding-left: 39rem;
-    font-size: xx-large;
-}
-.title2{
-    padding-top: 3rem;
-    color: white;
-    padding-left: 38rem;
-    font-size: x-large;
-    font-style: italic;
-    font-family: "inter";
-}
-input{
-    padding: 0.3rem;
-    border-radius: 0.5rem;
-    border: 2px solid rgb(148, 5, 112);
     
-}
-.Senha{
-    padding-top: 1rem;
-    color: white;
-}
-.E-mail{
-    padding-top: 0.5rem;
-    color: white;
-}
-.Nome{
-    padding-top: 1rem;
-    color: white;
-}
-.botão{
-    margin-top: 2rem;
-    border-radius: 1rem;
-    width: 100px;
-}
-.botão:hover{
-    transition: 0.2s;
-    background-color: blueviolet;
+    }
+    
+    .container-infos{
+    
+    
+        display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    
+    }
+    
+    .container2{
+        margin-top: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    fieldset{
+        display: flex;
+        flex-direction: column;
+        width: 300px;
+        gap:10px;
+        
+    }
+    .title1{
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-weight: 600;
+        font-size: 32px;
+        color: white;
+        text-align: center;
+        font-size: xx-large;
+    }
+    .title2{
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    
+        padding-top: 1rem;
+        color: white;
+        text-align: center;
+        font-size: x-large;
+    }
+    
+    .container-titles{
+    
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    
+    }
+    
+    .displayFlex{
+    
+        display: flex;
+        gap: 65rem;
+    }
+    
+    
+    input{
+        padding: 0.3rem;
+        border-radius: 0.5rem;
+        border: 2px solid rgb(148, 5, 112);
+        width: 400px;
+        
+    }
+    .Senha{
+        padding-top: 1rem;
+        color: white;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-weight: 500;
+    }
 
-}
+    .E-mail{
+         
+        padding-top: 1rem;
+        color: white;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-weight: 500;
+
+    }
+    
+    .Nome{
+        padding-top: 1rem;
+        color: white;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-weight: 500;
+    }
+    
+    .botão:hover{
+        transition: 0.2s;
+        background-color: blueviolet;
+    
+    }
+    
+    
+    .logo{
+    
+        font-family: Arial, sans-serif;/*estilo da letra*/
+    
+        font-size: 30px;
+        text-decoration: none;
+        color: white;
+        text-shadow:  0 0 10px purple, 0 0 20px purple, 0 0 40px purple, 0 0 80px purple;
+        transition: 0.8s;
+        
+    }
+    .logo:hover{
+        scale: 1.05;/*tamanho que vai aumentar*/
+    }
+
+    

@@ -60,10 +60,25 @@ button{
 
 .container-button{
 
+    margin-top: 15px;
+
 display: flex;
 justify-content: center;
 
 }
+
+
+.button-color {
+    background-color: #402B4F !important;; 
+    border-color: white !important;; 
+    color: white !important;
+  }
+
+  .button-color:hover {
+    background-color: #31213b !important;; 
+    border-color: rgb(255, 255, 255) !important;; 
+    color: white !important;
+  }
 
 .container-infos{
 
