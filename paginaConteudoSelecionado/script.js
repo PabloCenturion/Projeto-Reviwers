@@ -595,7 +595,7 @@ function Characters(name, actorName, imgActor){
 // Criando os personagens para cada filme
 const cast1 = [
     new Characters("Dom Cobb", "Leonardo DiCaprio", "https://m.media-amazon.com/images/M/MV5BMjI0MTg3MzI0M15BMl5BanBnXkFtZTcwMzQyODU2Mw@@._V1_FMjpg_UX1000_.jpg"),
-    new Characters("Arthur", "Joseph Gordon-Levitt", "https://static.independent.co.uk/2024/06/28/16/newFile-6.jpg"),
+    new Characters("Fischer", "Cillian Murphy", "https://cdn.britannica.com/10/215010-050-A44F9280/Irish-actor-Cillian-Murphy-2017.jpg"),
     new Characters("Ariadne", "Elliot Page", "https://cdn.britannica.com/41/249341-050-E5F7039C/Actor-Elliot-Page-2022.jpg"),
     new Characters("Eames", "Tom Hardy","https://s2-quem.glbimg.com/cmCoyWGZY90ELNt78lz1rt7CLaw=/0x0:5012x3341/888x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_b0f0e84207c948ab8b8777be5a6a4395/internal_photos/bs/2024/U/3/dIRp9hT1AJOJYOhbiM3w/gettyimages-2157159540.jpg" ),
     new Characters("Mal Cobb", "Marion Cotillard", "https://www.parismatch.com/lmnr/r/960,640,FFFFFF,forcex,center-middle/img/var/pm/public/styles/paysage/public/media/image/2024/02/23/21/2024-02-23t195328z_43811382_up1ek2n1j92dz_rtrmadp_3_awards-cesar.jpg?VersionId=P1xgpk.pFI_Qi7QyexL4rC8EAxBkEhQ3" )
