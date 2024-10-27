@@ -6,8 +6,8 @@
 
 
 body{   
-    background-image: url(extra/img/2.jpg);
-    background-repeat: no-repeat;
+    background-image: url(/Cadastro/fundo.jpg);
+    background-attachment: fixed;
     background-size: cover;
     background-position: center;
 }
