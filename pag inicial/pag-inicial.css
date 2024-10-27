@@ -1,27 +1,40 @@
-body{   
+body{
+    /* plano de fundo  */
     background-image: url(extra/img/2.jpg);
-    background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
 }
+.container-main {
+    /* elemtno que cobre todo o codigo */
+    max-width: 100%; /* Largura máxima do site */
+    margin: 0  auto; /* Centraliza horizontalmente */
+    position: relative;
+}
+
 /* COMEÇO CABEÇALHO*/
 header{
+    margin-top: -50px;
+    margin-left: 100px;
     backdrop-filter: blur(30px);
     box-shadow: 0px 0px 30px #6802ac6b;
     border: 2px solid #6802ac6b;
     border-radius: 30px;
-    display: flex;/*dx em linha*/
+    display: flex;/*dx em linha a logo e a nv*/
     align-items: center; /*centraliza tudo em uma linha*/
     color: white; /*cor das letras*/
-    margin: -150px 0px 0px 170px;
-    padding: 20px; /*define o espaçamento do header*/
+    padding: 10px; /*define o espaçamento do header*/
     font-family: Arial, sans-serif;/*estilo da letra*/
     position: fixed;
     z-index: 9;
 }
+nav {
+    margin-right: 30px;
+    display: flex;
+    align-items: center;
+}
 .logo{
-    margin: 0px 400px 0px 100px;/*250px distancia da logo das pag 100px distancia do cmc do header(esquerda) da logo*/
-    font-size: 40px;/*tamanho da font*/
+    margin: 0px 300px 0px 50px;/*250px distancia da logo das pag 100px distancia do cmc do header(esquerda) da logo*/
+    font-size: 25px;/*tamanho da font*/
     text-decoration: none;/*linha do <a>*/
     color: white;/*cor da letra*/
     text-shadow:  0 0 10px purple, 0 0 20px purple, 0 0 40px purple, 0 0 80px purple;/*sombra*/
@@ -31,14 +44,9 @@ header{
 .logo:hover{
     scale: 1.05;/*tamanho que vai aumentar*/
 }
-.cab-direita{
-    display: flex;  /*lado a lado*/
-    align-items: center;/*centraliza eles na linha*/
-    
-
-}
 .paginas{
-    margin: 0px 50px 0px 0px; /*20px espaço entre eles*/
+    font-size: 15px;
+    margin-right: 40px;
     text-decoration: none; /*tira linha do <a>*/
     color: white; /*cor da letra*/
     transition: 0.5s; /*tempo para fazer o hover*/
@@ -49,167 +57,139 @@ header{
     text-decoration-line: underline;/*coloca linha do <a>*/
 }
 .barra{
-    width: 364px;/*largura*/
-    height: 43px;/*altura*/
-    border-radius: 40px 40px 40px 40px;/*arrendodamento das bordas*/
-    font-size: 18px;/*tamanho da letra*/
+    padding: 0px 20px 0px 20px;
+    width: 200px;/*largura*/
+    height: 35px;/*altura*/
+    border-radius: 40px;
+    font-size: 15px;/*tamanho da letra*/
     background-color: transparent;
     border: 1px solid #6802ac;
     color: white;
 }
-.usuario{
-    width: 43px;
-    height: 43px;
-    border-radius: 50%;
-    margin: 0px 0px 0px 10px; 
-}
+
 .fundo-usuario{
-    width: 43px;
-    height: 43px;
+    margin-left: 20px;
+    width: 35px;
+    height: 35px;
     border-radius: 50%;
-    border: 3px solid purple;
+    border: 3px solid #6802ac;
 }
 /* FIM DO CABEÇALHO*/
 
 /* COMEÇO DO CORPO*/
-
-.corpo{
-    margin: 200px 150px 100px 150px;
+main{
+    margin-top: 80px;
+    padding: 60px;
+}
+.quadrado-topo-main{
+    display: flex;
 }
 .quadrado1{
+    
     background-color: #240738cf;
     filter: drop-shadow(5px 5px 10px rgb(0, 0, 0));
-    width: 900px;
-    height: 380px;
+    width: 828px;
+    height: 350px;
     border-radius: 40px;
-    margin: 0px 0px 0px 550px;
+    z-index: 2;
+}
+.quadrado1.sobreposto {
+    z-index: 3;
+    backdrop-filter: blur(30px);
 }
 .quadrado2{
+    left: 235px;
     background-color: #240738cf;
     filter: drop-shadow(5px 5px 10px rgb(0, 0, 0));
-    width: 900px;
-    height: 380px;
+    width: 828px;
+    height: 350px;
     border-radius: 40px;
-    margin: -380px 0px 0px 350px;
+    z-index: 1;
+    position: absolute;
+}
+.quadrado2.sobreposto {
+    z-index: 3;
+    backdrop-filter: blur(30px);
 }
 .quadrado3{
+    left: 400px;
     background-color: #240738cf;
     filter: drop-shadow(5px 5px 10px rgb(0, 0, 0));
-    width: 900px;
-    height: 380px;
+    width: 828px;
+    height: 350px;
     border-radius: 40px;
-    margin: -380px 0px 0px 150px;
+    z-index: 0;
+    position: absolute;
+    
 }
-.filme-quadrado{
-    margin: 50px 0px 0px 50px;
-    filter: drop-shadow(5px 5px 15px rgb(0, 0, 0));
-    width: 180px;
-    height: 280px;
-    border-radius: 40px;
+.quadrado3.sobreposto {
+    z-index: 3;
+    backdrop-filter: blur(30px);
+}
+/* quadrado 1 */
+.cont-quadrado1{
+    display: flex;
+    
 }
 .info-filme{
     padding: 30px;
-    margin: -310px 0px 0px 240px;
     color: white;
-    font-size: 120%;
+    font-size: 20px;
+}
+.filme-quadrado{
+    margin: 30px 10px 0px 40px;
+    filter: drop-shadow(5px 5px 15px rgb(0, 0, 0));
+    width: 173px;
+    height: 296px;
+    border-radius: 40px;
+}
+.filme-quadrado:hover{
+    transition: 1s;
+    scale: 1.1;
+}
+.nota1{
+    display: flex;
+    justify-content: end;
+    margin:-335px 20px 0px 0px;
+    color: white;
+
 }
 .genero1{
     display: flex;
     border: 1px solid white;
-    margin: 10px 10px 0px 0px;
     border-radius: 40px;
-    padding: 5px 10px 5px 10px;
+    padding: 5px;
     justify-content: center;
     display: inline;
 }
-.nota1{
-    justify-content: center;
+/* fim conteudo quadrado 1 */
+/* conteudo quadrado 2 */
+.nota2{
     display: flex;
-    font-size:110%; 
-    color: white;
-    margin: -320px 0px 0px 700px;
+    justify-content: end;
+    margin:15px 20px 0px 0px;
+    color: #BEBEBE;
 }
+/* fim do conteudo quadrado 2 */
+/* conteudo quadrado 3 */
+.nota3{
+    display: flex;
+    justify-content: end;
+    margin:15px 20px 0px 0px;
+    color: #909090;
+}
+/* fim conteudo quadrado 3 */
 .cat-filmes{
-    margin: 0px 0px 0px 60px;
-    width: 180px;
-    height: 280px;
-    border-radius: 40px;
+    margin-left: 25px;
+    width: 137px;
+    height: 226px;
+    border-radius: 20px;
     filter: drop-shadow(10px 10px 5px rgb(0, 0, 0));
 }
 /* FIM DO CORPO*/
-@media (max-width: 1366px) and (max-height: 768px) {
-    /*começo cabeçalho*/
-    header{
-        margin: -170px 0px 0px 100px;
-        padding: 10px;
-    }
-    .logo{
-        margin: 0px 300px 0px 40px;
-        font-size: 30px;
-    }
-    .cab-direita{
-        margin: 0px 0px 0px 10px;
-    }
-    .paginas{
-        margin: 0px 30px 0px 0px;
-        font-size: 15px;
-    }
-    .usuario{
-        margin: 0px 0px 0px 10px;
-        width: 50px;/*largura*/
-        height: 40px;/*altura*/
-    }
-    .fundo-usuario{
-        width: 40px;
-        height: 40px;
-    }
-    .barra{
-        width: 250px;/*largura*/
-        height: 35px;/*altura*/
-        font-size: 15px;/*tamanho da letra*/
-    }
-    /*fim cabeçalho*/
-    /*começo corpo*/
-    .corpo{
-        margin: 200px 150px 100px 150px;
-    }
-    .quadrado1{
-        width: 700px;
-        height: 300px;
-        margin: 0px 0px 0px 310px;
-    }
-    .quadrado2{
-        width: 700px;
-        height: 300px;
-        margin: -300px 0px 0px 155px;
-    }
-    .quadrado3{
-        width: 700px;
-        height: 300px;
-        margin: -300px 0px 0px 0px;
-    }
-    .filme-quadrado{
-        margin: 35px 0px 0px 50px;
-        width: 150px;
-        height: 230px;
-    }
-    .info-filme{
-        padding: 30px;
-        margin: -270px 0px 0px 200px;
-        font-size: 15px;
-    }
-    .genero1{
-        margin: 10px 10px 0px 0px;
-        padding: 5px 10px 5px 10px;
-    }
-    .nota1{
-        font-size:100%; 
-        margin: -270px 0px 0px 500px;
-    }
-    .cat-filmes{
-        margin: 0px 0px 0px 30px;
-        width: 130px;
-        height: 200px;
-    }
-    /*fim corpo*/
+footer {
+    color: white; 
+    padding: 20px; 
+    text-align: center;
 }
+
