@@ -1,6 +1,11 @@
+*{
+
+    box-sizing: border-box;
+}
 body{
-    /* plano de fundo  */
-    background-image: url(extra/img/2.jpg);
+    background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(/Cadastro/fundo.jpg);
+    background-attachment: fixed;
     background-size: cover;
     background-position: center;
 }
@@ -10,7 +15,6 @@ body{
     margin: 0  auto; /* Centraliza horizontalmente */
     position: relative;
 }
-
 /* COMEÇO CABEÇALHO*/
 header{
     margin-top: -50px;

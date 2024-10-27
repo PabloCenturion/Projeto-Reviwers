@@ -602,11 +602,11 @@ const cast1 = [
 ];
 
 const cast2 = [
-    new Characters("Neo", "Keanu Reeves"),
-    new Characters("Morpheus", "Laurence Fishburne"),
-    new Characters("Trinity", "Carrie-Anne Moss"),
-    new Characters("Agent Smith", "Hugo Weaving"),
-    new Characters("The Oracle", "Gloria Foster")
+    new Characters("Cooper Abbott", "Josh Hartnett", "https://www.hollywoodreporter.com/wp-content/uploads/2024/07/Josh-Hartnett-getty-H-2024.jpg?w=1296"),
+    new Characters("Lady Raven", "Saleka", "https://people.com/thmb/5F60y62XMaIpR9Ks1en2rf7Jx-E=/4000x0/filters:no_upscale():max_bytes(150000):strip_icc():focal(749x0:751x2)/Saleka-Shyamalan-attends-the-Trap-world-premiere-080724-3b7177f6f5fb436dacf00129e28f6232.jpg"),
+    new Characters("Riley Abbott", "Ariel Donoghue", "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/1841962_v9_aa.jpg"),
+    new Characters("Rachel Abbott", "Alison Pill", "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Alison_Pill_2019.jpg/640px-Alison_Pill_2019.jpg"),
+    new Characters("Vendor", "Jonathan Langdon", "https://www.shutterstock.com/editorial/image-editorial/M1TcQf39N3D4A9z8ODg5MDc=/jonathan-langdon-440nw-14600098hg.jpg")
 ];
 
 const cast3 = [
@@ -618,11 +618,11 @@ const cast3 = [
 ];
 
 const cast4 = [
-    new Characters("Tony Stark / Iron Man", "Robert Downey Jr."),
-    new Characters("Steve Rogers / Captain America", "Chris Evans"),
-    new Characters("Natasha Romanoff / Black Widow", "Scarlett Johansson"),
-    new Characters("Bruce Banner / Hulk", "Mark Ruffalo"),
-    new Characters("Thor", "Chris Hemsworth")
+    new Characters("Arthur Fleck", "Joaquin Phoenix", "https://cdn.britannica.com/63/215263-050-6C78005B/American-actor-Joaquin-Phoenix-2020.jpg"),
+    new Characters("Lee Quinzel", "Lady Gaga", "https://br.web.img2.acsta.net/pictures/18/09/12/19/42/5521101.jpg"),
+    new Characters("Sophie Dummond", "Zazie Beetz", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMAsXjCgQayIy_TnZ5ovo--rYMSWTzGy5OVQ&s"),
+    new Characters("Harvey Dent", "Harry Lawtey", "https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcRZk_RAictRVIjq5RRzdRuC7kpeMBQjvotlbGPabAMwb6zSXzW5dAybONQaLzUEnnIqGWLHJh2_jI_fKEI"),
+    new Characters("Gary Puddles", "Leigh Gill", "https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcQgd0oDSUIFu5MwuGklobML-_nmsfGoY3vc1-SEPBgD-IpV3YaU1QtsxXt_GxzXbjDl8z6Ax3QQeyo5nag")
 ];
 
 const cast5 = [
@@ -632,6 +632,17 @@ const cast5 = [
     new Characters("Dr. Mann", "Matt Damon"),
     new Characters("Professor Brand", "Michael Caine")
 ];
+
+const cast6 = [
+
+    new Characters("Elisabeth Sparkle", "Demi Moore", "https://m.media-amazon.com/images/M/MV5BMTc2Mjc1MDE4MV5BMl5BanBnXkFtZTcwNzAyNDczNA@@._V1_.jpg"),
+    new Characters("Sue", "Margaret Qualley", "https://m.media-amazon.com/images/M/MV5BOTE1YWZlMzgtYTMxOS00YWEwLWIzZTItYjI4ODM0ODZmODdmXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"),
+    new Characters ("Harvey", "Dennis Quaid", "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Dennis_Quaid_by_Gage_Skidmore.jpg/640px-Dennis_Quaid_by_Gage_Skidmore.jpg"),
+    new Characters("Troy", "Oscar Lesage", "https://medias.unifrance.org/medias/59/235/256827/format_page/oscar-lesage.jpg"),
+    new Characters("The Stylist", "Tiffany Hofstetter", "https://resizing.flixster.com/Z3vVx0rhSKFgGA6i8iwsHghw2SM=/fit-in/352x330/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/296733_v9_bb.jpg")
+
+
+]
 
 let casts = [cast1, cast2, cast3, cast4, cast5];
 
@@ -684,25 +695,25 @@ const filme1 = new Filme(
     "Netflix", 
     "Christopher Nolan", 
     "Emma Thomas",
-    "https://m.media-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_.jpg",
+    "https://a.ltrbxd.com/resized/sm/upload/sv/95/s9/4j/inception-0-1000-0-1500-crop.jpg?v=30d7224316",
     ["https://m.media-amazon.com/images/M/MV5BMTQ1ZmIzOTAtNDcwZi00NDVkLWE4NWItYWNhZGY1MmVlZGU0XkEyXkFqcGdeQWRvb2xpbmhk._V1_.jpg", "https://nextbestpicture-com.b-cdn.net/wp-content/uploads/2024/04/Inception.jpg", "https://p2.trrsf.com/image/fget/cf/774/0/images.terra.com/2023/07/11/1982331528-ecee5869820ff75ac4563dc6bfbf7083.jpg"],
     cast1, "https://www.youtube.com/watch?app=desktop&v=LifqWf0BAOA"
 
   );
   
   const filme2 = new Filme(
-    "The Matrix", 
-    1999, 
-    18, 
-    136, 
-    "Ação", 
-    "Um hacker descobre que o mundo em que vive é uma simulação controlada por máquinas.", 
-    "HBO Max", 
-    "The Wachowskis", 
-    "Joel Silver", 
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfSjSWOCaw5dnDL2GT1zFd9RMCgUGw5Q2Cfg&s",
-    ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3teTqtpY71bwNdc6gUV4TbKiv_IGqkL53FQ&s","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUCQtWJ2CmvrDnAOUSLbFmAdBlKrsg0IAbSA&s", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIgLH336Vh42U-KCOMPrD-lecti2JrL5Az9Q&s"],
-    cast2, "https://youtu.be/vKQi3bBA1y8?si=lRAFAIM1trJo9JXk"
+    "Trap", 
+    2024, 
+    14, 
+    105, 
+    "Horror, Mistério", 
+    "Um homem e sua filha adolescente percebem que estão no centro de um evento sombrio e sinistro enquanto assistem a um show.", 
+    "Prime Video, HBO Max", 
+    "Night Shyamalan", 
+    "Blinding Edge Pictures", 
+    "https://a.ltrbxd.com/resized/film-poster/9/3/1/1/6/4/931164-trap-0-1000-0-1500-crop.jpg?v=23298a998e",
+    ["https://static1.colliderimages.com/wordpress/wp-content/uploads/2024/07/trap-josh-hartnett-ariel-donoghue-2.jpg","https://static1.srcdn.com/wordpress/wp-content/uploads/2024/08/screenrant-sandbox-2024-08-02t003223-554.jpg", "https://planetadiariobr.com.br/wp-content/uploads/2024/07/revelacao-inesperada-no-trailer-de-trap-surpreende-fas-confira.webp"],
+    cast2, "https://youtu.be/mps1HbpECIA?si=aNyE_RrWYQk8mFCs"
   );
   
   const filme3 = new Filme(
@@ -721,15 +732,15 @@ const filme1 = new Filme(
   );
   
   const filme4 = new Filme(
-    "Avengers: Endgame", 
-    2019, 
-    12, 
-    181, 
-    "Aventura", 
-    "Os Vingadores restantes tentam reverter as ações de Thanos e salvar o universo.", 
-    "Disney+", 
-    "Anthony e Joe Russo", 
-    "Kevin Feige",
+    "Joker: Folie à Deux", 
+    2024, 
+    16, 
+    138, 
+    "Musical, Suspense", 
+    "Lutando contra sua dupla identidade, o comediante fracassado Arthur Fleck conhece o amor de sua vida, Arlequina, enquanto está preso no Hospital Estadual de Arkham.", 
+    "Cinema", 
+    "Todd Phillips", 
+    "Emma Tillinger Koskoff",
     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaw6QTsDE3d6-qOL5xMa4-JDdBNTa3uspCrg&s",
     ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSi2B-P00mjghuH0jPXNfTnY-wMU4nlqFuFDQ&s", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-J2MHk9JmW3zVU0Yjxpz84U0yK8JGwhWcGg&s", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_x_KYfwc7uRGwJROQtDA428GjJjv4tOHScw&s"],
     cast4, "https://youtu.be/TcMBFSGVi1c?si=XOfaIHrvEogeon97"
@@ -750,6 +761,22 @@ const filme1 = new Filme(
     cast5, "https://youtu.be/2LqzF5WauAw?si=K7H_3Y-ChNNYZWKS"
   );
 
+  const filme6 = new Filme(
+    "The Substance", 
+    2024, 
+    18, 
+    140, 
+    "Ficção Científica, Horror", 
+    "Elisabeth Sparkle, famosa por um show de aeróbica, enfrenta um golpe devastador em seu aniversário de 50 anos quando seu chefe a demite. Em meio à sua angústia, um laboratório lhe oferece uma substância que promete transformá-la em uma versão melhorada de si mesma.", 
+    "Cinema", 
+    "Coralie Fargeat", 
+    "Eric Fellner",
+    "https://a.ltrbxd.com/resized/film-poster/8/3/8/1/4/0/838140-the-substance-0-1000-0-1500-crop.jpg?v=ab9e1072f8",
+    ["https://s2-g1.glbimg.com/Ua--26GaagBh4Wfm5LhyvY7ltjw=/0x138:1920x937/1008x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2024/q/6/0nAPFOQ3AASSOaJVodew/videoframe-32231.png", "https://ingresso-a.akamaihd.net/b2b/production/uploads/article/image/2391/b4347a5e92d14907acd2ae33e38058d2.jpg", "https://www.cnnbrasil.com.br/wp-content/uploads/sites/12/2024/09/margaret-qualley-em-a-substancia.png?w=1200&h=1200&crop=1"],
+    cast6, "https://www.youtube.com/watch?v=LNlrGhBpYjc"
+
+  );
+
 
 
   const filmes = []
@@ -759,6 +786,7 @@ const filme1 = new Filme(
   filmes.push(filme3)
   filmes.push(filme4)
   filmes.push(filme5)
+  filmes.push(filme6)
 
 
 localStorage.setItem("listaFilmes", JSON.stringify(filmes))
