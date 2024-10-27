@@ -1,3 +1,10 @@
+/*obrigatorio*/
+*{
+
+    box-sizing: border-box;
+}
+
+
 body{   
     background-image: url(extra/img/2.jpg);
     background-repeat: no-repeat;
