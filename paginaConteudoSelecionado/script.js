@@ -602,11 +602,11 @@ const cast1 = [
 ];
 
 const cast2 = [
-    new Characters("Neo", "Keanu Reeves"),
-    new Characters("Morpheus", "Laurence Fishburne"),
-    new Characters("Trinity", "Carrie-Anne Moss"),
-    new Characters("Agent Smith", "Hugo Weaving"),
-    new Characters("The Oracle", "Gloria Foster")
+    new Characters("Cooper Abbott", "Josh Hartnett", "https://www.hollywoodreporter.com/wp-content/uploads/2024/07/Josh-Hartnett-getty-H-2024.jpg?w=1296"),
+    new Characters("Lady Raven", "Saleka", "https://people.com/thmb/5F60y62XMaIpR9Ks1en2rf7Jx-E=/4000x0/filters:no_upscale():max_bytes(150000):strip_icc():focal(749x0:751x2)/Saleka-Shyamalan-attends-the-Trap-world-premiere-080724-3b7177f6f5fb436dacf00129e28f6232.jpg"),
+    new Characters("Riley Abbott", "Ariel Donoghue", "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/1841962_v9_aa.jpg"),
+    new Characters("Rachel Abbott", "Alison Pill", "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Alison_Pill_2019.jpg/640px-Alison_Pill_2019.jpg"),
+    new Characters("Vendor", "Jonathan Langdon", "https://www.shutterstock.com/editorial/image-editorial/M1TcQf39N3D4A9z8ODg5MDc=/jonathan-langdon-440nw-14600098hg.jpg")
 ];
 
 const cast3 = [
@@ -618,7 +618,7 @@ const cast3 = [
 ];
 
 const cast4 = [
-    new Characters("Tony Stark / Iron Man", "Robert Downey Jr."),
+    new Characters("Brightbill", "Kit Connor", "https://br.web.img3.acsta.net/pictures/23/07/17/17/07/3405868.jpg"),
     new Characters("Steve Rogers / Captain America", "Chris Evans"),
     new Characters("Natasha Romanoff / Black Widow", "Scarlett Johansson"),
     new Characters("Bruce Banner / Hulk", "Mark Ruffalo"),
@@ -691,18 +691,18 @@ const filme1 = new Filme(
   );
   
   const filme2 = new Filme(
-    "The Matrix", 
-    1999, 
-    18, 
-    136, 
-    "Ação", 
-    "Um hacker descobre que o mundo em que vive é uma simulação controlada por máquinas.", 
-    "HBO Max", 
-    "The Wachowskis", 
-    "Joel Silver", 
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfSjSWOCaw5dnDL2GT1zFd9RMCgUGw5Q2Cfg&s",
-    ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3teTqtpY71bwNdc6gUV4TbKiv_IGqkL53FQ&s","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUCQtWJ2CmvrDnAOUSLbFmAdBlKrsg0IAbSA&s", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIgLH336Vh42U-KCOMPrD-lecti2JrL5Az9Q&s"],
-    cast2, "https://youtu.be/vKQi3bBA1y8?si=lRAFAIM1trJo9JXk"
+    "Trap", 
+    2024, 
+    14, 
+    105, 
+    "Horror, Mistério", 
+    "Um homem e sua filha adolescente percebem que estão no centro de um evento sombrio e sinistro enquanto assistem a um show.", 
+    "Prime Video, HBO Max", 
+    "Night Shyamalan", 
+    "Blinding Edge Pictures", 
+    "https://a.ltrbxd.com/resized/film-poster/9/3/1/1/6/4/931164-trap-0-1000-0-1500-crop.jpg?v=23298a998e",
+    ["https://static1.colliderimages.com/wordpress/wp-content/uploads/2024/07/trap-josh-hartnett-ariel-donoghue-2.jpg","https://static1.srcdn.com/wordpress/wp-content/uploads/2024/08/screenrant-sandbox-2024-08-02t003223-554.jpg", "https://planetadiariobr.com.br/wp-content/uploads/2024/07/revelacao-inesperada-no-trailer-de-trap-surpreende-fas-confira.webp"],
+    cast2, "https://youtu.be/mps1HbpECIA?si=aNyE_RrWYQk8mFCs"
   );
   
   const filme3 = new Filme(
