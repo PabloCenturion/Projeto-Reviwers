@@ -1,0 +1,193 @@
+body {
+    background-image: url(img/2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+/*--------------------------------------------------*/
+header {
+    backdrop-filter: blur(30px);
+    box-shadow: 0px 0px 30px #6802ac6b;
+    border: 2px solid #6802ac6b;
+    border-radius: 30px;
+    padding: 25px; 
+    color: white;
+    width: 100vmax;
+    margin: -170px 0px 0px -30px;
+    position: fixed;
+    z-index: 9;
+}
+nav a{
+    font-size: 30px;
+    text-decoration: none; /*tira linha do <a>*/
+    color: white; /*cor da letra*/
+    transition: 0.5s; /*tempo para fazer o hover*/
+    
+}
+nav a:hover{
+    color: #c37cf3;/*cor da letra*/
+    text-shadow: 0 0 50px #c378f5;
+    text-decoration-line: underline;/*coloca linha do <a>*/
+}
+.pagina1{
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 100px;
+}
+/*-----------------------------------------------------------*/
+.info-usuario{
+    color: white;
+    margin: 220px 0px 0px 0px;
+    
+}
+.usuario-info1{
+    background-image: url(img/usuario.jpg);
+    background-size: cover;
+    height: 250px;
+    width: 250px;
+    border-radius: 50%;
+    margin-left: 150px ;
+}
+.usuario-info2{
+    margin: -200px 0px 0px 450px;
+    font-size: 40px;
+    text-shadow: 0 0 10px black;
+}
+.usuario-info3{
+    margin: 10px 0px 120px 450px;
+    font-size: 25px;
+    text-shadow: 0 0 10px black;
+}
+/*------------------------------------------------*/
+.cont-favoritos{
+    margin-top: 200px;
+}
+.fav0{
+    background-color: rgba(0, 0, 0, 0.281);
+    width: 620px;
+    height: 370px;
+    border-radius: 40px;
+    margin-left: 200px;
+}
+
+.fav1{
+    color: white;
+    font-size: 30px;
+    margin: -390px 0px 0px 240px;
+}
+.fav3{
+    background-color: white;
+    width: 540px;
+    height: 1px;
+    margin: -20px 0px 0px 230px;
+}
+.fav4{
+    background-image: url(img/image\ 2.png);
+    background-size: cover;
+    width: 160px;
+    height: 260px;
+    border-radius: 20px;
+    margin: 20px 0px 0px 215px;
+    cursor: pointer;
+}
+.fav5{
+    background-image: url(img/image\ 16.png);
+    background-size: cover;
+    width: 160px;
+    height: 260px;
+    border-radius: 20px;
+    margin: -260px 0px 0px 400px;
+    cursor: pointer;
+    
+}
+.fav6{
+    background-image: url(img/image\ 20.png);
+    background-size: cover;
+    width: 160px;
+    height: 260px;
+    border-radius: 20px;
+    margin: -260px 0px 50px 585px;
+    cursor: pointer;
+}
+.seta{
+    position: absolute;
+    top: 700px;
+    left: 765px;
+    background-color: transparent;
+    color: rgb(0, 0, 0);
+    border: none;
+    cursor: pointer;
+    font-size: 50px;
+}
+.seta:hover{
+    transition: 1s;
+    color: white;
+}
+/*------------------------------------------------*/
+.cont-recente{
+    margin-top: 100px;
+}
+.rec1{
+    background-color: rgba(0, 0, 0, 0.281);
+    width: 620px;
+    height: 370px;
+    border-radius: 40px;
+    margin-left: 200px;
+}
+
+.rec2{
+    color: white;
+    font-size: 30px;
+    margin: -390px 0px 0px 240px;
+}
+.rec3{
+    background-color: white;
+    width: 540px;
+    height: 1px;
+    margin: -20px 0px 0px 230px;
+}
+.rec4{
+    background-image: url(img/image\ 21.png);
+    background-size: cover;
+    width: 160px;
+    height: 260px;
+    border-radius: 20px;
+    margin: 20px 0px 0px 215px;
+}
+.rec5{
+    background-image: url(img/image\ 24.png);
+    background-size: cover;
+    width: 160px;
+    height: 260px;
+    border-radius: 20px;
+    margin: -260px 0px 0px 400px;
+}
+.rec6{
+    background-image: url(img/image\ 25.png);
+    background-size: cover;
+    width: 160px;
+    height: 260px;
+    border-radius: 20px;
+    margin: -260px 0px 50px 585px;
+}
+.seta2{
+    position: absolute;
+    top: 1150px;
+    left: 765px;
+    background-color: transparent;
+    color: rgb(0, 0, 0);
+    border: none;
+    cursor: pointer;
+    font-size: 50px;
+}
+.seta2:hover{
+    transition: 1s;
+    color: white;
+}
+/*------------------------------------------------*/
+.linha-vertical{
+    background-color: white;
+    width: 2px;
+    height: 820px;
+    margin: -820px 0px 100px 900px;
+}
+/*------------------------------------------------*/
