@@ -19,7 +19,7 @@ function login() {
     for (var i = 0; i < usuarios.length; i++) {
         if (email.value === usuarios[i].email && senha.value === usuarios[i].senha) {
             console.log("Login bem-sucedido:", usuarios[i].userName);
-            window.location.href = "/pag inicial/pag-inicial-testes/corpo/index.html";
+            window.location.href = "pag inicial\pag-inicial.html";
             localStorage.setItem("estaLogado", true);
             return; // Para o loop quando encontrar um usuário válido
         }
@@ -29,4 +29,3 @@ function login() {
     alert("Usuário ou senha inválidos!");
 }
 
-login
