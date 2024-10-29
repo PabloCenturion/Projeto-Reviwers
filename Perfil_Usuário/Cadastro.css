@@ -1,0 +1,178 @@
+
+
+body {
+    background-image: url(img/2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    width: 100%;
+    font-family: Arial, sans-serif;
+    
+    padding: 0;
+}
+
+
+.retangulo {
+    display: flex;
+    align-items: center;
+    backdrop-filter: blur(50px);
+    background-color: rgba(0, 0, 0, 0.74);
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%; 
+    height: 50px;
+    z-index: 1000; 
+    padding: 5px;
+}
+
+.botao {
+    background-color: #8c00ffc0; /* Cor de fundo do botão */
+    color: rgb(255, 255, 255); /* Cor do texto do botão */
+    border: none; /* Remove a borda do botão */
+    border-radius: 5px; /* Cantos arredondados do botão */
+    padding: 10px 15px; /* Espaçamento interno do botão */
+    cursor: pointer; /* Muda o cursor ao passar sobre o botão */
+    margin:  0px 600px 0px 60px; /* Espaçamento entre os botões */
+}
+
+.botao:hover {
+    background-color: #d607ff5e; /* Cor do botão ao passar o mouse */
+    transform: scale(1.1);
+    transition: 2s;
+}
+
+
+
+.Sair {
+    background-color: #986abdc0; /* Cor de fundo do botão */
+    color: rgb(255, 255, 255); /* Cor do texto do botão */
+    border: none; /* Remove a borda do botão */
+    border-radius: 5px; /* Cantos arredondados do botão */
+    padding: 10px 15px; /* Espaçamento interno do botão */
+    cursor: pointer; /* Muda o cursor ao passar sobre o botão */
+    margin:  500px 0px 0px -200px; /* Espaçamento entre os botões */
+}
+
+.Sair:hover {
+    background-color: #db0d0d71; /* Cor do botão ao passar o mouse */
+    
+    transition: 2s;
+}
+
+.Salvar {
+    background-color: #986abdc0; /* Cor de fundo do botão */
+    color: rgb(255, 255, 255); /* Cor do texto do botão */
+    border: none; /* Remove a borda do botão */
+    border-radius: 5px; /* Cantos arredondados do botão */
+    padding: 10px 15px; /* Espaçamento interno do botão */
+    cursor: pointer; /* Muda o cursor ao passar sobre o botão */
+    margin:  500px 0px 0px -200px;
+}
+
+.Salvar:hover {
+    background-color: #00ff40d3; 
+    
+    transition: 2s;
+}
+
+.circulo {
+    backdrop-filter: blur(300px);
+    box-shadow: 0px 0px 150px rgb(158, 117, 161);
+    background: url(img/usuario.jpg);
+    background-position: center;
+    background-size: cover;
+    width: 250px;
+    height: 250px;
+    z-index: 49;
+    border-radius: 100%;
+    border: 9px solid rgba(46, 25, 56, 0.87);
+    margin: -400px 200px;
+}
+
+.circulo:hover {
+    transform: scale(1.1);
+    transition: 2s;
+}
+
+.Foto {
+    background-color: #986abdc0; 
+    color: rgb(255, 255, 255);
+    border: none; 
+    border-radius: 5px; 
+    padding: 10px 15px;
+    cursor: pointer; 
+    margin:  330px 0px 0px 50px; 
+    
+}
+
+.Foto:hover {
+    background-color: #aa07d3d3; 
+    
+   
+}
+
+.subtitulo {
+   margin-top: 70px;
+    background-color: rgba(55, 28, 61, 0);
+    color: rgba(231, 233, 235, 0.897);
+    z-index: 50;
+}
+
+.Digitavel{ 
+height: 60px;
+width: 500px;
+    background-color: rgb(226, 210, 247);
+    border-radius: 9%;
+    border-color: rgb(56, 41, 65);
+    font-size: 20px;
+    font-weight: bold;
+text-align: center;
+color: rgb(32, 0, 51);
+}
+
+.Caixa1{
+display: flex;
+justify-content: flex-start;
+align-items: center;
+height: 100%;
+width: 100%;
+}
+.Kitnome{
+    margin-top: 200px;
+}
+.footer {
+    background-color: blue;
+}
+
+.container {
+margin-top: 150px;
+margin-right: 150px;
+}
+
+#estado {
+
+width: 300px;
+height: 45px;
+font-size: 20px;
+text-align: center;
+color: rgb(255, 255, 255);
+background-color: rgba(138, 25, 138, 0.541);
+border-radius: 5%;
+border-color: rgba(56, 41, 65, 0.678);
+}
+
+#estado option {
+    background-color: rgba(0, 0, 0, 0.589); 
+    color: #ffffff; 
+    text-align: center; 
+    font-size: 20px;
+}
+
+#estado::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+    background-color: rgba(38, 9, 58, 0.788);
+    background: rgb(137, 111, 150);
+}
