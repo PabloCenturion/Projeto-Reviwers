@@ -1130,7 +1130,7 @@ function modificandoFilmeDados(){
 
     genreMovie.innerText = `Genero: ${filmes[0].genre}`
 
-    sinopseMovie.innerText = filmes[0].synopsis
+    sinopseMovie.innerText = filmes[0].synopsis;
 
     directorMovie.innerText = `Diretor: ${filmes[0].director}`
 
@@ -1164,11 +1164,3 @@ modificandoFilmeDados()
 
 
 
-function criarFilmes(){
-
-const listaFilmes = json.parse(localStorage.getItem("listaFilmes"));
-
-
-
-
-}
