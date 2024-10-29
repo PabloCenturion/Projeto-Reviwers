@@ -317,3 +317,12 @@ width: 450px;
     cursor: pointer;
 }
 
+.button-show-more{
+
+
+display: flex;
+justify-content: end;
+margin-top: 20px;
+margin-right: 70px;
+
+}
