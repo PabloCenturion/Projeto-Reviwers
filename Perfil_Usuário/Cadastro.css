@@ -126,6 +126,10 @@ width: 500px;
     background-color: rgb(226, 210, 247);
     border-radius: 9%;
     border-color: rgb(56, 41, 65);
+    font-size: 20px;
+    font-weight: bold;
+text-align: center;
+color: rgb(32, 0, 51);
 }
 
 .Caixa1{
