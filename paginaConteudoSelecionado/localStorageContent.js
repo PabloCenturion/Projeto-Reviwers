@@ -419,7 +419,7 @@ console.log(serie4.showInfoSerie());
 console.log(serie5.showInfoSerie());
 
 
-function Jogo(title, year, classification, genre, synopsis, producer, creator, platform) {
+function Jogo(title, year, classification, genre, synopsis, producer, creator, platform, gameCover) {
 
     this.title = title;
     this.year = year;

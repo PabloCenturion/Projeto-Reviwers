@@ -98,8 +98,10 @@ main{
     z-index: 2;
 }
 .quadrado1.sobreposto {
+
     z-index: 3;
     backdrop-filter: blur(30px);
+    
 }
 .quadrado2{
     left: 235px;
