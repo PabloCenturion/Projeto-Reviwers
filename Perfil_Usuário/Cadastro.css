@@ -1,15 +1,15 @@
 
 
 body {
-    background-image: url(img/2.jpg);
+    background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(/Cadastro/fundo.jpg);
+    background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    height: 100%;
-    width: 100%;
-    font-family: Arial, sans-serif;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     
-    padding: 0;
+    padding: 35px;
 }
 
 
@@ -52,8 +52,8 @@ body {
     border-radius: 5px; /* Cantos arredondados do botão */
     padding: 10px 15px; /* Espaçamento interno do botão */
     cursor: pointer; /* Muda o cursor ao passar sobre o botão */
-    margin:  500px 0px 0px -200px; /* Espaçamento entre os botões */
-}
+    width: 68px;
+    height: 38px;}
 
 .Sair:hover {
     background-color: #db0d0d71; /* Cor do botão ao passar o mouse */
@@ -68,7 +68,8 @@ body {
     border-radius: 5px; /* Cantos arredondados do botão */
     padding: 10px 15px; /* Espaçamento interno do botão */
     cursor: pointer; /* Muda o cursor ao passar sobre o botão */
-    margin:  500px 0px 0px -200px;
+    width: 80px;
+    height: 38px;
 }
 
 .Salvar:hover {
@@ -83,9 +84,8 @@ body {
     background: url(img/usuario.jpg);
     background-position: center;
     background-size: cover;
-    width: 250px;
-    height: 250px;
-    z-index: 49;
+    width: 100px;
+    height: 100px;
     border-radius: 100%;
     border: 9px solid rgba(46, 25, 56, 0.87);
     margin: -400px 200px;
@@ -114,15 +114,15 @@ body {
 }
 
 .subtitulo {
-   margin-top: 70px;
+    margin-top: 70px;
     background-color: rgba(55, 28, 61, 0);
     color: rgba(231, 233, 235, 0.897);
-    z-index: 50;
+    font-size: 22px;
 }
 
 .Digitavel{ 
-height: 60px;
-width: 500px;
+height: 38px;
+width: 350px;
     background-color: rgb(226, 210, 247);
     border-radius: 9%;
     border-color: rgb(56, 41, 65);
@@ -136,8 +136,7 @@ color: rgb(32, 0, 51);
 display: flex;
 justify-content: flex-start;
 align-items: center;
-height: 100%;
-width: 100%;
+
 }
 .Kitnome{
     margin-top: 200px;
@@ -147,7 +146,7 @@ width: 100%;
 }
 
 .container {
-margin-top: 150px;
+margin-top: 100px;
 margin-right: 150px;
 }
 
@@ -175,4 +174,30 @@ border-color: rgba(56, 41, 65, 0.678);
     height: 6px;
     background-color: rgba(38, 9, 58, 0.788);
     background: rgb(137, 111, 150);
+}
+
+
+.container-buttons{
+
+display: flex;
+gap:20px;
+
+
+}
+
+.container-right{
+
+
+
+    display: flex;
+    flex-direction: column;
+    gap:15px;
+
+}
+
+.block-img{
+
+display: flex;
+flex-direction: column;
+
 }

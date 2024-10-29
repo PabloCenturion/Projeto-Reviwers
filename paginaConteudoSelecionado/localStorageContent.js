@@ -261,7 +261,6 @@ const filme1 = new Filme(
 
 
 localStorage.setItem("listaFilmes", JSON.stringify(filmes))
-
   
   console.log(filme1.showInfoMovie());
   console.log(filme2.showInfoMovie());
