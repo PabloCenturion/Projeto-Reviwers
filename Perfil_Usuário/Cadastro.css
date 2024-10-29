@@ -88,11 +88,6 @@ body {
 
 
 
-.circulo:hover {
-    transform: scale(1.1);
-    transition: 2s;
-}
-
 .Foto {
     background-color: #986abdc0; 
     color: rgb(255, 255, 255);
