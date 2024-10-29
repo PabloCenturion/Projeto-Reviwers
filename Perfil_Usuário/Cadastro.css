@@ -12,6 +12,14 @@ body {
     padding: 35px;
 }
 
+.All{
+
+
+    display: flex;
+    justify-content: center;
+    gap: 70PX;
+   
+}
 
 .retangulo {
     display: flex;
@@ -78,18 +86,7 @@ body {
     transition: 2s;
 }
 
-.circulo {
-    backdrop-filter: blur(300px);
-    box-shadow: 0px 0px 150px rgb(158, 117, 161);
-    background: url(img/usuario.jpg);
-    background-position: center;
-    background-size: cover;
-    width: 100px;
-    height: 100px;
-    border-radius: 100%;
-    border: 9px solid rgba(46, 25, 56, 0.87);
-    margin: -400px 200px;
-}
+
 
 .circulo:hover {
     transform: scale(1.1);
@@ -103,7 +100,6 @@ body {
     border-radius: 5px; 
     padding: 10px 15px;
     cursor: pointer; 
-    margin:  330px 0px 0px 50px; 
     
 }
 
@@ -121,6 +117,8 @@ body {
 }
 
 .Digitavel{ 
+
+
 height: 38px;
 width: 350px;
     background-color: rgb(226, 210, 247);
@@ -146,8 +144,7 @@ align-items: center;
 }
 
 .container {
-margin-top: 100px;
-margin-right: 150px;
+margin-top: 0px;
 }
 
 #estado {
