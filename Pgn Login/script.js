@@ -13,19 +13,16 @@ function login() {
             window.location.href = "/pag inicial/pag-inicial-testes/corpo/index.html";
         }, 1000);
         return; 
-    }
-
-    // Loop para verificar os outros usuários cadastrados
-    for (var i = 0; i < usuarios.length; i++) {
-        if (email.value === usuarios[i].email && senha.value === usuarios[i].senha) {
-            console.log("Login bem-sucedido:", usuarios[i].userName);
-            window.location.href = "pag inicial\pag-inicial.html";
-            localStorage.setItem("estaLogado", true);
-            return; // Para o loop quando encontrar um usuário válido
+    }else{
+        for(var i=0;i<usuarios.length;i++){
+            if(email.value == usuarios[i].email && senha.value == usuarios[i].senha){   
+                console.log(usuarios[i].value);
+                window.location.href = "/pag inicial/pag-inicial.html";
+                localStorage.setItem("estaLogado", true);
+            }
+        
         }
     }
-
     // Se nenhum usuário for encontrado, exibe o alerta
     alert("Usuário ou senha inválidos!");
 }
-
