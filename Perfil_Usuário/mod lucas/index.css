@@ -193,6 +193,8 @@ img{
 
 }
 
+
+
 .container-reviews{
     margin-top: 50px;
 
@@ -280,3 +282,35 @@ display: flex;
     cursor: pointer;
 
 }
+
+.container-title-coment{
+
+display: flex;
+border-bottom: 1px solid white;
+height: 40px;
+gap: 20px;
+width: 450px;
+
+}
+
+.coment-struct{
+
+
+    margin-top: 20px;
+
+}
+
+.plus-color{
+
+    color: white;
+    font-size: 22px;
+
+}
+
+.plus-color:hover{
+
+
+    color: gray;
+    cursor: pointer;
+}
+
