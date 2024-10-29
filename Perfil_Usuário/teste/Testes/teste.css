@@ -1,0 +1,121 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #1a1a2e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    color: #ffffff;
+}
+
+.profile-container {
+    width: 400px;
+    background-color: #2e2e3a;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.profile-header {
+    background-color: #3c3c56;
+    padding: 10px;
+    text-align: center;
+    position: relative;
+}
+
+.back-button {
+    position: absolute;
+    left: 10px;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 24px;
+}
+
+.profile-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.user-photo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.photo-placeholder {
+    width: 80px;
+    height: 80px;
+    background-color: #8888aa;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.change-photo {
+    background-color: #8888aa;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.user-info {
+    width: 100%;
+}
+
+.user-info label {
+    margin-top: 10px;
+    font-size: 14px;
+    display: block;
+}
+
+.user-info input[type="text"],
+.user-info input[type="email"],
+.user-info input[type="date"],
+.user-info textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 4px;
+    background-color: #444455;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.user-info textarea {
+    resize: none;
+    height: 60px;
+}
+
+.profile-privacy {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.profile-privacy label {
+    font-size: 14px;
+}
+
+.logout-button {
+    background-color: #ff4d4d;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px;
+    cursor: pointer;
+    margin-top: 20px;
+    width: 100%;
+    font-size: 14px;
+}
