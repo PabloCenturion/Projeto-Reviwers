@@ -13,74 +13,78 @@
     <title>Cadastro</title>
 </head>
 <body>
+
+    <nav> 
+        <a href="/Perfil_Usuário/mod lucas/index.html">
+            <i title="Voltar" class="bi bi-arrow-left-square arrow-back"></a></i>
+        </nav>
     <section class="All">
-        <div class="retangulo"> <button class="botao"> VOLTAR </button></div>
         
 
-        <div class="Caixa1">
+        <div class="container-display-trio">
     
             <div class="block-img">
                 <img id="userImage" src="/Perfil_Usuário/img/usuario.jpg" alt="Imagem do Usuário">
                 <input type="file" id="fileInput" accept="image/*" style="display: none;" onchange="previewImage();">
-                <button class="Foto" onclick="document.getElementById('fileInput').click();">TROCAR FOTO</button>
+                <button class="btn btn-color-user" onclick="document.getElementById('fileInput').click();">Trocar Foto</button>
            </div>
 
-            <div class="container">
-                <h3 class="subtitulo">Nome:</h3>
-                <input class="Digitavel" placeholder="Escreva aqui...">
+            <div class="block-inputs">
+                <label class="subtitulo" for="nameUserNew">Nome:</label>
+                <input type="text" id="nameUserNew" name="nameUser" class="form-control input-style" placeholder="Digite seu Nome de Usuário">
 
-                <h3 class="subtitulo">E-mail:</h3>
-                <input class="Digitavel" placeholder="Escreva aqui...">
+                <label class="subtitulo" for="emailUser">E-mail:</label>
+                <input type="text" id="emailUserNew" class="form-control input-style" placeholder="Digite seu e-mail">
 
-                <h3 class="subtitulo">Bio:</h3>
-                <input class="Digitavel" placeholder="Escreva aqui...">
+                <label class="subtitulo" for="bioUser">Bio:</label>
+                <textarea type="text" id="bioUser" name="bioUser" class="form-control input-style" placeholder="Digite sua bio" cols="30" rows="1"></textarea>
 
-                <h3 class="subtitulo">Data:</h3>
-                <input type="date" class="Digitavel" placeholder="Escreva aqui...">
+                <label class="subtitulo" for="dateBirthUser">Data:</label>
+                <input id="dateBirthUser" type="date" class="form-control input-style-date" placeholder="">
             </div>
             
         <section class="container-right">
-           <div>
-            <h3 class="subtitulo">Localização:</h3>
-            <select id="estado">
-            <option value="AC">Acre</option>
-            <option value="AL">Alagoas</option>
-            <option value="AP">Amapá</option>
-            <option value="BA">Bahia</option>
-            <option value="CE">Ceará</option>
-            <option value="DF">Distrito Federal</option>
-            <option value="ES">Espírito Santo</option>
-            <option value="GO">Goiás</option>
-            <option value="MA">Maranhão</option>
-            <option value="MT">Mato Grosso</option>
-            <option value="MS">Mato Grosso do Sul</option>
-            <option value="MG">Minas Gerais</option>
-            <option value="PA">Pará</option>
-            <option value="PB">Paraíba</option>
-            <option value="PR">Paraná</option>
-            <option value="PE">Pernambuco</option>
-            <option value="PI">Piauí</option>
-            <option value="RJ">Rio de Janeiro</option>
-            <option value="RN">Rio Grande do Norte</option>
-            <option value="RS">Rio Grande do Sul</option>
-            <option value="RO">Rondônia</option>
-            <option value="RR">Roraima</option>
-            <option value="SC">Santa Catarina</option>
-            <option value="SP">São Paulo</option>
-            <option value="SE">Sergipe</option>
-            <option value="TO">Tocantins</option>
-        </select>
-    </div>
+
+            <label class="subtitulo">Localização:</label>
+            <select id="form-select">
+                <option value="AF">África</option>
+                <option value="AN">Antártida</option>
+                <option value="AS">Ásia</option>
+                <option value="EU">Europa</option>
+                <option value="NA">América do Norte</option>
+                <option value="OC">Oceania</option>
+                <option value="SA">América do Sul</option>
+            </select>
+
+        
+            <p class="subtitulo">Perfil</p>
+
+            <section class="block-check-privacy">
+
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"  onclick="togglePrivacy()">
+            <label class="form-check-label font-color" for="flexRadioDefault1">Privado</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+            <label class="form-check-label font-color" for="flexRadioDefault2">Público</label>
+          </div>
+
+        </section>
         
     <div class="container-buttons">
-        <button class="Salvar">SALVAR</button>
-        <button class="Sair">SAIR</button>
+
+        <button id="botaoSalvar"class="btn btn-save-account" onclick="saveImage()">Salvar Alterações</button>
+        <button class="btn btn-left-account">Sair</button>
+    </div>
+
         </div>
-        </div>
-        
-        
+    
     </section>
 
+    
+
     </section>
+    <script src="DadosUser.js"></script>
 </body>
 </html>
