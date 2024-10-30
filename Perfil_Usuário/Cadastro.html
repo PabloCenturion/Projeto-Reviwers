@@ -1,90 +1,75 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<title>Cadastro</title>
 <head>
-    
-    <link rel="stylesheet" href="Cadastro.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-          <!-- Bootstrap Icons -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <title>Cadastro</title>
+    <link rel="stylesheet" href="Cadastro.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 </head>
 <body>
 
     <nav> 
         <a href="/Perfil_Usuário/mod lucas/index.html">
-            <i title="Voltar" class="bi bi-arrow-left-square arrow-back"></a></i>
-        </nav>
+            <i title="Voltar" class="bi bi-arrow-left-square arrow-back"></i>
+        </a>
+    </nav> 
+    <a href=""></a>
     <section class="All">
-        
-
         <div class="container-display-trio">
-    
             <div class="block-img">
                 <img id="userImage" src="/Perfil_Usuário/img/usuario.jpg" alt="Imagem do Usuário">
                 <input type="file" id="fileInput" accept="image/*" style="display: none;" onchange="previewImage();">
                 <button class="btn btn-color-user" onclick="document.getElementById('fileInput').click();">Trocar Foto</button>
-           </div>
+            </div>
 
             <div class="block-inputs">
-                <label class="subtitulo" for="nameUserNew">Nome:</label>
-                <input type="text" id="nameUserNew" name="nameUser" class="form-control input-style" placeholder="Digite seu Nome de Usuário">
+                <label class="subtitulo" for="nameUser New">Nome:</label>
+                <input type="text" id="nameUser New" name="nameUser " class="form-control input-style" placeholder="Digite seu Nome de Usuário">
 
-                <label class="subtitulo" for="emailUser">E-mail:</label>
-                <input type="text" id="emailUserNew" class="form-control input-style" placeholder="Digite seu e-mail">
+                <label class="subtitulo" for="emailUser ">E-mail:</label>
+                <input type="text" id="emailUser New" class="form-control input-style" placeholder="Digite seu e-mail">
 
-                <label class="subtitulo" for="bioUser">Bio:</label>
-                <textarea type="text" id="bioUser" name="bioUser" class="form-control input-style" placeholder="Digite sua bio" cols="30" rows="1"></textarea>
+                <label class="subtitulo" for="bioUser ">Bio:</label>
+                <textarea type="text" id="bioUser " name="bioUser " class="form-control input-style" placeholder="Digite sua bio" cols="30" rows="1"></textarea>
 
-                <label class="subtitulo" for="dateBirthUser">Data:</label>
-                <input id="dateBirthUser" type="date" class="form-control input-style-date" placeholder="">
+                <label class="subtitulo" for="dateBirthUser ">Data:</label>
+                <input id="dateBirthUser " type="date" class="form-control input-style-date" placeholder="">
             </div>
             
-        <section class="container-right">
+            <section class="container-right">
+                <label class="subtitulo">Localização:</label>
+                <select id="form-select">
+                    <option value="AF">África</option>
+                    <option value="AN">Antártida</option>
+                    <option value="AS">Ásia</option>
+                    <option value="EU">Europa</option>
+                    <option value="NA">América do Norte</option>
+                    <option value="OC">Oceania</option>
+                    <option value="SA">América do Sul</option>
+                </select>
 
-            <label class="subtitulo">Localização:</label>
-            <select id="form-select">
-                <option value="AF">África</option>
-                <option value="AN">Antártida</option>
-                <option value="AS">Ásia</option>
-                <option value="EU">Europa</option>
-                <option value="NA">América do Norte</option>
-                <option value="OC">Oceania</option>
-                <option value="SA">América do Sul</option>
-            </select>
-
-        
-            <p class="subtitulo">Perfil</p>
-
-            <section class="block-check-privacy">
-
-        <div class="form-check">
-            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"  onclick="togglePrivacy()">
-            <label class="form-check-label font-color" for="flexRadioDefault1">Privado</label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-            <label class="form-check-label font-color" for="flexRadioDefault2">Público</label>
-          </div>
-
-        </section>
-        
-    <div class="container-buttons">
-
-        <button id="botaoSalvar"class="btn btn-save-account" onclick="saveImage()">Salvar Alterações</button>
-        <button class="btn btn-left-account">Sair</button>
-    </div>
-
+                <p class="subtitulo">Perfil</p>
+                <section class="block-check-privacy">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" onclick="togglePrivacy()">
+                        <label class="form-check-label font-color" for="flexRadioDefault1">Privado</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked onclick="togglePrivacy()">
+                        <label class="form-check-label font-color" for="flexRadioDefault2">Público</label>
+                    </div>
+                </section>
+                
+                <div class="container-buttons">
+                    <button id="botaoSalvar" class="btn btn-save-account" onclick="saveImage()">Salvar Alterações</button>
+                    <button class="btn btn-left-account">Sair</button>
+                </div>
+            </div>
         </div>
-    
     </section>
 
-    
-
-    </section>
     <script src="DadosUser.js"></script>
+   
 </body>
 </html>
