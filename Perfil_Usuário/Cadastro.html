@@ -14,9 +14,10 @@
         <div class="Caixa1">
     
             <div class="block-img">
-            <img src="/Perfil_Usuário/img/usuario.jpg">
-            <button class="Foto">TROCAR FOTO</button></div>
-        </div>
+                <img id="userImage" src="/Perfil_Usuário/img/usuario.jpg" alt="Imagem do Usuário">
+                <input type="file" id="fileInput" accept="image/*" style="display: none;" onchange="previewImage();">
+                <button class="Foto" onclick="document.getElementById('fileInput').click();">TROCAR FOTO</button>
+           </div>
 
             <div class="container">
                 <h3 class="subtitulo">Nome:</h3>
