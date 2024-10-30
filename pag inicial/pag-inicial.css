@@ -1,5 +1,5 @@
 *{
-
+    text-decoration: none;
     box-sizing: border-box;
 }
 body{
@@ -8,16 +8,20 @@ body{
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;/*estilo da letra*/
+
 }
 .container-main {
     /* elemtno que cobre todo o codigo */
     max-width: 100%; /* Largura máxima do site */
     margin: 0  auto; /* Centraliza horizontalmente */
     position: relative;
+    padding-left: 125px;
+    padding-right: 125px;
+    padding-top: 120px;
 }
 /* COMEÇO CABEÇALHO*/
 header{
-    margin-top: -50px;
     margin-left: 100px;
     backdrop-filter: blur(30px);
     box-shadow: 0px 0px 30px #6802ac6b;
@@ -27,7 +31,6 @@ header{
     align-items: center; /*centraliza tudo em uma linha*/
     color: white; /*cor das letras*/
     padding: 10px; /*define o espaçamento do header*/
-    font-family: Arial, sans-serif;/*estilo da letra*/
     position: fixed;
     z-index: 9;
 }
@@ -35,10 +38,11 @@ nav {
     margin-right: 30px;
     display: flex;
     align-items: center;
+
 }
 .logo{
     margin: 0px 300px 0px 50px;/*250px distancia da logo das pag 100px distancia do cmc do header(esquerda) da logo*/
-    font-size: 25px;/*tamanho da font*/
+    font-size: 30px;/*tamanho da font*/
     text-decoration: none;/*linha do <a>*/
     color: white;/*cor da letra*/
     text-shadow:  0 0 10px purple, 0 0 20px purple, 0 0 40px purple, 0 0 80px purple;/*sombra*/
@@ -81,10 +85,7 @@ nav {
 /* FIM DO CABEÇALHO*/
 
 /* COMEÇO DO CORPO*/
-main{
-    margin-top: 80px;
-    padding: 60px;
-}
+
 .quadrado-topo-main{
     display: flex;
 }
@@ -92,14 +93,16 @@ main{
     
     background-color: #240738cf;
     filter: drop-shadow(5px 5px 10px rgb(0, 0, 0));
-    width: 828px;
+    width: 833px;
     height: 350px;
     border-radius: 40px;
     z-index: 2;
 }
 .quadrado1.sobreposto {
+
     z-index: 3;
     backdrop-filter: blur(30px);
+    
 }
 .quadrado2{
     left: 235px;
@@ -141,11 +144,11 @@ main{
     font-size: 20px;
 }
 .filme-quadrado{
-    margin: 30px 10px 0px 40px;
+    padding: 35px;
     filter: drop-shadow(5px 5px 15px rgb(0, 0, 0));
-    width: 173px;
-    height: 296px;
-    border-radius: 40px;
+    width: 300px;
+    height:350px;
+    border-radius: 70px;
 }
 .filme-quadrado:hover{
     transition: 1s;
@@ -183,6 +186,32 @@ main{
     color: #909090;
 }
 /* fim conteudo quadrado 3 */
+/* começo categorias */
+.categorias{
+    margin-top: 50px;
+    width: 100%;
+}
+.categorias-1{
+    margin: 40px;
+    display: flex;
+    justify-content: center;
+}
+.categorias-2{
+    margin: 40px;
+    display: flex;
+    justify-content: center;
+}
+.categorias-filmes{
+    background-color: rgba(128, 0, 128, 0.082);
+    margin-right: 30px;
+    color: rgb(255, 255, 255);
+    border: 3px solid purple;
+    border-radius: 40px;
+    font-size: 22px;
+    padding: 10px;
+    font-weight: 600;
+}
+/* fim categorias */
 .cat-filmes{
     margin-left: 25px;
     width: 137px;
@@ -197,3 +226,11 @@ footer {
     text-align: center;
 }
 
+.container-box-movies{
+
+display: flex;
+height: 300px;
+border:1px solid white;
+
+
+}

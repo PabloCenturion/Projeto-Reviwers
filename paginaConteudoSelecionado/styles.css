@@ -606,7 +606,6 @@ footer {
 
     font-size: 10pt !important;
 
-
   }
 
 
@@ -1082,4 +1081,11 @@ gap: 4px;
 #trailer-movie{
 text-decoration: none;
 
+}
+
+
+.container-header{
+
+
+    display: flex;
 }

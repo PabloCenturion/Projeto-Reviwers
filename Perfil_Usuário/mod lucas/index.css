@@ -1,21 +1,51 @@
 body {
-    background-image: url(img/2.jpg);
+    background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(/Cadastro/fundo.jpg); 
+    background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
 }
+
+main{
+
+display: flex;
+flex-direction: column;
+gap: 20px;
+padding: 40px;
+
+max-width: 1336px;
+margin: 0 auto;
+
+
+
+}
+
+.nav-user{
+
+    background-color: #21005D;
+    height: 50px;
+
+}
+
+.arrow-back{
+
+color: white;
+font-size: 30px;
+margin-left: 20px;
+
+}
+
+.arrow-back:hover{
+
+    color: gray;
+    cursor: pointer;
+}
+
+
+
 /*--------------------------------------------------*/
-header {
-    backdrop-filter: blur(30px);
-    box-shadow: 0px 0px 30px #6802ac6b;
-    border: 2px solid #6802ac6b;
-    border-radius: 30px;
-    padding: 25px; 
-    color: white;
-    width: 100vmax;
-    margin: -170px 0px 0px -30px;
-    position: fixed;
-    z-index: 9;
-}
 nav a{
     font-size: 30px;
     text-decoration: none; /*tira linha do <a>*/
@@ -28,166 +58,259 @@ nav a:hover{
     text-shadow: 0 0 50px #c378f5;
     text-decoration-line: underline;/*coloca linha do <a>*/
 }
-.pagina1{
-    display: flex;
-    justify-content: flex-end;
-    margin-right: 100px;
-}
+
 /*-----------------------------------------------------------*/
 .info-usuario{
+
+    display: flex;
+    flex-direction: column;
+
     color: white;
-    margin: 220px 0px 0px 0px;
     
 }
-.usuario-info1{
-    background-image: url(img/usuario.jpg);
+
+.container-user{
+
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    flex: 1;
+
+}
+
+
+
+.user-img{
     background-size: cover;
-    height: 250px;
-    width: 250px;
     border-radius: 50%;
-    margin-left: 150px ;
+    margin-left: 100px ;
 }
-.usuario-info2{
-    margin: -200px 0px 0px 450px;
-    font-size: 40px;
+.user-name{
+    font-size: 22px;
     text-shadow: 0 0 10px black;
 }
-.usuario-info3{
-    margin: 10px 0px 120px 450px;
-    font-size: 25px;
+.user-bio{
+
+    font-size: 16px;
     text-shadow: 0 0 10px black;
-}
-/*------------------------------------------------*/
-.cont-favoritos{
-    margin-top: 200px;
-}
-.fav0{
-    background-color: rgba(0, 0, 0, 0.281);
-    width: 620px;
-    height: 370px;
-    border-radius: 40px;
-    margin-left: 200px;
+    max-width: 280px;
 }
 
-.fav1{
-    color: white;
-    font-size: 30px;
-    margin: -390px 0px 0px 240px;
+
+
+
+
+/**/
+
+.container-playlist-duo{
+
+
+    display: flex;
+    flex-direction: row;
+
+    margin-top: 50px;
 }
-.fav3{
-    background-color: white;
-    width: 540px;
-    height: 1px;
-    margin: -20px 0px 0px 230px;
+
+.container-playlist-right{
+
+
+    display: flex;
+    flex-direction: column;
+    margin-left: 100px;
+    
+
+    flex: 1;
+
+
+
 }
-.fav4{
-    background-image: url(img/image\ 2.png);
-    background-size: cover;
-    width: 160px;
-    height: 260px;
-    border-radius: 20px;
-    margin: 20px 0px 0px 215px;
-    cursor: pointer;
+
+.container-playlist-left{
+
+    display: flex;
+    flex-direction: column;
+    margin-left: 100px;
+
+    flex: 1;
+
+    border-right: 1px solid white;
+
+
+
 }
-.fav5{
-    background-image: url(img/image\ 16.png);
-    background-size: cover;
-    width: 160px;
-    height: 260px;
-    border-radius: 20px;
-    margin: -260px 0px 0px 400px;
-    cursor: pointer;
+
+.bloco-conteudo{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 40px;
+    background-color: rgba(0, 0, 0, 0.281);
+    width: 450px;
+    margin-top: 20px;
     
 }
-.fav6{
-    background-image: url(img/image\ 20.png);
-    background-size: cover;
-    width: 160px;
-    height: 260px;
-    border-radius: 20px;
-    margin: -260px 0px 50px 585px;
-    cursor: pointer;
-}
-.seta{
-    position: absolute;
-    top: 700px;
-    left: 765px;
-    background-color: transparent;
-    color: rgb(0, 0, 0);
-    border: none;
-    cursor: pointer;
-    font-size: 50px;
-}
-.seta:hover{
-    transition: 1s;
-    color: white;
-}
-/*------------------------------------------------*/
-.cont-recente{
-    margin-top: 100px;
-}
-.rec1{
-    background-color: rgba(0, 0, 0, 0.281);
-    width: 620px;
-    height: 370px;
-    border-radius: 40px;
-    margin-left: 200px;
+
+.list-content{
+
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+margin-top: 15px;
+gap: 15px;
+
+
 }
 
-.rec2{
+img{
+
+    border-radius: 10px;
+
+
+
+}
+
+.title-list{
+
     color: white;
-    font-size: 30px;
-    margin: -390px 0px 0px 240px;
+    font-size: 22px;
+    width: 400px;
+    font-weight: 500;
+
+
+
 }
-.rec3{
-    background-color: white;
-    width: 540px;
-    height: 1px;
-    margin: -20px 0px 0px 230px;
+
+
+
+.container-reviews{
+    margin-top: 50px;
+
+
+    margin-left: 100px;
+
 }
-.rec4{
-    background-image: url(img/image\ 21.png);
-    background-size: cover;
-    width: 160px;
-    height: 260px;
-    border-radius: 20px;
-    margin: 20px 0px 0px 215px;
+
+.arrow-color{
+
+    margin-top: 5px;
+    color: white;
+    font-size: 22px;
+
 }
-.rec5{
-    background-image: url(img/image\ 24.png);
-    background-size: cover;
-    width: 160px;
-    height: 260px;
-    border-radius: 20px;
-    margin: -260px 0px 0px 400px;
+
+.arrow-color:hover{
+
+color: gray;
+cursor: pointer;
+
+
 }
-.rec6{
-    background-image: url(img/image\ 25.png);
-    background-size: cover;
-    width: 160px;
-    height: 260px;
-    border-radius: 20px;
-    margin: -260px 0px 50px 585px;
+
+.coment-struct p{
+
+
+    color:white;
+
 }
-.seta2{
-    position: absolute;
-    top: 1150px;
-    left: 765px;
-    background-color: transparent;
-    color: rgb(0, 0, 0);
-    border: none;
+
+.button-color{
+
+    border: 1px solid rgb(0, 0, 0) !important;
+    border-radius: 6px !important;
+    background-color: #EBE5FC !important;
+    color: #6610F2 !important;
+    height: 38px !important;
+
+
+    font-weight: bold !important;
+
+}
+
+.button-color:hover{
+
+    border: 2px solid rgb(83, 75, 197) !important;
+    background-color: #a2a1a3 !important;
+    color: #6610F2 !important;
+
+
+}
+.container-header{
+
+display: flex;
+
+
+}
+
+.block-button{
+
+    display: flex;
+    justify-content: flex-end;
+    flex: 1;
+    margin-right: 100px;
+
+}
+
+
+.block-title{
+
+    display: flex;
+    width: 450px;
+    border-bottom: 1px solid white;
+    gap:20px;
+    height: 40px;
+    margin-top: 20px;
+
+}
+
+.filter-color{
+
+    color: white;
+    font-size: 25px;
     cursor: pointer;
-    font-size: 50px;
+
 }
-.seta2:hover{
-    transition: 1s;
+
+.container-title-coment{
+
+display: flex;
+border-bottom: 1px solid white;
+height: 40px;
+gap: 20px;
+width: 450px;
+
+}
+
+.coment-struct{
+
+
+    margin-top: 20px;
+
+}
+
+.plus-color{
+
     color: white;
+    font-size: 22px;
+
 }
-/*------------------------------------------------*/
-.linha-vertical{
-    background-color: white;
-    width: 2px;
-    height: 820px;
-    margin: -820px 0px 100px 900px;
+
+.plus-color:hover{
+
+
+    color: gray;
+    cursor: pointer;
 }
-/*------------------------------------------------*/
+
+.button-show-more{
+
+
+display: flex;
+justify-content: end;
+margin-top: 20px;
+margin-right: 70px;
+
+}
