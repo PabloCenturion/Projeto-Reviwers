@@ -1160,7 +1160,41 @@ function modificandoFilmeDados(){
 
 }
 
-modificandoFilmeDados()
+
+
+function criarFilmes(){
+
+    const headerMovie = document.getElementById("header-movie");
+
+    const listaFilmes = (JSON.parse(localStorage.getItem("listaFilmes")));
+
+    console.log(listaFilmes) //confirmando
+
+
+    const structInfoMovie = `
+
+    <div class="info-movie">
+            <img id="cover-movie" src="${listaFilmes[0].movieCover}" alt="Capa do Filme">
+
+            <div class="movie-details">
+                <div class="description-movie">
+                    <h1 id="title-movie">${listaFilmes[0].title}</h1>
+                    <h6 id="infos-movie">${listaFilmes[0].year} | ${listaFilmes[0].time}m | ${listaFilmes[0].classification}</h6>
+                    <h6 id="genre-movie">Genero: ${listaFilmes[0].genre}</h6>
+                    <p id="sinopse-movie">${listaFilmes[0].synopsis}</p>
+
+                    <p id="streamings">Aonde Assistir: <strong>${listaFilmes[0].streaming}</strong></p>
+                    <a href="#">Créditos</a>
+                </div>
+            </div>
+`
+
+headerMovie.innerHTML = structInfoMovie
+
+
+}
+
+criarFilmes()
 
 
 
