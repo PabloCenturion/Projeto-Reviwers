@@ -10,11 +10,10 @@ function login() {
 
     if (email.value === "admin@admin.com" && senha.value === "admin") {
         setTimeout(() => {
-            window.location.href = "/pag inicial/pag-inicial-testes/corpo/index.html";
-        }, 1000);
+            window.location.href = "/pag inicial/pag-inicial.html";
+        });
         return; 
     }
-<<<<<<< HEAD
     else{
         for(var i=0;i<usuarios.length;i++){
             if(email.value == usuarios[i].email && senha.value == usuarios[i].senha){   
@@ -22,21 +21,8 @@ function login() {
                 window.location.href = "/pag inicial/pag-inicial.html";
                 localStorage.setItem("estaLogado", true);
             }
-=======
-
-    // Loop para verificar os outros usuários cadastrados
-    for (var i = 0; i < usuarios.length; i++) {
-        if (email.value === usuarios[i].email && senha.value === usuarios[i].senha) {
-            console.log("Login bem-sucedido:", usuarios[i].userName);
-            window.location.href = "/pag inicial/pag-inicial-testes/corpo/index.html";
-            localStorage.setItem("estaLogado", true);
-            return; // Para o loop quando encontrar um usuário válido
->>>>>>> 5bc7798d028c7ad84d27537a9529872b98c287cd
-        }
     }
-
     // Se nenhum usuário for encontrado, exibe o alerta
     alert("Usuário ou senha inválidos!");
-}
-
-login
+    }
+    }
