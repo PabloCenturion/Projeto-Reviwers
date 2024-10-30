@@ -1,5 +1,5 @@
 *{
-
+    text-decoration: none;
     box-sizing: border-box;
 }
 body{
@@ -143,11 +143,11 @@ main{
     font-size: 20px;
 }
 .filme-quadrado{
-    mask-image: linear-gradient(to right, rgba(0, 0, 0, 0.932), transparent);
+    padding: 35px;
     filter: drop-shadow(5px 5px 15px rgb(0, 0, 0));
     width: 300px;
     height:350px;
-    border-radius: 40px;
+    border-radius: 70px;
 }
 .filme-quadrado:hover{
     transition: 1s;
@@ -185,6 +185,32 @@ main{
     color: #909090;
 }
 /* fim conteudo quadrado 3 */
+/* começo categorias */
+.categorias{
+    margin-top: 50px;
+    width: 100%;
+    height: 200px;
+}
+.categorias-1{
+    margin: 40px;
+    display: flex;
+    justify-content: center;
+}
+.categorias-2{
+    margin: 40px;
+    display: flex;
+    justify-content: center;
+}
+.categorias-filmes{
+    background-color: rgba(128, 0, 128, 0.342);
+    margin-right: 30px;
+    color: rgb(255, 255, 255);
+    border: 3px solid purple;
+    border-radius: 40px;
+    font-size: 200%;
+    padding: 10px;
+}
+/* fim categorias */
 .cat-filmes{
     margin-left: 25px;
     width: 137px;
