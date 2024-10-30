@@ -1,3 +1,7 @@
+function goBack() {
+    window.location.href = 'Perfil_Usuário\mod lucas\index.html'; // Subs
+}
+
 let isPrivate = false;
 
 function togglePrivacy() {
