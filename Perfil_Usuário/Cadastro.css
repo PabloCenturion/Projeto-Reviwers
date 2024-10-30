@@ -99,8 +99,11 @@ body {
 
 .Foto:hover {
     background-color: #aa07d3d3; 
-    
-   
+}
+
+#userImage {
+width: 100%;
+height: auto;
 }
 
 .subtitulo {
@@ -168,36 +171,26 @@ border-color: rgba(56, 41, 65, 0.678);
 
 
 .container-buttons{
-
 display: flex;
 gap:150px;
-
-
 }
 
 .container-right{
-
     display: flex;
     flex-direction: column;
     gap:15px;
-
 }
 
-.block-img{
-
+.block-img{   
 display: flex;
 flex-direction: column;
 gap: 20px;
-
 }
 
 img{
-
 border-radius: 50%;
 }
 
 select{
-
 margin-bottom: 430px;
-
 }
