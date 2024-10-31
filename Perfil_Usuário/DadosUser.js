@@ -16,48 +16,36 @@ function loadSettings() {
     const savedPrivacy = localStorage.getItem('isPrivate');
     const savedData = JSON.parse(localStorage.getItem('userData'));
 
+    // Carregar imagem do usuário
     if (savedImage) {
         document.getElementById('userImage').src = savedImage;
-    } else {
-        document.getElementById('userImage').src = '/Perfil_Usuário/img/usuario.jpg'; // Imagem padrão
     }
 
+    // Carregar configurações de privacidade
     if (savedPrivacy === 'true') {
         document.getElementById('privacyPrivate').checked = true;
         isPrivate = true;
-        document.getElementById('fileInput').disabled = false; // Permitir upload mesmo se privado
     } else {
         document.getElementById('privacyPublic').checked = true;
         isPrivate = false;
-        document.getElementById('fileInput').disabled = false; // Permitir upload mesmo se público
     }
 
-    // Carregar dados adicionais
+    // Carregar dados do usuário se o perfil for público
     if (savedData) {
-        document.getElementById('inputName').value = savedData.name || '';
-        document.getElementById('inputEmail').value = savedData.email || '';
-        document.getElementById('inputBio').value = savedData.bio || '';
-        document.getElementById('inputBirthDate').value = savedData.birthDate || '';
-        document.getElementById('inputLocation').value = savedData.location || '';
-    }
-}
-
-function togglePrivacy() {
-    const fileInput = document.getElementById('fileInput');
-    const radioButtons = document.getElementsByName('privacyOption');
-
-    for (let i = 0; i < radioButtons.length; i++) {
-        if (radioButtons[i].checked) {
-            isPrivate = radioButtons[i].id === 'privacyPrivate';
-            break;
+        if (!isPrivate) {
+            document.getElementById('inputName').value = savedData.name || '';
+            document.getElementById('inputEmail').value = savedData.email || '';
+            document.getElementById('inputBio').value = savedData.bio || '';
+            document.getElementById('inputBirthDate').value = savedData.birthDate || '';
+            document.getElementById('inputLocation').value = savedData.location || '';
+        } else {
+            // Se o perfil é privado, não exibir os dados
+            document.getElementById('inputName').value = 'Usuário Anônimo';
+            document.getElementById('inputEmail').value = '';
+            document.getElementById('inputBio').value = '';
+            document.getElementById('inputBirthDate').value = '';
+            document.getElementById('inputLocation').value = '';
         }
-    }
-
-    if (isPrivate) {
-        document.getElementById('inputName').value = 'Usuário Anônimo'; // Definir nome padrão
-        showMessage('O perfil está configurado como privado.', true);
-    } else {
-        showMessage('O perfil está configurado como público.', true);
     }
 }
 
@@ -72,6 +60,24 @@ function previewImage() {
             showMessage('Imagem carregada com sucesso!', true);
         };
         reader.readAsDataURL(fileInput.files[0]);
+    }
+}
+
+function togglePrivacy() {
+    const radioButtons = document.getElementsByName('privacyOption');
+
+    for (let i = 0; i < radioButtons.length; i++) {
+        if (radioButtons[i].checked) {
+            isPrivate = radioButtons[i].id === 'privacyPrivate';
+            break;
+        }
+    }
+
+    if (isPrivate) {
+        document.getElementById('inputName').value = 'Usuário Anônimo'; // Definir nome padrão
+        showMessage('O perfil está configurado como privado.', true);
+    } else {
+        showMessage('O perfil está configurado como público.', true);
     }
 }
 
@@ -109,6 +115,16 @@ function saveData() {
         privacy: isPrivate ? 'privado' : 'público'
     };
 
-    localStorage.setItem ('userData', JSON.stringify(userData));
+    localStorage.setItem('userData', JSON.stringify(userData));
     showMessage('Configurações salvas com sucesso!', true);
 }
+
+window.onload = function() {
+    let estalogado = localStorage.getItem('userData') === "true"
+    if (estalogado) {
+        // Código para quando o usuário está logado
+    } else {
+        // Código para quando o usuário não está logado
+    }
+    loadSettings();
+};
