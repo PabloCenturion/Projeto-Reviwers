@@ -56,6 +56,7 @@ function previewImage() {
     if (fileInput.files && fileInput.files[0]) {
         const reader = new FileReader();
         reader.onload = function(e) {
+            
             userImage.src = e.target.result;
             showMessage('Imagem carregada com sucesso!', true);
         };
