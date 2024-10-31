@@ -268,5 +268,10 @@ border:1px solid white;
 
 }
 
+img{
+
+    object-fit: cover;
+
+}
 
 

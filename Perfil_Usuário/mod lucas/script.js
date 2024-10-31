@@ -17,9 +17,7 @@ function exibirUsuarioInfos(){
         
     </div>`
 
-
     divShowUserInfos.innerHTML = structUser;
-
 
 }
 
