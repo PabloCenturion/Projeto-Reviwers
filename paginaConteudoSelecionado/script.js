@@ -154,7 +154,6 @@ function changeIconState(idElement, localStorageKey, iconTrue, iconFalse, classC
 
 
 window.onload = function() {
-
     
     changeIconState(eyeAction, "eye-changes", "bi-eye-fill", "bi-eye", "watched")
 
@@ -783,7 +782,7 @@ const filme1 = new Filme(
     "Amazon Prime", 
     "Bong Joon-ho", 
     "Kwak Sin-ae", 
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHHddg8wzW-auuwLxHR2IpH5QP1vqhBMjsMw&s"
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHHddg8wzW-auuwLxHR2IpH5QP1vqhBMjsMw&s",
     ["https://jacobin.com.br/wp-content/uploads/2021/02/b2c155b6-de08-495d-a027-78add6cbf06b-1.jpeg", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhV3Qtulu5TKUjK5BdnnmWmxxNhlMLSghZPg&s", "https://cinemacao.com/wp-content/uploads/2019/10/parasita-3-1200x630.jpg"],
     castMovie3, "https://youtu.be/m4jfE-TxC24?si=OfWDoB9JTpmVFOmp"
   );
@@ -834,16 +833,11 @@ const filme1 = new Filme(
 
   );
 
+  console.log(filme3.threeImgs)
 
 
-  const filmes = []
+  const filmes = [filme1,filme2,filme3,filme4,filme5,filme6]
 
-  filmes.push(filme1)
-  filmes.push(filme2)
-  filmes.push(filme3)
-  filmes.push(filme4)
-  filmes.push(filme5)
-  filmes.push(filme6)
 
 
 localStorage.setItem("listaFilmes", JSON.stringify(filmes))
@@ -1170,7 +1164,6 @@ function criarFilmes(){
 
     console.log(listaFilmes) //confirmando
 
-
     const structInfoMovie = `
 
     <div class="info-movie">
@@ -1195,6 +1188,43 @@ headerMovie.innerHTML = structInfoMovie
 }
 
 criarFilmes()
+
+function FilmeLançamento(title, cover){
+
+    this.title = title
+    this.cover = cover
+
+}
+
+const filmeLançamento1 = new FilmeLançamento(
+
+    "Borderlands","https://metallife.com/wp-content/uploads/2024/02/borderlands_movie_h.jpg"
+    
+)
+
+const filmeLançamento2 = new FilmeLançamento(
+
+    "Long Legs","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRojBh60l2zkcz7Yv9a8iWOYW-ALJpGSYRSkg&s"
+    
+)
+
+const filmeLançamento3 = new FilmeLançamento(
+
+     "Twisters", "https://yhsnews.com/wp-content/uploads/2024/09/ac7983ff-f638-4285-a07c-a4ec0f4b2d56.jpg"
+
+)
+
+const filmeLançamento4 = new FilmeLançamento(
+
+    "Blink Twice", "https://img.englishcinemakyiv.com/5VHatzq9uMDONmt3Ay9jjLK_nPkkXJSbB70JW4uZvRQ/resize:fill:800:450:1:0/gravity:sm/aHR0cHM6Ly9leHBhdGNpbmVtYXByb2QuYmxvYi5jb3JlLndpbmRvd3MubmV0L2ltYWdlcy81MWY5MDY3Ny0yYTM5LTQ1MzctYWExOC1iNzNjZTg1M2Q2ZGYuanBn.jpg"
+
+)
+
+
+const listaLancamentosFilmes = [filmeLançamento1,filmeLançamento2,filmeLançamento3,filmeLançamento4]
+
+
+localStorage.setItem("filmesLancamentos", JSON.stringify(listaLancamentosFilmes))
 
 
 
