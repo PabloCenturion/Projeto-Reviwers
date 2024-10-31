@@ -1089,54 +1089,16 @@ console.log(jogo4.showInfoJogo());
 console.log(jogo5.showInfoJogo());
 
 
-function modificandoFilmeDados(){
 
-    const titleMovie = document.getElementById("title-movie")
 
-    const infosMovie = document.getElementById("infos-movie")
-
-    const genreMovie = document.getElementById("genre-movie")
-
-    const sinopseMovie = document.getElementById("sinopse-movie")
-
-    const directorMovie = document.getElementById("director-movie")
-
-    const producerMovie = document.getElementById("producer-movie")
-
-    const streamingsMovies = document.getElementById("streamings")
-
-    const coverMovie = document.getElementById("cover-movie")
-
-    const scenesImgs = document.getElementsByClassName("scenes-img")
+function modificandoCastGambiarra(){
 
     const nameActor = document.getElementsByClassName("name-celebrity")
 
     const imgsCast = document.getElementsByClassName("character-img")
 
-    const trailer = document.getElementById("trailer-movie")
-
-
     ////////////////////////////////////////////////////////////////////////////////////////////
 
-    titleMovie.innerText = filmes[0].title
-
-    infosMovie.innerText = `${filmes[0].year} | ${filmes[0].time}m | ${filmes[0].classification}`
-
-    genreMovie.innerText = `Genero: ${filmes[0].genre}`
-
-    sinopseMovie.innerText = filmes[0].synopsis;
-
-    directorMovie.innerText = `Diretor: ${filmes[0].director}`
-
-    producerMovie.innerText = `Produtora: ${filmes[0].producer}`
-
-    streamingsMovies.innerHTML = `Aonde Assistir: <strong>${filmes[0].streaming}</strong>`
-
-    coverMovie.src = filmes[0].movieCover
-
-    for(let i = 0; i < 3; i++){
-     scenesImgs[i].src = filmes[0].threeImgs[i];
-}
 
     for(let i = 0; i < 5; i++){
 
@@ -1150,9 +1112,9 @@ function modificandoFilmeDados(){
 
     }
 
-    trailer.href = filmes[0].trailer
-
 }
+
+modificandoCastGambiarra()
 
 
 
@@ -1161,6 +1123,8 @@ function criarFilmes(){
     const headerMovie = document.getElementById("header-movie");
 
     const listaFilmes = (JSON.parse(localStorage.getItem("listaFilmes")));
+
+    const listaCasts = (JSON.parse(localStorage.getItem("castFilmes")));
 
     console.log(listaFilmes) //confirmando
 
@@ -1183,6 +1147,33 @@ function criarFilmes(){
 `
 
 headerMovie.innerHTML = structInfoMovie
+
+
+
+    const divImgs = document.getElementsByClassName("container-imgs")[0];
+
+    const structImgs = `
+            <img class="scenes-img" src="${listaFilmes[0].threeImgs[0]}" alt="scene1">
+            <img class="scenes-img" src="${listaFilmes[0].threeImgs[1]}" alt="scene2">
+            <img class="scenes-img" src="${listaFilmes[0].threeImgs[2]}" alt="scene3">`
+
+
+    divImgs.innerHTML = structImgs
+
+
+    const divProduction = document.getElementsByClassName("container-production")[0];
+
+    const structProduction = `
+    
+        <p id="director-movie">Diretor: ${listaFilmes[0].director}</p>
+            <p id="producer-movie">Produtora: ${listaFilmes[0].producer}</p>
+            <p>Trailer:<a id="trailer-movie" href="${listaFilmes[0].trailer}" target="_blank">
+                    <img src="./ImgsPagConteudoSelecionado/Youtube_logo.png" alt="youtube logo" width="100" height="60px">
+                </a>
+            </p>`
+
+
+    divProduction.innerHTML = structProduction;
 
 
 }

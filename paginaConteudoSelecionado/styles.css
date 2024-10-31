@@ -350,10 +350,10 @@ width: 50%;
 }
 
 .character-img{
-    background-size: cover;
-    background-position: center; /* Centraliza a imagem */
-    width: 100px; /* Largura do bloco */
-    height: 100px; /* Altura do bloco */
+    background-position: center; 
+    width: 100px; 
+    height: 100px; 
+    object-fit: cover;
 
 
 
