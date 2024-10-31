@@ -8,7 +8,7 @@ function showMessage(message, isSuccess) {
 
     setTimeout(() => {
         messageDiv.style.display = 'none';
-    }, 3000);
+    }, 1500);
 }
 
 function loadSettings() {
