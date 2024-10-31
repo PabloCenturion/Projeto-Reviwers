@@ -3,11 +3,6 @@
     box-sizing: border-box;
 
 }
-
-
-
-
-
 body {
     background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url(/Cadastro/fundo.jpg);
@@ -20,8 +15,6 @@ body {
 
    
 }
-
-
 .All{
     max-width: 1333px;
     margin: 0 auto;
@@ -35,20 +28,6 @@ body {
 
    
 }
-
-.retangulo {
-    display: flex;
-    align-items: center;
-    backdrop-filter: blur(50px);
-    background-color: #21005D;
-    top: 0;
-    left: 0;
-    width: 100%; 
-    height: 50px;
-    z-index: 1000; 
-    padding: 5px;
-}
-
 nav{
     background-color: #21005D;
     height: 50px;
@@ -56,7 +35,6 @@ nav{
     align-items: center;
 
 }
-
 .botao {
     background-color: #8c00ffc0;
     color: rgb(255, 255, 255);
@@ -66,15 +44,11 @@ nav{
     cursor: pointer; 
     margin:  0px 600px 0px 60px; 
 }
-
 .botao:hover {
     background-color: #d607ff5e; 
     transform: scale(1.1);
     transition: 1s;
 }
-
-
-
 .Sair {
     background-color: #986abdc0; 
     color: rgb(255, 255, 255);
@@ -90,7 +64,6 @@ nav{
     
     transition: 1s;
 }
-
 .Salvar {
     background-color: #986abdc0; 
     color: rgb(255, 255, 255); 
@@ -101,15 +74,11 @@ nav{
     width: 80px;
     height: 38px;
 }
-
 .Salvar:hover {
     background-color: #00ff40d3; 
     
     transition: 2s;
 }
-
-
-
 .Foto {
     background-color: #986abdc0; 
     color: rgb(255, 255, 255);
@@ -119,19 +88,15 @@ nav{
     cursor: pointer; 
     
 }
-
 .Foto:hover {
     background-color: #aa07d3d3; 
 }
-
 #userImage {
 width: 175px;
 height: 175px;
 border-radius: 50%;
 object-fit: cover;
-
 }
-
 .subtitulo {
 
     font-style: italic;
@@ -141,7 +106,6 @@ object-fit: cover;
     font-weight: 500;
     margin-bottom: -5px;
 }
-
 .container-display-trio{ 
 
     width: 100%;
@@ -149,18 +113,13 @@ display: flex;
 justify-content: flex-start;
 align-items: center;
 gap: 50px;
-
 }
-
 .arrow-back{
 
     color: white;
     font-size: 30px;
     margin-left: 20px;
-    
     }
-
-
 .block-inputs {
 
     flex: 1;
@@ -171,43 +130,33 @@ gap: 50px;
 
 
 }
-
 #form-select {
-
 
 width: 200px !important;
 font-size: 18px !important;
-
 color: rgb(255, 255, 255) !important;
 background-color: rgb(138, 25, 138) !important;
 border-radius: 0.375rem !important ;
 border: 1px solid rgb(56, 41, 65) !important;
-
-
 }
-
 #form-select option {
     background-color: rgba(0, 0, 0, 0.589) !important; 
     color: #ffffff !important; 
     text-align: center  !important; 
     font-size: 16px !important;
 }
-
 #form-select::-webkit-scrollbar {
     width: 6px;
     height: 6px;
     background-color: rgba(38, 9, 58, 0.788);
     background: rgb(137, 111, 150);
 }
-
-
 .container-buttons{
 
     margin-top: 160px;
 display: flex;
 gap:20px;
 }
-
 .container-right{
     flex: 1;
     display: flex;
@@ -215,7 +164,6 @@ gap:20px;
     gap:15px;
 
 }
-
 .block-img{   
 
 flex:1;
@@ -224,23 +172,15 @@ flex-direction: column;
 justify-content: center;
 align-items: center;
 gap: 20px;
-
-
 }
 
 img{
 border-radius: 50%;
 }
-
-
-
-
 .input-style{
 
 width: 300px !important; 
 }
-
-
 .input-style-date{
 
 
@@ -283,26 +223,16 @@ background-color: #ffffff !important;
     color: #ffffff !important;
 
 }
-
-
 .btn-left-account{
 
 border: 2px solid #DC3545 !important;
 background-color: white !important;
 color: #DC3545 !important;
 font-weight: 600 !important;
-
-
 }
-
-
 .btn-left-account:hover{
-
-
     background-color: #DC3545 !important;
     color: #ffffff !important;
-
-
 }
 
 .btn-save-account{
@@ -313,12 +243,9 @@ color: #17c423 !important;
 font-weight: 600 !important;
 
 }
-
 .btn-save-account:hover{
-
 
     background-color: #17c423 !important;
     color: #ffffff !important;
-
 
 }
