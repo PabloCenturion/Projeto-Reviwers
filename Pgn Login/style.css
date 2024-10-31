@@ -86,6 +86,8 @@ justify-content: center;
     display: flex;
 justify-content: center;
 align-items: center;
+gap: 5px;
+
 
 
 }
@@ -114,7 +116,6 @@ fieldset{
 .title2{
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 
-    padding-top: 1rem;
     color: white;
     text-align: center;
     font-size: x-large;
@@ -180,4 +181,10 @@ input{
 }
 .logo:hover{
     scale: 1.05;/*tamanho que vai aumentar*/
+}
+
+a{
+
+    text-decoration: none !important;
+
 }
