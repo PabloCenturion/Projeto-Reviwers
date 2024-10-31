@@ -1,5 +1,11 @@
 let input = {};
 
+function puxaPagina(){
+    setTimeout(() => {
+    window.location.href = "/Pgn Login/index.html";
+    });
+}
+
 function cadastro() {
     input.email = document.getElementById("email").value;
     input.userName = document.getElementById("name").value;
@@ -15,10 +21,12 @@ function cadastro() {
     localStorage.setItem("usuarios", JSON.stringify(usuarios));
 
     // Redireciona para a página de login após o cadastro
-    setTimeout(() => {
-        window.location.href = "/Pgn Login/index.html";
-    });
+    if(document.getElementById("email") === null){
+        prompt("Preencha o Formulário Corretamente!");
+    }else{
+        puxaPagina();
+    }
 }
-
 // Exibe os usuários salvos no console para conferência
 console.log(JSON.parse(localStorage.getItem("usuarios")));
+console.log(document.getElementById("senha").value);

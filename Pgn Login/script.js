@@ -1,6 +1,5 @@
-let usuarios = [];
-
 function login() {
+    let usuarios = [];
     var email = document.getElementById("email");
     var senha = document.getElementById("senha");
 
@@ -11,8 +10,7 @@ function login() {
     if (email.value === "admin@admin.com" && senha.value === "admin") {
         setTimeout(() => {
             window.location.href = "/pag inicial/pag-inicial.html";
-        });
-        return; 
+        }); 
     }
     else{
         for(var i=0;i<usuarios.length;i++){
