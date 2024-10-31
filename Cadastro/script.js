@@ -17,7 +17,7 @@ function cadastro() {
     // Redireciona para a página de login após o cadastro
     setTimeout(() => {
         window.location.href = "/Pgn Login/index.html";
-    }, 1000);
+    });
 }
 
 // Exibe os usuários salvos no console para conferência

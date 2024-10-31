@@ -10,19 +10,19 @@ function login() {
 
     if (email.value === "admin@admin.com" && senha.value === "admin") {
         setTimeout(() => {
-            window.location.href = "/pag inicial/pag-inicial-testes/corpo/index.html";
-        }, 1000);
+            window.location.href = "/pag inicial/pag-inicial.html";
+        });
         return; 
-    }else{
+    }
+    else{
         for(var i=0;i<usuarios.length;i++){
             if(email.value == usuarios[i].email && senha.value == usuarios[i].senha){   
                 console.log(usuarios[i].value);
                 window.location.href = "/pag inicial/pag-inicial.html";
                 localStorage.setItem("estaLogado", true);
             }
-        
-        }
     }
     // Se nenhum usuário for encontrado, exibe o alerta
     alert("Usuário ou senha inválidos!");
-}
+    }
+    }

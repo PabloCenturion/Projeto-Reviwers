@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <title>Cadastro</title>
-    <link rel="stylesheet" href="Cadastro.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="EdiçaoPerfil.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <title>Editando Perfil</title>
 </head>
 <body>
 
@@ -14,7 +15,7 @@
             <i title="Voltar" class="bi bi-arrow-left-square arrow-back"></i>
         </a>
     </nav> 
-    <a href=""></a>
+
     <section class="All">
         <div class="container-display-trio">
             <div class="block-img">
@@ -24,22 +25,22 @@
             </div>
 
             <div class="block-inputs">
-                <label class="subtitulo" for="nameUser New">Nome:</label>
-                <input type="text" id="nameUser New" name="nameUser " class="form-control input-style" placeholder="Digite seu Nome de Usuário">
+                <label class="subtitulo" for="inputName">Nome:</label>
+                <input type="text" id="inputName" class="form-control input-style" placeholder="Digite seu Nome de Usuário">
 
-                <label class="subtitulo" for="emailUser ">E-mail:</label>
-                <input type="text" id="emailUser New" class="form-control input-style" placeholder="Digite seu e-mail">
+                <label class="subtitulo" for="inputEmail">E-mail:</label>
+                <input type="email" id="inputEmail" class="form-control input-style" placeholder="Digite seu e-mail">
 
-                <label class="subtitulo" for="bioUser ">Bio:</label>
-                <textarea type="text" id="bioUser " name="bioUser " class="form-control input-style" placeholder="Digite sua bio" cols="30" rows="1"></textarea>
+                <label class="subtitulo" for="inputBio">Bio:</label>
+                <textarea id="inputBio" class="form-control input-style" placeholder="Digite sua bio" cols="30" rows="1"></textarea>
 
-                <label class="subtitulo" for="dateBirthUser ">Data:</label>
-                <input id="dateBirthUser " type="date" class="form-control input-style-date" placeholder="">
+                <label class="subtitulo" for="inputBirthDate">Data de Nascimento:</label>
+                <input id="inputBirthDate" type="date" class="form-control input-style-date">
             </div>
             
             <section class="container-right">
                 <label class="subtitulo">Localização:</label>
-                <select id="form-select">
+                <select id="inputLocation" class="form-select">
                     <option value="AF">África</option>
                     <option value="AN">Antártida</option>
                     <option value="AS">Ásia</option>
@@ -52,24 +53,25 @@
                 <p class="subtitulo">Perfil</p>
                 <section class="block-check-privacy">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" onclick="togglePrivacy()">
-                        <label class="form-check-label font-color" for="flexRadioDefault1">Privado</label>
+                        <input class="form-check-input" type="radio" name="privacyOption" id="privacyPrivate" onclick="togglePrivacy()">
+                        <label class="form-check-label font-color" for="privacyPrivate">Privado</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked onclick="togglePrivacy()">
-                        <label class="form-check-label font-color" for="flexRadioDefault2">Público</label>
+                        <input class="form-check-input" type="radio" name="privacyOption" id="privacyPublic" checked onclick="togglePrivacy()">
+                        <label class="form-check-label font-color" for="privacyPublic">Público</label>
                     </div>
                 </section>
                 
                 <div class="container-buttons">
-                    <button id="botaoSalvar" class="btn btn-save-account" onclick="saveImage()">Salvar Alterações</button>
+                    <button id="buttonSave" class="btn btn-save-account" onclick="saveData()">Salvar Alterações</button>
                     <button class="btn btn-left-account">Sair</button>
                 </div>
             </div>
         </div>
     </section>
 
-    <script src="DadosUser.js"></script>
-   
+    <div id="message" style="display:none;"></div>
+
+    <script src="DadosUser .js"></script>
 </body>
 </html>

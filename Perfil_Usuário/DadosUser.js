@@ -1,4 +1,4 @@
-let isPrivate = false; // Estado inicial de privacidade
+let isPrivate = false;
 
 function showMessage(message, isSuccess) {
     const messageDiv = document.getElementById('message');
@@ -6,54 +6,61 @@ function showMessage(message, isSuccess) {
     messageDiv.className = 'alert ' + (isSuccess ? 'alert-success' : 'alert-error');
     messageDiv.style.display = 'block';
 
-    // Ocultar a mensagem após 3 segundos
     setTimeout(() => {
         messageDiv.style.display = 'none';
     }, 3000);
 }
 
-// Função para carregar as configurações do localStorage
 function loadSettings() {
     const savedImage = localStorage.getItem('userImage');
     const savedPrivacy = localStorage.getItem('isPrivate');
+    const savedData = JSON.parse(localStorage.getItem('userData'));
 
     if (savedImage) {
         document.getElementById('userImage').src = savedImage;
+    } else {
+        document.getElementById('userImage').src = '/Perfil_Usuário/img/usuario.jpg'; // Imagem padrão
     }
 
     if (savedPrivacy === 'true') {
-        document.getElementById('flexRadioDefault1').checked = true;
+        document.getElementById('privacyPrivate').checked = true;
         isPrivate = true;
-        document.getElementById('fileInput').disabled = true; // Desabilita a escolha de imagem
+        document.getElementById('fileInput').disabled = false; // Permitir upload mesmo se privado
     } else {
-        document.getElementById('flexRadioDefault2').checked = true;
+        document.getElementById('privacyPublic').checked = true;
         isPrivate = false;
-        document.getElementById('fileInput').disabled = false; // Habilita a escolha de imagem
+        document.getElementById('fileInput').disabled = false; // Permitir upload mesmo se público
+    }
+
+    // Carregar dados adicionais
+    if (savedData) {
+        document.getElementById('inputName').value = savedData.name || '';
+        document.getElementById('inputEmail').value = savedData.email || '';
+        document.getElementById('inputBio').value = savedData.bio || '';
+        document.getElementById('inputBirthDate').value = savedData.birthDate || '';
+        document.getElementById('inputLocation').value = savedData.location || '';
     }
 }
 
-// Função para alternar a privacidade
 function togglePrivacy() {
-    const userImage = document.getElementById('userImage');
     const fileInput = document.getElementById('fileInput');
-    const radioButtons = document.getElementsByName('flexRadioDefault');
+    const radioButtons = document.getElementsByName('privacyOption');
 
     for (let i = 0; i < radioButtons.length; i++) {
         if (radioButtons[i].checked) {
-            isPrivate = radioButtons[i].id === 'flexRadioDefault1';
+            isPrivate = radioButtons[i].id === 'privacyPrivate';
             break;
         }
     }
 
     if (isPrivate) {
-        userImage.src = '/Perfil_Usuário/img/usuario.jpg'; // Imagem padrão para privado
-        fileInput.disabled = true; // Desabilita a escolha de imagem
+        document.getElementById('inputName').value = 'Usuário Anônimo'; // Definir nome padrão
+        showMessage('O perfil está configurado como privado.', true);
     } else {
-        fileInput.disabled = false; // Habilita a escolha de imagem
+        showMessage('O perfil está configurado como público.', true);
     }
 }
 
-// Função para visualizar a imagem
 function previewImage() {
     const fileInput = document.getElementById('fileInput');
     const userImage = document.getElementById('userImage');
@@ -62,34 +69,46 @@ function previewImage() {
         const reader = new FileReader();
         reader.onload = function(e) {
             userImage.src = e.target.result;
+            showMessage('Imagem carregada com sucesso!', true);
         };
         reader.readAsDataURL(fileInput.files[0]);
     }
 }
 
-// Função para salvar a imagem e configurações no localStorage
-function saveImage() {
-    const userImage = document.getElementById('userImage');
+function saveData() {
     const fileInput = document.getElementById('fileInput');
+    const inputName = document.getElementById('inputName').value || 'Usuário Anônimo'; // Nome padrão se vazio
+    const inputEmail = document.getElementById('inputEmail').value;
+    const inputBio = document.getElementById('inputBio').value;
+    const inputBirthDate = document.getElementById('inputBirthDate').value;
+    const inputLocation = document.getElementById('inputLocation').value;
 
-    if (!isPrivate && fileInput.files && fileInput.files[0]) {
-        // Salva a imagem escolhida pelo usuário
+    // Salvar imagem
+    if (fileInput.files && fileInput.files[0]) {
         const reader = new FileReader();
         reader.onload = function(e) {
-            localStorage.setItem('userImage', e.target.result); // Salva a imagem no localStorage
+            localStorage.setItem('userImage', e.target.result);
+            showMessage('Imagem salva com sucesso!', true);
         };
         reader.readAsDataURL(fileInput.files[0]);
     } else {
-        // Salva a imagem padrão para privado
-        localStorage.setItem('userImage', '/Perfil_Usuário/img/usuario.jpg');
+        localStorage.setItem('userImage', '/Perfil_Usuário/img/usuario.jpg'); // Imagem padrão
+        showMessage('Configurações salvas com a imagem padrão.', true);
     }
 
-    // Salva a configuração de privacidade
+    // Salvar configurações de privacidade
     localStorage.setItem('isPrivate', isPrivate);
-    console.log('Configurações salvas');
-}
 
-// Carregar as configurações ao iniciar
-window.onload = function() {
-    loadSettings();
-};
+    // Salvar dados do usuário
+    const userData = {
+        name: isPrivate ? 'Usuário Anônimo' : inputName,
+        email: inputEmail,
+        bio: inputBio,
+        birthDate: inputBirthDate,
+        location: inputLocation,
+        privacy: isPrivate ? 'privado' : 'público'
+    };
+
+    localStorage.setItem ('userData', JSON.stringify(userData));
+    showMessage('Configurações salvas com sucesso!', true);
+}
