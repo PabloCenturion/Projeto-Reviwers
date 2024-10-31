@@ -29,11 +29,11 @@ function changeImgMovie() {
     
         const imgMovie = document.getElementById('img-movie-display');
         
-        // Atualiza a imagem com a capa do filme atual
+        // atualiza a imagem com a capa do filme atual
         imgMovie.src = listaFilmes[i].cover;
         
-        // Atualiza o índice para o próximo filme
-        i = (i + 1) % listaFilmes.length; // Volta ao início se chegar ao fim
+        // atualizando indice 
+        i = (i + 1) % listaFilmes.length; // volta ao inicio se chegar ao fim
    
 }
 
