@@ -21,8 +21,8 @@ function cadastro() {
     localStorage.setItem("usuarios", JSON.stringify(usuarios));
 
     // Redireciona para a página de login após o cadastro
-    if(document.getElementById("email") === null){
-        prompt("Preencha o Formulário Corretamente!");
+    if(!input.email || !input.userName || !input.senha){
+        alert("Preencha o Formulário Corretamente!");
     }else{
         puxaPagina();
     }
