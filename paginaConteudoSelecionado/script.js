@@ -414,6 +414,10 @@ function registerComment(){
 
 function openModalCast(){
 
+    const castLocalStorage = JSON.parse(localStorage.getItem("listCastsMovie"));
+
+    
+
     const modalCastDiv = document.getElementById("modalCastDiv");
 
     const modalCastSintax = `<section class="container-modal-cast">
