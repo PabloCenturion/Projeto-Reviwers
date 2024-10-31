@@ -1,588 +1,3 @@
-///////////////////////////////// DOM /////////////////////////////////////////
-
-const eyeAction = document.getElementById("eye-action");
-const listAction = document.getElementById("save-list-action");
-const starAction = document.getElementById("star-action");
-const likeAction = document.getElementById("like-action");
-const dislikeAction = document.getElementById("dislike-action")
-
-
-eyeAction.addEventListener("click", function() {
-
-    this.classList.toggle("bi-eye-fill");
-
-    this.classList.toggle("bi-eye");
-
-    this.classList.toggle("watched");
-
-    //se tiver com o olho preenchido(assistido) ele será true
-    let foiAssistido = this.classList.contains("bi-eye-fill"); //true
-    localStorage.setItem("eye-changes", foiAssistido);
-
-    console.log("Foi Assistido:", localStorage.getItem("eye-changes"));
-});
-
-listAction.addEventListener("click", function() {
-
-    this.classList.toggle("bi-bookmark-check-fill");
-
-    this.classList.toggle("bi-bookmark-plus");
-
-    this.classList.toggle("saved-list");
-
-    // Se o item estiver salvo na lista, será true
-    let foiSalvo = this.classList.contains("bi-bookmark-check-fill");
-    localStorage.setItem("list-changes", foiSalvo);
-
-    console.log("Foi Salvo Na Lista:", localStorage.getItem("list-changes"));
-
-    const listGroupAction = document.getElementById("listGroupAction");
-
-    
-    if(foiSalvo){
-        showListGroups();
-        listGroupAction.style.display = "block";  // Mostra o elemento
-
-    }else{
-
-        listGroupAction.style.display = "none"
-    }
-
-});
-
-starAction.addEventListener("click", function() {
-
-    this.classList.toggle("bi-star-fill");
-
-    this.classList.toggle("bi-star");
-
-    this.classList.toggle("rated");
-
-    // Se o item estiver avaliado, será true
-    //a função class.list.contains retorna true ou fake por isso let foiAvaliado é uma variavel bool
-
-    let foiAvaliado = this.classList.contains("bi-star-fill");
-    localStorage.setItem("star-changes", foiAvaliado);
-
-    console.log("Foi Avaliado:", localStorage.getItem("star-changes"));
-
-    const rateAction = document.getElementById("modalRateDiv");
-
-    if(foiAvaliado){
-
-        openModalRate();
-        rateAction.style.display = "block"
-
-    }else{
-
-        rateAction.style.display = "none"
-
-    }
-
-});
-
-
-
-likeAction.addEventListener("click", function() {
-
-
-    this.classList.toggle("bi-heart-fill");
-
-    this.classList.toggle("bi-heart");
-
-    this.classList.toggle("liked");
-    
-
-    // Se o item estiver curtido, será true
-    let foiCurtido = this.classList.contains("bi-heart-fill");
-    localStorage.setItem("like-changes", foiCurtido);
-
-    console.log("Foi Like:", localStorage.getItem("like-changes"));
-
-    if (foiCurtido) {
-        dislikeAction.disabled = true;  
-
-        showAlert("<i class='bi bi-heart like-Icon-Alert'></i>'Título' foi <strong>adicionado</strong> aos seus Filmes Curtidos", 'primary');
-    } else {
-        dislikeAction.disabled = false;  
-
-        showAlert("<i class='bi bi-heart like-Icon-Alert'></i>'Título' foi <strong>excluído</strong> dos seus Filmes Curtidos", 'danger');
-    }
-
-});
-
-dislikeAction.addEventListener("click", function() {
-
-    this.classList.toggle("bi-hand-thumbs-down-fill");
-
-    this.classList.toggle("bi-hand-thumbs-down");
-
-    this.classList.toggle("disliked");
-
-    likeAction.disabled = true;
-
-
-    // Se o item estiver com dislike, será true
-    let foiDisliked = this.classList.contains("bi-hand-thumbs-down-fill");
-    localStorage.setItem("dislike-changes", foiDisliked);
-
-    console.log("Foi Dislike:", localStorage.getItem("dislike-changes"));
-
-    if(foiDisliked){
-
-        likeAction.disabled = true;  
-
-    }else{
-
-        likeAction.disabled = false;  
-
-    }
-
-});
-
-
-//uma função global (para tds os icones) para salvar alteração do localStorage mostrando o status do icone
-
-function changeIconState(idElement, localStorageKey, iconTrue, iconFalse, classColor){
-
-    let foiAlterado = localStorage.getItem(localStorageKey) === "true";
-
-    idElement.classList.toggle(iconTrue, foiAlterado)
-    idElement.classList.toggle(iconFalse, !foiAlterado)
-    idElement.classList.toggle(classColor, foiAlterado)
-}
-
-
-window.onload = function() {
-    
-    changeIconState(eyeAction, "eye-changes", "bi-eye-fill", "bi-eye", "watched")
-
-    changeIconState(listAction, "list-changes", "bi-bookmark-check-fill", "bi-bookmark-plus", "saved-list")
-
-    changeIconState(starAction, "star-changes", "bi-star-fill", "bi-star", "rated");
-
-    changeIconState(likeAction, "like-changes", "bi-heart-fill", "bi-heart", "liked")
-
-    changeIconState(dislikeAction, "dislike-changes", "bi-hand-thumbs-down-fill", "bi-hand-thumbs-down", "disliked")
-
-
-};
-
-
-
-//função global para alertas
-
-function showAlert(textAlert, typeAlert) {
-
-    const alertsAction = document.getElementById("alertsAction");
-
-    alertsAction.innerHTML = `
-        <div class="alert alert-${typeAlert} alert-dismissible fade show" role="alert">
-          ${textAlert}
-          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-    `;
-
-    // Define o tempo para o alerta desaparecer.
-    setTimeout(function() {
-        alertsAction.innerHTML = '';}, 3500); 
-}
-
-
-function validandoSeJaExisteInput(){
-
-     const existingInput = listGroupAction.querySelector("input");
-
-     if (existingInput) {
-         alert("Você já está criando uma lista. Complete a lista antes de criar outra."); 
-         return; 
-         };
-
-
-}
-
-function addNewList() {
-
-    const listGroupAction = document.getElementsByClassName("list-group")[0]; 
-
-    validandoSeJaExisteInput()
-
-    const itemsExist = document.getElementsByTagName("li");
-
-    const newListInput = document.createElement("input"); //criando o input para o nome da nova lista
-
-    //css
-    newListInput.type = "text"; 
-    newListInput.placeholder = "digite o nome da nova lista";
-    newListInput.classList.add("list-group-item"); //classe da lista do bootstrap
-    //css
-
-    listGroupAction.insertBefore(newListInput, itemsExist[1]); //inserindo elemento novo no indice 1 (segundo) da lista 
-
-    // adicionando funcionalidade na tecla enter quando o usuario digitar o nome da nova lista
-
-    newListInput.addEventListener("keydown", function (evento) {
-        if (evento.key === "Enter") { 
-
-            const listName = newListInput.value.trim(); // pega o que foi digitado com (value) e tira os espaços com trim()
-
-            if (listName !== "") {
-
-                const newListItem = document.createElement("li"); //criando nova lista
-                newListItem.classList.add("list-group-item"); // adiciona a classe de estilo do bootstrap
-                newListItem.innerText = listName; // Define o texto como o nome digitado
-
-                listGroupAction.insertBefore(newListItem, itemsExist[1]);
-
-                //removendo o input apos inserção da nova lista
-                listGroupAction.removeChild(newListInput);
-            } else {
-                alert("Por favor, insira um nome para a lista.");
-            }
-        }
-    });
-}
-
-
-
-//função para aparecer o list group bootstrap
-
-function showListGroups(){
-
-    const listGroupAction = document.getElementById("listGroupAction");
-
-    const listGroupSintax = 
-    `
-
-    <ul class="list-group">
-    <li class="list-group-item">Lista de Observação</li>
-    <li class="list-group-item list-group-item-action" onclick="addNewList()"><em><strong>Criar Lista +</strong></em></li>
-
-    </ul> `
-
-    listGroupAction.innerHTML = listGroupSintax
-
-}
-
-function openModalRate(){
-
-    const modalCorpo =  
-    
-    `<section class="container-modal-rate">
-
-    <div class="brothers-title">
-    <h2 class="title-rate">Avaliação de 'Titulo'</h2>
-    <div class="button-remove"><i class="bi bi-x-lg x-size" onclick="closeModal('modalRateDiv')"></i></div>
-</div>
-
-    <h3 class="subtitle-rate">Dê uma nota de 0 a 10:</h3>
-
-    <div class="rating">
-    <input type="radio" name="star" id="star1" value="1">
-    <label for="star1"></label>
-
-    <input type="radio" name="star" id="star2" value="2">
-    <label for="star2"></label>
-
-    <input type="radio" name="star" id="star3" value="3">
-    <label for="star3"></label>
-
-    <input type="radio" name="star" id="star4" value="4">
-    <label for="star4"></label>
-
-    <input type="radio" name="star" id="star5" value="5">
-    <label for="star5"></label>
-
-    <input type="radio" name="star" id="star6" value="6">
-    <label for="star6"></label>
-
-    <input type="radio" name="star" id="star7" value="7">
-    <label for="star7"></label>
-
-    <input type="radio" name="star" id="star8" value="8">
-    <label for="star8"></label>
-
-    <input type="radio" name="star" id="star9" value="9">
-    <label for="star9"></label>
-
-    <input type="radio" name="star" id="star10" value="10">
-    <label for="star10"></label>
-
-</div>
-
-          <div id="star-count"></div>
-
-    
-    <a type="button" onclick="openComentModal()"><span>clique aqui e detalhe sua avaliação</span></a>
-
-    <div class="container-button">
-
-    <button type="button" class="btn button-color-register">Registrar</button>
-
-</div>
-
-</section>`
-    
-    const divModalRate = document.getElementById("modalRateDiv")
-
-    divModalRate.innerHTML = modalCorpo
-
-}
-
-function openComentModal(){
-
-    document.getElementById("modalRateDiv").style.display = "none";
-
-    const comentModalCorpo = 
-    
-    ` <section class="container-modal-coment">
-
-        <div class="brothers-title">
-            <h2 class="title-rate">Avaliação de 'Titulo'</h2>
-            <div class="button-remove"><i class="bi bi-x-lg x-size" onclick="closeModal('modalComentDiv')"></i></div>
-        </div>
-            <h3 class="subtitle-rate">Dê uma nota de 0 a 10:</h3>
-
-            <div class="rating">
-                <input type="radio" name="star" id="star1" value="1">
-                <label for="star1"></label>
-            
-                <input type="radio" name="star" id="star2" value="2">
-                <label for="star2"></label>
-            
-                <input type="radio" name="star" id="star3" value="3">
-                <label for="star3"></label>
-            
-                <input type="radio" name="star" id="star4" value="4">
-                <label for="star4"></label>
-                
-                <input type="radio" name="star" id="star5" value="5">
-                <label for="star5"></label>
-    
-                 
-                <input type="radio" name="star" id="star6" value="6">
-                <label for="star6"></label>
-    
-                 
-                <input type="radio" name="star" id="star7" value="7">
-                <label for="star7"></label>
-    
-                 
-                <input type="radio" name="star" id="star8" value="8">
-                <label for="star8"></label>
-    
-                 
-                <input type="radio" name="star" id="star9" value="9">
-                <label for="star9"></label>
-    
-                 
-                <input type="radio" name="star" id="star10" value="10">
-                <label for="star10"></label>
-              </div>
-    
-              <div id="star-count"></div>
-        
-        <label for="review-coment" class="form-label"></label>
-        <textarea class="form-control" id="review-coment" rows="5" placeholder="Digite aqui sua Crítica"></textarea>
-
-        <div class="container-button">
-
-            <button type="button" class="btn btn-outline-primary button-color-register">Registrar</button>
-    
-        </div>
-        
-
-    </section>
-` 
-
-    const modalComentDiv = document.getElementById("modalComentDiv")
-
-    modalComentDiv.innerHTML = comentModalCorpo
-
-
-}
-
-//rascUNHO
-
-function registerComment(){
-
-    let inputComent = document.getElementById("review-coment").value;
-
-}
-
-
-
-function openModalCast(){
-
-    const castLocalStorage = JSON.parse(localStorage.getItem("listCastsMovie"));
-
-    
-
-    const modalCastDiv = document.getElementById("modalCastDiv");
-
-    const modalCastSintax = `<section class="container-modal-cast">
-        <div class="brothers-title"><p class="title-modal-cast">Personagens/Elenco</p>
-            <div class="button-remove"><i class="bi bi-x-lg x-size" onclick="closeModal('modalCastDiv')"></i></div>
-        </div>
-        
-        <div class="display-cast">
-
-        <div class="struct-character">
-            <img src="./ImgsPagConteudoSelecionado/exemploImg.avif" alt="" width="80px" height="80px">
-            <p class="name-celebrity">lorem 1<br>Phasellus gravida </p>
-            <button type="button"><i class="bi bi-star star-cast-size"></i></button>
-        </div>
-
-        <div class="struct-character">
-            <img src="./ImgsPagConteudoSelecionado/exemploImg.avif" alt="" width="80px" height="80px">
-            <p class="name-celebrity">lorem 1<br>Phasellus gravida </p>
-            <button type="button"><i class="bi bi-star star-cast-size"></i></button>
-        </div>
-
-        <div class="struct-character">
-            <img src="./ImgsPagConteudoSelecionado/exemploImg.avif" alt="" width="80px" height="80px">
-            <p class="name-celebrity">lorem 1<br>Phasellus gravida </p>
-            <button type="button"><i class="bi bi-star star-cast-size"></i></button>
-        </div>
-
-        <div class="struct-character">
-            <img src="./ImgsPagConteudoSelecionado/exemploImg.avif" alt="" width="80px" height="80px">
-            <p class="name-celebrity">lorem 1<br>Phasellus gravida </p>
-            <button type="button"><i class="bi bi-star star-cast-size"></i></button>
-        </div>
-
-        <div class="struct-character">
-            <img src="./ImgsPagConteudoSelecionado/exemploImg.avif" alt="" width="80px" height="80px">
-            <p class="name-celebrity">lorem 1<br>Phasellus gravida </p>
-            <button type="button"><i class="bi bi-star star-cast-size"></i></button>
-        </div>
-
-        <div class="struct-character">
-            <img src="./ImgsPagConteudoSelecionado/exemploImg.avif" alt="" width="80px" height="80px">
-            <p class="name-celebrity">lorem 1<br>Phasellus gravida </p>
-            <button type="button"><i class="bi bi-star star-cast-size"></i></button>
-        </div>
-
-        <div class="struct-character">
-            <img src="./ImgsPagConteudoSelecionado/exemploImg.avif" alt="" width="80px" height="80px">
-            <p class="name-celebrity">lorem 1<br>Phasellus gravida </p>
-            <button type="button"><i class="bi bi-star star-cast-size"></i></button>
-        </div>
-
-        <div class="struct-character">
-            <img src="./ImgsPagConteudoSelecionado/exemploImg.avif" alt="" width="80px" height="80px">
-            <p class="name-celebrity">lorem 1<br>Phasellus gravida </p>
-            <button type="button"><i class="bi bi-star star-cast-size"></i></button>
-        </div>
-
-        <div class="struct-character">
-            <img src="./ImgsPagConteudoSelecionado/exemploImg.avif" alt="" width="80px" height="80px">
-            <p class="name-celebrity">lorem 1<br>Phasellus gravida </p>
-            <button type="button"><i class="bi bi-star star-cast-size"></i></button>
-        </div>
-
-        <div class="struct-character">
-            <img src="./ImgsPagConteudoSelecionado/exemploImg.avif" alt="" width="80px" height="80px">
-            <p class="name-celebrity">lorem 1<br>Phasellus gravida </p>
-            <button type="button"><i class="bi bi-star star-cast-size"></i></button>
-        </div>
-
-
-        <div class="struct-character">
-            <img src="./ImgsPagConteudoSelecionado/exemploImg.avif" alt="" width="80px" height="80px">
-            <p class="name-celebrity">lorem 1<br>Phasellus gravida </p>
-            <button type="button"><i class="bi bi-star star-cast-size"></i></button>
-        </div>
-
-        <div class="struct-character">
-            <img src="./ImgsPagConteudoSelecionado/exemploImg.avif" alt="" width="80px" height="80px">
-            <p class="name-celebrity">lorem 1<br>Phasellus gravida </p>
-            <button type="button"><i class="bi bi-star star-cast-size"></i></button>
-        </div>
-    </div>
-    </section>
-`
-
-modalCastDiv.innerHTML = modalCastSintax;
-
-}
-
-function closeModal(idModal) {
-    document.getElementById(idModal).style.display = "none";
-}
-
-
-//fazer sistema de comentarios de acordo com o usuario cadastrado no JSON 
-function createComent() {
-
-    let usuarios = JSON.parse(localStorage.getItem("usuarios")); //transformando para objeto para podermos manipular
-    console.log(usuarios);
-
-    for (let i = 0; i < usuarios.length; i++) {
-        let userName = usuarios[i].userName; 
-
-        // Cria o corpo do comentário
-        const comentBody = `
-            <div class="coment-struct">
-                <article class="header-coment">
-                    <img src="./ImgsPagConteudoSelecionado/iconAvatar.png" alt="foto de perfil do usuario">
-                    <p id="userName">${userName}</p>
-                    <p id="userRate">9.0★</p>
-                </article>
-                <article class="coment-content">
-                    <p id="comentContent">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus gravida libero ac egestas malesuada. Enean a ipsum a purus consequat dapibus in in magna.</p>
-                </article>
-                <article class="coment-interaction">
-                    <button type="button"><i class="bi bi-chat-left-dots coment-size"></i></button>
-                    <button type="button"><i class="bi bi-hand-thumbs-up coment-size"></i></button>
-                    <button type="button"><i class="bi bi-hand-thumbs-down coment-size"></i></button>
-                </article>
-            </div>
-        `;
-
-       
-    }
-}
-
-validandoUsuario()
-
-
-function validandoUsuario(){
-
-    const miniNonUserDiv = document.getElementById("miniNonUserDiv")
-
-    const miniDivBody = `
-    
-    <div class="mini-container-nonuser">
-        <div class="display-text">
-            <p>Entre para avaliar, curtir,<br> adicionar a listas e muito mais</p>
-        </div>
-        <div class="buttons-brothers">
-            <a class="button-in"  href="/Pgn Login/index.html">entrar</a>
-            <a class="button-in" href="/Cadastro/index.html">cadastrar</a>
-        </div>
-
-    </div>`
-
-    if(localStorage.getItem("estaLogado")==="true"){
-
-        document.getElementById("review-part-body").style.display = "block"
-
-    }else{
-
-        document.getElementById("review-part-body").style.visibility = "hidden";
-            miniNonUserDiv.innerHTML = miniDivBody
-
-        }
-
-    }
-    
-
-
-
-      
-      
-
 ///////////////////////////////LOCAL STORAGE E JSON/////////////////////////////
 
 //funçao construtora para criação de itens
@@ -1220,6 +635,594 @@ const listaLancamentosFilmes = [filmeLançamento1,filmeLançamento2,filmeLançam
 
 
 localStorage.setItem("filmesLancamentos", JSON.stringify(listaLancamentosFilmes))
+
+
+///////////////////////////////// DOM /////////////////////////////////////////
+
+const eyeAction = document.getElementById("eye-action");
+const listAction = document.getElementById("save-list-action");
+const starAction = document.getElementById("star-action");
+const likeAction = document.getElementById("like-action");
+const dislikeAction = document.getElementById("dislike-action")
+
+
+eyeAction.addEventListener("click", function() {
+
+    this.classList.toggle("bi-eye-fill");
+
+    this.classList.toggle("bi-eye");
+
+    this.classList.toggle("watched");
+
+    //se tiver com o olho preenchido(assistido) ele será true
+    let foiAssistido = this.classList.contains("bi-eye-fill"); //true
+    localStorage.setItem("eye-changes", foiAssistido);
+
+    console.log("Foi Assistido:", localStorage.getItem("eye-changes"));
+});
+
+listAction.addEventListener("click", function() {
+
+    this.classList.toggle("bi-bookmark-check-fill");
+
+    this.classList.toggle("bi-bookmark-plus");
+
+    this.classList.toggle("saved-list");
+
+    // Se o item estiver salvo na lista, será true
+    let foiSalvo = this.classList.contains("bi-bookmark-check-fill");
+    localStorage.setItem("list-changes", foiSalvo);
+
+    console.log("Foi Salvo Na Lista:", localStorage.getItem("list-changes"));
+
+    const listGroupAction = document.getElementById("listGroupAction");
+
+    
+    if(foiSalvo){
+        showListGroups();
+        listGroupAction.style.display = "block";  // Mostra o elemento
+
+    }else{
+
+        listGroupAction.style.display = "none"
+    }
+
+});
+
+starAction.addEventListener("click", function() {
+
+    this.classList.toggle("bi-star-fill");
+
+    this.classList.toggle("bi-star");
+
+    this.classList.toggle("rated");
+
+    // Se o item estiver avaliado, será true
+    //a função class.list.contains retorna true ou fake por isso let foiAvaliado é uma variavel bool
+
+    let foiAvaliado = this.classList.contains("bi-star-fill");
+    localStorage.setItem("star-changes", foiAvaliado);
+
+    console.log("Foi Avaliado:", localStorage.getItem("star-changes"));
+
+    const rateAction = document.getElementById("modalRateDiv");
+
+    if(foiAvaliado){
+
+        openModalRate();
+        rateAction.style.display = "block"
+
+    }else{
+
+        rateAction.style.display = "none"
+
+    }
+
+});
+
+
+
+likeAction.addEventListener("click", function() {
+
+
+    this.classList.toggle("bi-heart-fill");
+
+    this.classList.toggle("bi-heart");
+
+    this.classList.toggle("liked");
+    
+
+    // Se o item estiver curtido, será true
+    let foiCurtido = this.classList.contains("bi-heart-fill");
+    localStorage.setItem("like-changes", foiCurtido);
+
+    console.log("Foi Like:", localStorage.getItem("like-changes"));
+
+    if (foiCurtido) {
+        dislikeAction.disabled = true;  
+
+        showAlert("<i class='bi bi-heart like-Icon-Alert'></i>'Título' foi <strong>adicionado</strong> aos seus Filmes Curtidos", 'primary');
+    } else {
+        dislikeAction.disabled = false;  
+
+        showAlert("<i class='bi bi-heart like-Icon-Alert'></i>'Título' foi <strong>excluído</strong> dos seus Filmes Curtidos", 'danger');
+    }
+
+});
+
+dislikeAction.addEventListener("click", function() {
+
+    this.classList.toggle("bi-hand-thumbs-down-fill");
+
+    this.classList.toggle("bi-hand-thumbs-down");
+
+    this.classList.toggle("disliked");
+
+    likeAction.disabled = true;
+
+
+    // Se o item estiver com dislike, será true
+    let foiDisliked = this.classList.contains("bi-hand-thumbs-down-fill");
+    localStorage.setItem("dislike-changes", foiDisliked);
+
+    console.log("Foi Dislike:", localStorage.getItem("dislike-changes"));
+
+    if(foiDisliked){
+
+        likeAction.disabled = true;  
+
+    }else{
+
+        likeAction.disabled = false;  
+
+    }
+
+});
+
+
+//uma função global (para tds os icones) para salvar alteração do localStorage mostrando o status do icone
+
+function changeIconState(idElement, localStorageKey, iconTrue, iconFalse, classColor){
+
+    let foiAlterado = localStorage.getItem(localStorageKey) === "true";
+
+    idElement.classList.toggle(iconTrue, foiAlterado)
+    idElement.classList.toggle(iconFalse, !foiAlterado)
+    idElement.classList.toggle(classColor, foiAlterado)
+}
+
+
+window.onload = function() {
+    
+    changeIconState(eyeAction, "eye-changes", "bi-eye-fill", "bi-eye", "watched")
+
+    changeIconState(listAction, "list-changes", "bi-bookmark-check-fill", "bi-bookmark-plus", "saved-list")
+
+    changeIconState(starAction, "star-changes", "bi-star-fill", "bi-star", "rated");
+
+    changeIconState(likeAction, "like-changes", "bi-heart-fill", "bi-heart", "liked")
+
+    changeIconState(dislikeAction, "dislike-changes", "bi-hand-thumbs-down-fill", "bi-hand-thumbs-down", "disliked")
+
+
+};
+
+
+
+//função global para alertas
+
+function showAlert(textAlert, typeAlert) {
+
+    const alertsAction = document.getElementById("alertsAction");
+
+    alertsAction.innerHTML = `
+        <div class="alert alert-${typeAlert} alert-dismissible fade show" role="alert">
+          ${textAlert}
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    `;
+
+    // Define o tempo para o alerta desaparecer.
+    setTimeout(function() {
+        alertsAction.innerHTML = '';}, 3500); 
+}
+
+
+function validandoSeJaExisteInput(){
+
+     const existingInput = listGroupAction.querySelector("input");
+
+     if (existingInput) {
+         alert("Você já está criando uma lista. Complete a lista antes de criar outra."); 
+         return; 
+         };
+
+
+}
+
+function addNewList() {
+
+    const listGroupAction = document.getElementsByClassName("list-group")[0]; 
+
+    validandoSeJaExisteInput()
+
+    const itemsExist = document.getElementsByTagName("li");
+
+    const newListInput = document.createElement("input"); //criando o input para o nome da nova lista
+
+    //css
+    newListInput.type = "text"; 
+    newListInput.placeholder = "digite o nome da nova lista";
+    newListInput.classList.add("list-group-item"); //classe da lista do bootstrap
+    //css
+
+    listGroupAction.insertBefore(newListInput, itemsExist[1]); //inserindo elemento novo no indice 1 (segundo) da lista 
+
+    // adicionando funcionalidade na tecla enter quando o usuario digitar o nome da nova lista
+
+    newListInput.addEventListener("keydown", function (evento) {
+        if (evento.key === "Enter") { 
+
+            const listName = newListInput.value.trim(); // pega o que foi digitado com (value) e tira os espaços com trim()
+
+            if (listName !== "") {
+
+                const newListItem = document.createElement("li"); //criando nova lista
+                newListItem.classList.add("list-group-item"); // adiciona a classe de estilo do bootstrap
+                newListItem.innerText = listName; // Define o texto como o nome digitado
+
+                listGroupAction.insertBefore(newListItem, itemsExist[1]);
+
+                //removendo o input apos inserção da nova lista
+                listGroupAction.removeChild(newListInput);
+            } else {
+                alert("Por favor, insira um nome para a lista.");
+            }
+        }
+    });
+}
+
+
+
+//função para aparecer o list group bootstrap
+
+function showListGroups(){
+
+    const listGroupAction = document.getElementById("listGroupAction");
+
+    const listGroupSintax = 
+    `
+
+    <ul class="list-group">
+    <li class="list-group-item">Lista de Observação</li>
+    <li class="list-group-item list-group-item-action" onclick="addNewList()"><em><strong>Criar Lista +</strong></em></li>
+
+    </ul> `
+
+    listGroupAction.innerHTML = listGroupSintax
+
+}
+
+function openModalRate(){
+
+    const modalCorpo =  
+    
+    `<section class="container-modal-rate">
+
+    <div class="brothers-title">
+    <h2 class="title-rate">Avaliação de 'Titulo'</h2>
+    <div class="button-remove"><i class="bi bi-x-lg x-size" onclick="closeModal('modalRateDiv')"></i></div>
+</div>
+
+    <h3 class="subtitle-rate">Dê uma nota de 0 a 10:</h3>
+
+    <div class="rating">
+    <input type="radio" name="star" id="star1" value="1">
+    <label for="star1"></label>
+
+    <input type="radio" name="star" id="star2" value="2">
+    <label for="star2"></label>
+
+    <input type="radio" name="star" id="star3" value="3">
+    <label for="star3"></label>
+
+    <input type="radio" name="star" id="star4" value="4">
+    <label for="star4"></label>
+
+    <input type="radio" name="star" id="star5" value="5">
+    <label for="star5"></label>
+
+    <input type="radio" name="star" id="star6" value="6">
+    <label for="star6"></label>
+
+    <input type="radio" name="star" id="star7" value="7">
+    <label for="star7"></label>
+
+    <input type="radio" name="star" id="star8" value="8">
+    <label for="star8"></label>
+
+    <input type="radio" name="star" id="star9" value="9">
+    <label for="star9"></label>
+
+    <input type="radio" name="star" id="star10" value="10">
+    <label for="star10"></label>
+
+</div>
+
+          <div id="star-count"></div>
+
+    
+    <a type="button" onclick="openComentModal()"><span>clique aqui e detalhe sua avaliação</span></a>
+
+    <div class="container-button">
+
+    <button type="button" class="btn button-color-register">Registrar</button>
+
+</div>
+
+</section>`
+    
+    const divModalRate = document.getElementById("modalRateDiv")
+
+    divModalRate.innerHTML = modalCorpo
+
+}
+
+function openComentModal(){
+
+    document.getElementById("modalRateDiv").style.display = "none";
+
+    const comentModalCorpo = 
+    
+    ` <section class="container-modal-coment">
+
+        <div class="brothers-title">
+            <h2 class="title-rate">Avaliação de 'Titulo'</h2>
+            <div class="button-remove"><i class="bi bi-x-lg x-size" onclick="closeModal('modalComentDiv')"></i></div>
+        </div>
+            <h3 class="subtitle-rate">Dê uma nota de 0 a 10:</h3>
+
+            <div class="rating">
+                <input type="radio" name="star" id="star1" value="1">
+                <label for="star1"></label>
+            
+                <input type="radio" name="star" id="star2" value="2">
+                <label for="star2"></label>
+            
+                <input type="radio" name="star" id="star3" value="3">
+                <label for="star3"></label>
+            
+                <input type="radio" name="star" id="star4" value="4">
+                <label for="star4"></label>
+                
+                <input type="radio" name="star" id="star5" value="5">
+                <label for="star5"></label>
+    
+                 
+                <input type="radio" name="star" id="star6" value="6">
+                <label for="star6"></label>
+    
+                 
+                <input type="radio" name="star" id="star7" value="7">
+                <label for="star7"></label>
+    
+                 
+                <input type="radio" name="star" id="star8" value="8">
+                <label for="star8"></label>
+    
+                 
+                <input type="radio" name="star" id="star9" value="9">
+                <label for="star9"></label>
+    
+                 
+                <input type="radio" name="star" id="star10" value="10">
+                <label for="star10"></label>
+              </div>
+    
+              <div id="star-count"></div>
+        
+        <label for="review-coment" class="form-label"></label>
+        <textarea class="form-control" id="review-coment" rows="5" placeholder="Digite aqui sua Crítica"></textarea>
+
+        <div class="container-button">
+
+            <button type="button" class="btn btn-outline-primary button-color-register">Registrar</button>
+    
+        </div>
+        
+
+    </section>
+` 
+
+    const modalComentDiv = document.getElementById("modalComentDiv")
+
+    modalComentDiv.innerHTML = comentModalCorpo
+
+
+}
+
+//rascUNHO
+
+function registerComment(){
+
+    let inputComent = document.getElementById("review-coment").value;
+
+}
+
+
+
+function openModalCast(){
+
+    const castLocalStorage = JSON.parse(localStorage.getItem("listCastsMovie"));
+
+
+    const modalCastDiv = document.getElementById("modalCastDiv");
+
+    const modalCastSintax = `
+    
+    <section class="container-modal-cast">
+        <div class="brothers-title"><p class="title-modal-cast">Personagens/Elenco</p>
+            <div class="button-remove"><i class="bi bi-x-lg x-size" onclick="closeModal('modalCastDiv')"></i></div>
+        </div>
+        
+        <div class="display-cast">
+
+        <div class="struct-character">
+            <img src="./ImgsPagConteudoSelecionado/exemploImg.avif" alt="" width="80px" height="80px">
+            <p class="name-celebrity">Lorem 1<br>Phasellus gravida</p>
+            <button type="button"><i class="bi bi-star star-cast-size"></i></button>
+        </div>
+
+        <div class="struct-character">
+            <img src="./ImgsPagConteudoSelecionado/exemploImg.avif" alt="" width="80px" height="80px">
+            <p class="name-celebrity">lorem 1<br>Phasellus gravida</p>
+            <button type="button"><i class="bi bi-star star-cast-size"></i></button>
+        </div>
+
+        <div class="struct-character">
+            <img src="./ImgsPagConteudoSelecionado/exemploImg.avif" alt="" width="80px" height="80px">
+            <p class="name-celebrity">lorem 1<br>Phasellus gravida </p>
+            <button type="button"><i class="bi bi-star star-cast-size"></i></button>
+        </div>
+
+        <div class="struct-character">
+            <img src="./ImgsPagConteudoSelecionado/exemploImg.avif" alt="" width="80px" height="80px">
+            <p class="name-celebrity">lorem 1<br>Phasellus gravida </p>
+            <button type="button"><i class="bi bi-star star-cast-size"></i></button>
+        </div>
+
+        <div class="struct-character">
+            <img src="./ImgsPagConteudoSelecionado/exemploImg.avif" alt="" width="80px" height="80px">
+            <p class="name-celebrity">lorem 1<br>Phasellus gravida </p>
+            <button type="button"><i class="bi bi-star star-cast-size"></i></button>
+        </div>
+
+        <div class="struct-character">
+            <img src="./ImgsPagConteudoSelecionado/exemploImg.avif" alt="" width="80px" height="80px">
+            <p class="name-celebrity">lorem 1<br>Phasellus gravida </p>
+            <button type="button"><i class="bi bi-star star-cast-size"></i></button>
+        </div>
+
+        <div class="struct-character">
+            <img src="./ImgsPagConteudoSelecionado/exemploImg.avif" alt="" width="80px" height="80px">
+            <p class="name-celebrity">lorem 1<br>Phasellus gravida </p>
+            <button type="button"><i class="bi bi-star star-cast-size"></i></button>
+        </div>
+
+        <div class="struct-character">
+            <img src="./ImgsPagConteudoSelecionado/exemploImg.avif" alt="" width="80px" height="80px">
+            <p class="name-celebrity">lorem 1<br>Phasellus gravida </p>
+            <button type="button"><i class="bi bi-star star-cast-size"></i></button>
+        </div>
+
+        <div class="struct-character">
+            <img src="./ImgsPagConteudoSelecionado/exemploImg.avif" alt="" width="80px" height="80px">
+            <p class="name-celebrity">lorem 1<br>Phasellus gravida </p>
+            <button type="button"><i class="bi bi-star star-cast-size"></i></button>
+        </div>
+
+        <div class="struct-character">
+            <img src="./ImgsPagConteudoSelecionado/exemploImg.avif" alt="" width="80px" height="80px">
+            <p class="name-celebrity">lorem 1<br>Phasellus gravida </p>
+            <button type="button"><i class="bi bi-star star-cast-size"></i></button>
+        </div>
+
+
+        <div class="struct-character">
+            <img src="./ImgsPagConteudoSelecionado/exemploImg.avif" alt="" width="80px" height="80px">
+            <p class="name-celebrity">lorem 1<br>Phasellus gravida </p>
+            <button type="button"><i class="bi bi-star star-cast-size"></i></button>
+        </div>
+
+        <div class="struct-character">
+            <img src="./ImgsPagConteudoSelecionado/exemploImg.avif" alt="" width="80px" height="80px">
+            <p class="name-celebrity">lorem 1<br>Phasellus gravida </p>
+            <button type="button"><i class="bi bi-star star-cast-size"></i></button>
+        </div>
+    </div>
+    </section>
+`
+
+modalCastDiv.innerHTML = modalCastSintax;
+
+}
+
+function closeModal(idModal) {
+    document.getElementById(idModal).style.display = "none";
+}
+
+
+//fazer sistema de comentarios de acordo com o usuario cadastrado no JSON 
+function createComent() {
+
+    let usuarios = JSON.parse(localStorage.getItem("usuarios")); //transformando para objeto para podermos manipular
+    console.log(usuarios);
+
+    for (let i = 0; i < usuarios.length; i++) {
+        let userName = usuarios[i].userName; 
+
+        // Cria o corpo do comentário
+        const comentBody = `
+            <div class="coment-struct">
+                <article class="header-coment">
+                    <img src="./ImgsPagConteudoSelecionado/iconAvatar.png" alt="foto de perfil do usuario">
+                    <p id="userName">${userName}</p>
+                    <p id="userRate">9.0★</p>
+                </article>
+                <article class="coment-content">
+                    <p id="comentContent">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus gravida libero ac egestas malesuada. Enean a ipsum a purus consequat dapibus in in magna.</p>
+                </article>
+                <article class="coment-interaction">
+                    <button type="button"><i class="bi bi-chat-left-dots coment-size"></i></button>
+                    <button type="button"><i class="bi bi-hand-thumbs-up coment-size"></i></button>
+                    <button type="button"><i class="bi bi-hand-thumbs-down coment-size"></i></button>
+                </article>
+            </div>
+        `;
+
+       
+    }
+}
+
+validandoUsuario()
+
+
+function validandoUsuario(){
+
+    const miniNonUserDiv = document.getElementById("miniNonUserDiv")
+
+    const miniDivBody = `
+    
+    <div class="mini-container-nonuser">
+        <div class="display-text">
+            <p>Entre para avaliar, curtir,<br> adicionar a listas e muito mais</p>
+        </div>
+        <div class="buttons-brothers">
+            <a class="button-in"  href="/Pgn Login/index.html">entrar</a>
+            <a class="button-in" href="/Cadastro/index.html">cadastrar</a>
+        </div>
+
+    </div>`
+
+    if(localStorage.getItem("estaLogado")==="true"){
+
+        document.getElementById("review-part-body").style.display = "block"
+
+    }else{
+
+        document.getElementById("review-part-body").style.visibility = "hidden";
+            miniNonUserDiv.innerHTML = miniDivBody
+
+        }
+
+    }
+    
+
+
+
+      
+      
+
 
 
 
