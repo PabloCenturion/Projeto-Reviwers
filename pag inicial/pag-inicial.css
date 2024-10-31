@@ -210,6 +210,8 @@ nav {
     font-size: 22px;
     padding: 10px;
     font-weight: 600;
+
+    text-decoration: none;
 }
 /* fim categorias */
 .cat-filmes{
@@ -234,3 +236,37 @@ border:1px solid white;
 
 
 }
+
+.container-display-movies{
+
+
+    display: flex;
+    justify-content: center;
+
+}
+
+.container-display-movies img{
+
+   
+    object-fit: cover;
+
+}
+
+
+.bi-chevron-compact-right{
+
+    margin-top: 140px;
+    color: #410C64 !important;
+    font-size: 40px !important;
+    cursor: pointer;
+
+}
+
+#img-movie-display{
+
+    border-radius: 10px;
+
+}
+
+
+
