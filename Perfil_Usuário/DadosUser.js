@@ -16,12 +16,11 @@ function loadSettings() {
     const savedPrivacy = localStorage.getItem('isPrivate');
     const savedData = JSON.parse(localStorage.getItem('userData'));
 
-    // Carregar imagem do usuário
+    
     if (savedImage) {
         document.getElementById('userImage').src = savedImage;
     }
 
-    // Carregar configurações de privacidade
     if (savedPrivacy === 'true') {
         document.getElementById('privacyPrivate').checked = true;
         isPrivate = true;
@@ -30,20 +29,21 @@ function loadSettings() {
         isPrivate = false;
     }
 
-    // Carregar dados do usuário se o perfil for público
     if (savedData) {
         if (!isPrivate) {
+
             document.getElementById('inputName').value = savedData.name || '';
             document.getElementById('inputEmail').value = savedData.email || '';
             document.getElementById('inputBio').value = savedData.bio || '';
             document.getElementById('inputBirthDate').value = savedData.birthDate || '';
             document.getElementById('inputLocation').value = savedData.location || '';
         } else {
-            // Se o perfil é privado, não exibir os dados
+            
+            document.getElementById('userImage').value = src="/Perfil_Usuário/img/usuario.jpg";
             document.getElementById('inputName').value = 'Usuário Anônimo';
-            document.getElementById('inputEmail').value = '';
-            document.getElementById('inputBio').value = '';
-            document.getElementById('inputBirthDate').value = '';
+            document.getElementById('inputEmail').value = savedData.email;
+            document.getElementById('inputBio').value = 'Perfil Privado';
+            document.getElementById('inputBirthDate').value = savedData.birthDate;
             document.getElementById('inputLocation').value = '';
         }
     }
@@ -74,7 +74,7 @@ function togglePrivacy() {
     }
 
     if (isPrivate) {
-        document.getElementById('inputName').value = 'Usuário Anônimo'; // Definir nome padrão
+        document.getElementById('inputName').value = 'Usuário Anônimo'; 
         showMessage('O perfil está configurado como privado.', true);
     } else {
         showMessage('O perfil está configurado como público.', true);
@@ -83,13 +83,13 @@ function togglePrivacy() {
 
 function saveData() {
     const fileInput = document.getElementById('fileInput');
-    const inputName = document.getElementById('inputName').value || 'Usuário Anônimo'; // Nome padrão se vazio
+    const inputName = document.getElementById('inputName').value || 'Usuário Anônimo'; 
     const inputEmail = document.getElementById('inputEmail').value;
     const inputBio = document.getElementById('inputBio').value;
     const inputBirthDate = document.getElementById('inputBirthDate').value;
     const inputLocation = document.getElementById('inputLocation').value;
 
-    // Salvar imagem
+    
     if (fileInput.files && fileInput.files[0]) {
         const reader = new FileReader();
         reader.onload = function(e) {
@@ -98,14 +98,14 @@ function saveData() {
         };
         reader.readAsDataURL(fileInput.files[0]);
     } else {
-        localStorage.setItem('userImage', '/Perfil_Usuário/img/usuario.jpg'); // Imagem padrão
+        localStorage.setItem('userImage', '/Perfil_Usuário/img/usuario.jpg'); 
         showMessage('Configurações salvas com a imagem padrão.', true);
     }
 
-    // Salvar configurações de privacidade
+    
     localStorage.setItem('isPrivate', isPrivate);
 
-    // Salvar dados do usuário
+   
     const userData = {
         name: isPrivate ? 'Usuário Anônimo' : inputName,
         email: inputEmail,
@@ -122,9 +122,9 @@ function saveData() {
 window.onload = function() {
     let estalogado = localStorage.getItem('userData') === "true"
     if (estalogado) {
-        // Código para quando o usuário está logado
+        
     } else {
-        // Código para quando o usuário não está logado
+        
     }
     loadSettings();
 };

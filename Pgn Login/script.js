@@ -26,3 +26,5 @@ function login() {
     alert("Usuário ou senha inválidos!");
     }
 }
+
+login();

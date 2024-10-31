@@ -22,6 +22,7 @@ body{
 }
 /* COMEÇO CABEÇALHO*/
 header{
+    margin-top: 20px;
     margin-left: 100px;
     backdrop-filter: blur(30px);
     box-shadow: 0px 0px 30px #6802ac6b;
@@ -46,7 +47,7 @@ nav {
     text-decoration: none;/*linha do <a>*/
     color: white;/*cor da letra*/
     text-shadow:  0 0 10px purple, 0 0 20px purple, 0 0 40px purple, 0 0 80px purple;/*sombra*/
-    transition: 0.8s;/*tempo para fazer o hover*/
+    transition: 0.2s;/*tempo para fazer o hover*/
     
 }
 .logo:hover{
@@ -221,6 +222,7 @@ nav {
     border-radius: 20px;
     filter: drop-shadow(10px 10px 5px rgb(0, 0, 0));
 }
+
 /* FIM DO CORPO*/
 footer {
     color: white; 
@@ -265,6 +267,12 @@ border:1px solid white;
 #img-movie-display{
 
     border-radius: 10px;
+
+}
+
+img{
+
+    object-fit: cover;
 
 }
 
