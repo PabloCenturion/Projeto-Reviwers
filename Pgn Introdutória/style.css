@@ -270,3 +270,14 @@ nav ul li a {
 .torre{
     padding-left: 40rem;
 }
+
+
+.logo{
+    margin-left: 100px;
+    font-size: 30px;/*tamanho da font*/
+    text-decoration: none;/*linha do <a>*/
+    color: white;/*cor da letra*/
+    text-shadow:  0 0 10px purple, 0 0 20px purple, 0 0 40px purple, 0 0 80px purple;/*sombra*/
+    transition: 0.8s;/*tempo para fazer o hover*/
+    
+}
