@@ -8,7 +8,7 @@ function showMessage(message, isSuccess) {
 
     setTimeout(() => {
         messageDiv.style.display = 'none';
-    }, 1500);
+    }, 1500);   //msg some em 1 segundo e meio
 }
 
 function loadSettings() {
@@ -56,7 +56,7 @@ function previewImage() {
     if (fileInput.files && fileInput.files[0]) {
         const reader = new FileReader();
         reader.onload = function(e) {
-            userImage.src = e.target.result;
+            userImage.src = e.target.result;    //altera imagem
             showMessage('Imagem carregada com sucesso!', true);
         };
         reader.readAsDataURL(fileInput.files[0]);
