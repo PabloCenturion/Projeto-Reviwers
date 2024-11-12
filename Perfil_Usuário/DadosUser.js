@@ -9,7 +9,7 @@ function showMessage(message, isSuccess) {
 
     setTimeout(() => {
         messageDiv.style.display = 'none';
-    }, 3000);
+    }, 1500);   //msg some em 1 segundo e meio
 }
 
 function loadSettings() {
