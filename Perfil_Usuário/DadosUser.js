@@ -1,6 +1,7 @@
-let isPrivate = false;
+let estaPrivado = false;
 
 function showMessage(message, isSuccess) {
+
     const messageDiv = document.getElementById('message');
     messageDiv.textContent = message;
     messageDiv.className = 'alert ' + (isSuccess ? 'alert-success' : 'alert-error');
@@ -13,37 +14,37 @@ function showMessage(message, isSuccess) {
 
 function loadSettings() {
     const savedImage = localStorage.getItem('userImage');
-    const savedPrivacy = localStorage.getItem('isPrivate');
+    const savedPrivacy = localStorage.getItem('estaPrivado');
     const savedData = JSON.parse(localStorage.getItem('userData'));
 
-    // Carregar imagem do usuário
+    
     if (savedImage) {
         document.getElementById('userImage').src = savedImage;
     }
 
-    // Carregar configurações de privacidade
     if (savedPrivacy === 'true') {
         document.getElementById('privacyPrivate').checked = true;
-        isPrivate = true;
+        estaPrivado = true;
     } else {
         document.getElementById('privacyPublic').checked = true;
-        isPrivate = false;
+        estaPrivado = false;
     }
 
-    // Carregar dados do usuário se o perfil for público
     if (savedData) {
-        if (!isPrivate) {
+        if (!estaPrivado) {
+
             document.getElementById('inputName').value = savedData.name || '';
             document.getElementById('inputEmail').value = savedData.email || '';
             document.getElementById('inputBio').value = savedData.bio || '';
             document.getElementById('inputBirthDate').value = savedData.birthDate || '';
             document.getElementById('inputLocation').value = savedData.location || '';
         } else {
-            // Se o perfil é privado, não exibir os dados
+            
+            document.getElementById('userImage').value = src="/Perfil_Usuário/img/usuario.jpg";
             document.getElementById('inputName').value = 'Usuário Anônimo';
-            document.getElementById('inputEmail').value = '';
-            document.getElementById('inputBio').value = '';
-            document.getElementById('inputBirthDate').value = '';
+            document.getElementById('inputEmail').value = savedData.email;
+            document.getElementById('inputBio').value = 'Perfil Privado';
+            document.getElementById('inputBirthDate').value = savedData.birthDate;
             document.getElementById('inputLocation').value = '';
         }
     }
@@ -54,7 +55,9 @@ function previewImage() {
     const userImage = document.getElementById('userImage');
 
     if (fileInput.files && fileInput.files[0]) {
+        
         const reader = new FileReader();
+
         reader.onload = function(e) {
             
             userImage.src = e.target.result;
@@ -64,18 +67,19 @@ function previewImage() {
     }
 }
 
-function togglePrivacy() {
+function alterarPrivacidade() {
+
     const radioButtons = document.getElementsByName('privacyOption');
 
     for (let i = 0; i < radioButtons.length; i++) {
         if (radioButtons[i].checked) {
-            isPrivate = radioButtons[i].id === 'privacyPrivate';
+            estaPrivado = radioButtons[i].id === 'privacyPrivate';
             break;
         }
     }
 
-    if (isPrivate) {
-        document.getElementById('inputName').value = 'Usuário Anônimo'; // Definir nome padrão
+    if (estaPrivado) {
+        document.getElementById('inputName').value = 'Usuário Anônimo'; 
         showMessage('O perfil está configurado como privado.', true);
     } else {
         showMessage('O perfil está configurado como público.', true);
@@ -83,37 +87,40 @@ function togglePrivacy() {
 }
 
 function saveData() {
+
     const fileInput = document.getElementById('fileInput');
-    const inputName = document.getElementById('inputName').value || 'Usuário Anônimo'; // Nome padrão se vazio
+    const inputName = document.getElementById('inputName').value || 'Usuário Anônimo'; 
     const inputEmail = document.getElementById('inputEmail').value;
     const inputBio = document.getElementById('inputBio').value;
     const inputBirthDate = document.getElementById('inputBirthDate').value;
     const inputLocation = document.getElementById('inputLocation').value;
 
-    // Salvar imagem
+    //salvando img(file)
     if (fileInput.files && fileInput.files[0]) {
+
         const reader = new FileReader();
         reader.onload = function(e) {
             localStorage.setItem('userImage', e.target.result);
             showMessage('Imagem salva com sucesso!', true);
         };
         reader.readAsDataURL(fileInput.files[0]);
+
     } else {
-        localStorage.setItem('userImage', '/Perfil_Usuário/img/usuario.jpg'); // Imagem padrão
+        localStorage.setItem('userImage', '/Perfil_Usuário/img/usuario.jpg'); 
         showMessage('Configurações salvas com a imagem padrão.', true);
     }
+// end salvando img(file)
+    
+    localStorage.setItem('estaPrivado', estaPrivado);
 
-    // Salvar configurações de privacidade
-    localStorage.setItem('isPrivate', isPrivate);
-
-    // Salvar dados do usuário
+   
     const userData = {
-        name: isPrivate ? 'Usuário Anônimo' : inputName,
+        name: estaPrivado ? 'Usuário Anônimo' : inputName,
         email: inputEmail,
         bio: inputBio,
         birthDate: inputBirthDate,
         location: inputLocation,
-        privacy: isPrivate ? 'privado' : 'público'
+        privacy: estaPrivado ? 'privado' : 'público'
     };
 
     localStorage.setItem('userData', JSON.stringify(userData));
@@ -121,11 +128,26 @@ function saveData() {
 }
 
 window.onload = function() {
+
     let estalogado = localStorage.getItem('userData') === "true"
+    
     if (estalogado) {
-        // Código para quando o usuário está logado
+        
     } else {
-        // Código para quando o usuário não está logado
+        
     }
     loadSettings();
 };
+
+//miguel add//
+
+function logout(){
+
+    localStorage.setItem("estaLogado", false);
+
+        setTimeout(() => {
+            window.location.href = "/pag inicial/pag-inicial.html";
+        });
+    
+
+}

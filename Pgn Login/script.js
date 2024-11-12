@@ -7,6 +7,8 @@ function login() {
     usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
     console.log(usuarios);
 
+    let loginSucess = false
+
     if (email.value === "admin@admin.com" && senha.value === "admin") {
         setTimeout(() => {
             window.location.href = "/pag inicial/pag-inicial.html";
@@ -17,14 +19,27 @@ function login() {
         for(var i=0;i<usuarios.length;i++){
             if(email.value == usuarios[i].email && senha.value == usuarios[i].senha){   
                 console.log(usuarios[i].value);
-                window.location.href = "/pag inicial/pag-inicial.html";
+
+                setTimeout(() => {
+                    window.location.href = "/pag inicial/pag-inicial.html";
+                });
+
                 localStorage.setItem("estaLogado", true);
+                loginSucess = true
                 break;
             }
     }
-    // Se nenhum usuário for encontrado, exibe o alerta
-    alert("Usuário ou senha inválidos!");
+
+    if(!loginSucess){
+
+        alert("Usuário ou senha inválidos!");
+
+
     }
+    
+
+    }
+
 }
 
 login();

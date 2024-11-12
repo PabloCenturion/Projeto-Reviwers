@@ -1,40 +1,67 @@
 
-// function changeImgMovie(){
+const listaFilmes = JSON.parse(localStorage.getItem("filmesLancamentos"));
+let currentItem = 0;
 
-// const listaFilmes = JSON.parse(localStorage.getItem("listaFilmes"));
 
-// console.log(listaFilmes.length)
 
-// for(let i = 0;i<listaFilmes.length;i++){
+function showMovie(movie){
+
+
+
+    const movieId = listaFilmes[movie]
+
+    const imgMovie = document.getElementById('img-movie-display');
+
+    imgMovie.src = movieId.cover;
+
     
-//     const imgMovie = document.getElementById('img-movie-display');
 
-//     imgMovie.src = listaFilmes[i].movieCover
+}
 
-// }
-
-
-// }
-
-// changeImgMovie()
-
-
-let i = 0;
 
 function changeImgMovie() {
 
-    const listaFilmes = JSON.parse(localStorage.getItem("filmesLancamentos"));
+currentItem++;
 
-    console.log(listaFilmes)
-    
-        const imgMovie = document.getElementById('img-movie-display');
-        
-        // atualiza a imagem com a capa do filme atual
-        imgMovie.src = listaFilmes[i].cover;
-        
-        // atualizando indice 
-        i = (i + 1) % listaFilmes.length; // volta ao inicio se chegar ao fim
+if(currentItem > listaFilmes.length-1){
+
+
+    currentItem = 0
+}
+
+showMovie(currentItem)
    
 }
 
-changeImgMovie();
+
+setInterval(changeImgMovie, 5000)
+
+showMovie(currentItem);
+
+function validatingUserLogged(){
+
+    const localStorageUsersLogged = localStorage.getItem("estaLogado")
+
+    if(localStorageUsersLogged === "false"){
+
+
+        setTimeout(()=>{
+
+            window.location.href = "/Pgn Login/index.html"
+
+        })
+
+
+    }else{
+
+        setTimeout(()=>{
+
+            window.location.href = "/Perfil_Usuário/mod lucas/index.html"
+
+        })
+
+    }
+
+}
+
+

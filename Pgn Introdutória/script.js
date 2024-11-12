@@ -110,8 +110,22 @@ console.log(`Este é o segundo digito verificador: ${(somatoria2*10)%11}`);*/
 
 
 */
+
+
    
 function entrarSemLogin(){
+
+    const localStorageUsersLogged = localStorage.getItem("estaLogado")
+
+    if(localStorageUsersLogged === "true"  ){
+
+        setTimeout(()=>{
+
+            window.location.href = "/pag inicial/pag-inicial.html"
+
+        })
+
+    }
 
     localStorage.setItem("estaLogado", "false");
 

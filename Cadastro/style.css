@@ -191,3 +191,20 @@
         text-decoration: none !important;
 
     }
+
+    .container-login{
+
+        margin-top: 20px;
+
+        display: flex;
+        justify-content: center;
+
+
+    }
+
+    .container-login p{
+
+        color: white;
+        font-weight: 500;
+
+    }

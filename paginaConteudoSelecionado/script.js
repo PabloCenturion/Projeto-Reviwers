@@ -599,7 +599,7 @@ headerMovie.innerHTML = structInfoMovie
 
 criarFilmes()
 
-function FilmeLançamento(title, cover){
+function FilmeLançamento(id,title, cover){
 
     this.title = title
     this.cover = cover
@@ -608,25 +608,25 @@ function FilmeLançamento(title, cover){
 
 const filmeLançamento1 = new FilmeLançamento(
 
-    "Borderlands","https://metallife.com/wp-content/uploads/2024/02/borderlands_movie_h.jpg"
+    1,"Borderlands","https://metallife.com/wp-content/uploads/2024/02/borderlands_movie_h.jpg"
     
 )
 
 const filmeLançamento2 = new FilmeLançamento(
 
-    "Long Legs","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRojBh60l2zkcz7Yv9a8iWOYW-ALJpGSYRSkg&s"
+    2,"Long Legs","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRojBh60l2zkcz7Yv9a8iWOYW-ALJpGSYRSkg&s"
     
 )
 
 const filmeLançamento3 = new FilmeLançamento(
 
-     "Twisters", "https://yhsnews.com/wp-content/uploads/2024/09/ac7983ff-f638-4285-a07c-a4ec0f4b2d56.jpg"
+     3,"Twisters", "https://yhsnews.com/wp-content/uploads/2024/09/ac7983ff-f638-4285-a07c-a4ec0f4b2d56.jpg"
 
 )
 
 const filmeLançamento4 = new FilmeLançamento(
 
-    "Blink Twice", "https://img.englishcinemakyiv.com/5VHatzq9uMDONmt3Ay9jjLK_nPkkXJSbB70JW4uZvRQ/resize:fill:800:450:1:0/gravity:sm/aHR0cHM6Ly9leHBhdGNpbmVtYXByb2QuYmxvYi5jb3JlLndpbmRvd3MubmV0L2ltYWdlcy81MWY5MDY3Ny0yYTM5LTQ1MzctYWExOC1iNzNjZTg1M2Q2ZGYuanBn.jpg"
+    4,"Blink Twice", "https://img.englishcinemakyiv.com/5VHatzq9uMDONmt3Ay9jjLK_nPkkXJSbB70JW4uZvRQ/resize:fill:800:450:1:0/gravity:sm/aHR0cHM6Ly9leHBhdGNpbmVtYXByb2QuYmxvYi5jb3JlLndpbmRvd3MubmV0L2ltYWdlcy81MWY5MDY3Ny0yYTM5LTQ1MzctYWExOC1iNzNjZTg1M2Q2ZGYuanBn.jpg"
 
 )
 
@@ -905,58 +905,42 @@ function showListGroups(){
 
 function openModalRate(){
 
+    const listaFilmes = JSON.parse(localStorage.getItem("listaFilmes"))
+
     const modalCorpo =  
     
     `<section class="container-modal-rate">
 
     <div class="brothers-title">
-    <h2 class="title-rate">Avaliação de 'Titulo'</h2>
+    <h2 class="title-rate">Avaliação de '${listaFilmes[0].title}'</h2>
     <div class="button-remove"><i class="bi bi-x-lg x-size" onclick="closeModal('modalRateDiv')"></i></div>
 </div>
 
-    <h3 class="subtitle-rate">Dê uma nota de 0 a 10:</h3>
+    <h3 class="subtitle-rate">Dê uma nota de 0 a 5:</h3>
 
+<article class="container-stars">
     <div class="rating">
-    <input type="radio" name="star" id="star1" value="1">
-    <label for="star1"></label>
 
-    <input type="radio" name="star" id="star2" value="2">
-    <label for="star2"></label>
+        <input type="radio" name="star" id="star1" value = 5  onclick="registerStar()"><label for="star1"></label>
+      <input type="radio" name="star" id="star2" value = 4 onclick="registerStar()"><label for="star2"></label>
+      <input type="radio" name="star" id="star3" value = 3 onclick="registerStar()"><label for="star3"></label>
+      <input type="radio" name="star" id="star4" value = 2 onclick="registerStar()"><label for="star4"></label>
+      <input type="radio" name="star" id="star5" value = 1 onclick="registerStar()"><label for="star5"></label>
 
-    <input type="radio" name="star" id="star3" value="3">
-    <label for="star3"></label>
-
-    <input type="radio" name="star" id="star4" value="4">
-    <label for="star4"></label>
-
-    <input type="radio" name="star" id="star5" value="5">
-    <label for="star5"></label>
-
-    <input type="radio" name="star" id="star6" value="6">
-    <label for="star6"></label>
-
-    <input type="radio" name="star" id="star7" value="7">
-    <label for="star7"></label>
-
-    <input type="radio" name="star" id="star8" value="8">
-    <label for="star8"></label>
-
-    <input type="radio" name="star" id="star9" value="9">
-    <label for="star9"></label>
-
-    <input type="radio" name="star" id="star10" value="10">
-    <label for="star10"></label>
+      
 
 </div>
 
           <div id="star-count"></div>
 
+          </article>
+
     
-    <a type="button" onclick="openComentModal()"><span>clique aqui e detalhe sua avaliação</span></a>
+    <a type="button" id="show-coment" onclick="openComentModal()"><span>clique aqui e detalhe sua avaliação</span></a>
 
     <div class="container-button">
 
-    <button type="button" class="btn button-color-register">Registrar</button>
+    <button type="button" class="btn button-color-register" onclick="registerStar()">Registrar</button>
 
 </div>
 
@@ -970,84 +954,47 @@ function openModalRate(){
 
 function openComentModal(){
 
-    document.getElementById("modalRateDiv").style.display = "none";
+
+   const modalRate = document.querySelector(".container-modal-rate");
+
+   const idComent = document.getElementById("show-coment");
 
     const comentModalCorpo = 
-    
-    ` <section class="container-modal-coment">
-
-        <div class="brothers-title">
-            <h2 class="title-rate">Avaliação de 'Titulo'</h2>
-            <div class="button-remove"><i class="bi bi-x-lg x-size" onclick="closeModal('modalComentDiv')"></i></div>
-        </div>
-            <h3 class="subtitle-rate">Dê uma nota de 0 a 10:</h3>
-
-            <div class="rating">
-                <input type="radio" name="star" id="star1" value="1">
-                <label for="star1"></label>
-            
-                <input type="radio" name="star" id="star2" value="2">
-                <label for="star2"></label>
-            
-                <input type="radio" name="star" id="star3" value="3">
-                <label for="star3"></label>
-            
-                <input type="radio" name="star" id="star4" value="4">
-                <label for="star4"></label>
-                
-                <input type="radio" name="star" id="star5" value="5">
-                <label for="star5"></label>
-    
-                 
-                <input type="radio" name="star" id="star6" value="6">
-                <label for="star6"></label>
-    
-                 
-                <input type="radio" name="star" id="star7" value="7">
-                <label for="star7"></label>
-    
-                 
-                <input type="radio" name="star" id="star8" value="8">
-                <label for="star8"></label>
-    
-                 
-                <input type="radio" name="star" id="star9" value="9">
-                <label for="star9"></label>
-    
-                 
-                <input type="radio" name="star" id="star10" value="10">
-                <label for="star10"></label>
-              </div>
-    
-              <div id="star-count"></div>
+    ` 
         
         <label for="review-coment" class="form-label"></label>
         <textarea class="form-control" id="review-coment" rows="5" placeholder="Digite aqui sua Crítica"></textarea>
 
-        <div class="container-button">
-
-            <button type="button" class="btn btn-outline-primary button-color-register">Registrar</button>
-    
-        </div>
-        
-
-    </section>
 ` 
 
-    const modalComentDiv = document.getElementById("modalComentDiv")
+    modalRate.classList.add("more-height")
+    idComent.innerHTML = comentModalCorpo
 
-    modalComentDiv.innerHTML = comentModalCorpo
+
+}
+
+
+
+function registerStar(){
+
+    const displayStarCount = document.getElementById("star-count");
+
+    const stars = document.querySelectorAll('input[name="star"]')
+
+
+    stars.forEach(star =>{
+
+        if(star.checked){
+
+            displayStarCount.innerText = `${star.value}`
+
+        }
+
+        })
 
 
 }
 
-//rascUNHO
-
-function registerComment(){
-
-    let inputComent = document.getElementById("review-coment").value;
-
-}
 
 
 
@@ -1189,8 +1136,6 @@ validandoUsuario()
 
 function validandoUsuario(){
 
-    const miniNonUserDiv = document.getElementById("miniNonUserDiv")
-
     const miniDivBody = `
     
     <div class="mini-container-nonuser">
@@ -1210,13 +1155,16 @@ function validandoUsuario(){
 
     }else{
 
-        document.getElementById("review-part-body").style.visibility = "hidden";
-            miniNonUserDiv.innerHTML = miniDivBody
+        document.getElementById("review-part-body").innerHTML = miniDivBody
 
         }
 
     }
+
+
+
     
+
 
 
 

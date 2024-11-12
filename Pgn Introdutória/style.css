@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     font-family: 'Poppins', sans-serif;
+    
 }
 body{
     width: 100%;
@@ -10,274 +11,254 @@ body{
     background-repeat:initial;
     background-attachment: fixed;
     background-size:cover;
+    overflow-x: hidden;
 }
 header{
-    margin-top: 2rem;
+    width: 100%;
+    height: 14vh;
 }
 .container1{ 
-    width: 100%;
-    height: 90px;
-    flex-direction: row ;
+    display: flex;
+}
+nav ul {
+    width: 75%;
+    height: 14vh;
+    padding-left: 20%;
     display: flex;
     align-items: center;
 }
-nav ul li {
-    display: inline;
-    margin: 15px;
-}
-nav ul li a {
-    text-decoration: none; 
-}
 .Reviewers {
-    margin-left: 4.9rem;
-    font-size: 3rem;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin-left: 10%;
+    margin-top: 2%;
+    width: 17%;
+    height: 10vh;
+    font-size: 5vh;
+    text-decoration: none;
     color: white;
-    text-shadow: 1vw 1vw 1vw #000, 0 0 2vw rgb(129, 24, 226), 0 0 3vw rgb(129, 24, 226), 0 0 3vw rgb(129, 24, 226);
-    -webkit-text-stroke: 2px #000;
+    text-shadow:  0 0 1vh purple, 0 0 3vh purple, 0 0 5vh purple, 0 0 10vh purple;
+    transition: 0.8s;
 }
-.Início {
+.paginas{
     color: rgb(255, 255, 255);
-    font-size:x-small;
-    margin-left: 18rem;
-    text-decoration: underline;
-}
-.Explorar{
-    color: white;
-    font-size:medium;
-    margin-right: 49px;
-}
-.Entrar {
-    color: white;
-    font-size: medium;
-    margin-right: 49px;
-}
-.Cadastrar {
-    color: white;
-    font-size: medium;
-    margin-right: 49px;
-}
-.Início {
-    color: white;
-    font-size: medium;
-    margin-right: 49px;
+    font-size:3vh;
+    text-decoration: none;
+    margin-right: 10vh;
 }
 
 .Reviewers:hover{
-    transition: 0.2s;
-    color:rgb(129, 24, 226) ;
+    scale: 1.05;
 }
-.Início:hover{
-    transition: 0.2s;
-    text-decoration: underline;
-    color:rgb(129, 24, 226) ;
-}
-.Explorar:hover{
-    transition: 0.2s;
-    text-decoration: underline;
-    color:rgb(129, 24, 226) ;
-}
-.Entrar:hover{
-    transition: 0.2s;
-    text-decoration: underline;
-    color:rgb(129, 24, 226) ;
-}
-.Cadastrar:hover{
-    transition: 0.2s;
+.paginas:hover{
+    transition: 0.5s;
     text-decoration: underline;
     color:rgb(129, 24, 226) ;
 }
 
 
 
-
-
-
-
+.container2{
+    margin-top: 5%;
+    width: 100%;
+    height: 85vh;
+    display: flex;
+    flex-direction: row;
+}
 .description {
-    width: 45%;
-    height: 535px;
+    margin-top: 5%;
+    width: 50%;
+    height: 88%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     color: rgb(255, 255, 255); 
 }
-.container2{
-    display: flex;
-    flex-direction: row;
-    padding-left: 8rem;
-}
 .des1 {
-    padding-top: 10rem;
-    width: 450px;
+    width: 60%;
+    margin: 0;
+    height: 40%;
     text-align:left;
     font-family: 'Aclonica';
-    font-size: 2.2rem;
-    font-weight: 700;
+    font-size: 5vh;
 }
 .des2 {
-    height: 200px;
-    width: 450px;
+    margin-bottom: 1vh;
+    margin-left: 10%;
+    width: 70%;
     text-align: left;
-    font-size: 1rem;
+    font-size: 3vh;
 }
+
 .tabela {
-    margin-top: 2rem;
-    display: flex;
-    justify-content: end;
-    align-items: end;
-    margin-left: 188px;
+    width: 50%;
+    height: 100%;
 }
 .item img {
-    padding: 3.5px;
-    border-radius: 15%;
-    border: 0;
-    filter: drop-shadow(0 0 2rem rgb(65, 1, 124));
-    box-shadow: 1px 1px 2rem rgb(83, 0, 161);
+    border: 0.3vh solid #0B0A0A;
+    width: 17.7vh;
+    height:25.7vh;
+    margin: 0vh 0vh 3vh 3vh;
+    border-radius: 3vh;
+    box-shadow: 10vh 0vh 8vh 10vh rgba(0, 0, 0, 0.3);
+    
 }
-
-
-
-
-
-
-
 
 
 
 .container3{
+    margin-top: 10%;
+    width: 100%;
+    height: 80vh;
     display: flex;
 }
 .description2{
-    width: 45%;
-    height: 350px;
+    width: 50%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     color: rgb(255, 255, 255); 
-    margin-left: 10rem;
     
 }
 .des3{
-    padding-top: 4rem;
-    padding-left: 2rem;
-    height: 250px;
-    width: 500px;
+    margin: 0;
+    margin: 10vh 14vh;
+    height: 20%;
+    width: 70%;
     font-family: 'Aclonica';
-    font-size: 2.2rem;
+    font-size: 6vh;
+    filter: drop-shadow(-0.5vh 0.5vh 0.2vh black);
 }
 .des4{
-    padding-left: 2rem;
-    height: 200px;
-    width: 400px;
-    font-size: 1rem;
+    margin: -5vh 14vh;
+    height: 20%;
+    width: 70%;
+    font-size: 3vh;
+    filter: drop-shadow(-0.5vh 0.5vh 0.2vh black);
 }
 .Lupa{
-    margin-left: 20rem;
+    
+    width: 50%;
+    height: 100%;
 }
-
-
-
-
-
-
-
-
-
-
+.Lupa img{
+    margin-left: 20vh;
+    width: 50%;
+    height: 80%;
+}
 
 
 
 .container4{
+    width: 100%;
+    height: 80vh;
     display: flex;
     flex-direction: row;
 }
 .description3{
-    width: 45%;
-    height: 350px;
+    width: 50%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     color: rgb(255, 255, 255); 
-    margin-left: 15rem;
-    margin-top: 4rem;
 }
 .des5{
-    padding-top: 1rem;
-    font-size: 2.7rem;
+    font-size: 6vh;
     font-family: 'Aclonica';
-    height: 100px;
-    width: 500px;
+    height: 20%;
+    width: 80%;
+    margin: 0;
+    margin-left: 10vh;
+    margin-top: 15vh;
 }
 .des6{
-    padding-top: 2rem;
-    font-size: 1.3rem;
-    height: 200px;
-    width: 400px;
+    margin-left: 10vh;
+    font-size: 3vh;
+    height: 30%;
+    width: 70%;
 }
-
-
-
-
-
-
-
+.Astronauta{
+    width: 50%;
+    height: 100%;
+}
+.Astronauta img{
+    
+    width: 80%;
+    height: 70%;
+}
 
 
 
 .container5{
+    width: 100%;
+    height: 80vh;
     display: flex;
     flex-direction: row;
 }
 .description4{
-    width: 45%;
-    height: 350px;
+    width: 50%;
+    height: 100%;
     display: flex;
     flex-direction: column;
-    
     color: rgb(255, 255, 255); 
-    margin-left: 150px;
+}
+.des7{
+    font-size: 6vh;
+    font-family: 'Aclonica';
+    height: 20%;
+    width: 80%;
+    margin-left: 10vh;
+    margin-top: 15vh;
+}
+.des8{
+    margin-left: 10vh;
+    font-size: 3vh;
+    height: 30%;
+    width: 70%;
 }
 .pessoas{
-    margin-left: 25rem;
+    width: 50%;
+    height: 100%;
 }
-
-
-
-
-
-
-
-
-
+.pessoas img{
+    margin-left: 20vh;
+    margin-top: 10vh;
+    width: 50%;
+    height: 60%;
+}
 
 
 
 .container6{
+    width: 100%;
+    height: 80vh;
     display: flex;
     flex-direction: row;
 }
-
+.description5{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    color: rgb(255, 255, 255); 
+}
 .des9{
-    border: 1px solid white;
-    height: 100px;
-    width: 100px;
+    font-size: 6vh;
+    font-family: 'Aclonica';
+    height: 20%;
+    width: 80%;
+    margin-left: 10vh;
+    margin-top: 15vh;
 }
 .des10{
-    border: 1px solid white;
-    height: 300px;
-    width: 300px;
+    margin-left: 10vh;
+    font-size: 3vh;
+    height: 30%;
+    width: 70%;
 }
 .torre{
-    padding-left: 40rem;
+    width: 50%;
+    height: 100%;
 }
-
-
-.logo{
-    margin-left: 100px;
-    font-size: 30px;/*tamanho da font*/
-    text-decoration: none;/*linha do <a>*/
-    color: white;/*cor da letra*/
-    text-shadow:  0 0 10px purple, 0 0 20px purple, 0 0 40px purple, 0 0 80px purple;/*sombra*/
-    
+.torre img{
+    width: 80%;
+    height: 70%;
 }
-

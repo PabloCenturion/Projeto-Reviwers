@@ -34,7 +34,7 @@
                 <input type="email" id="inputEmail" class="form-control input-style" placeholder="Digite seu e-mail">
 
                 <label class="subtitulo" for="inputBio">Bio:</label>
-                <textarea id="inputBio" class="form-control input-style" placeholder="Digite sua bio" cols="30" rows="1"></textarea>
+                <input type="text" id="inputBio" class="form-control input-style" placeholder="Digite sua bio" cols="30" rows="1">
 
                 <label class="subtitulo" for="inputBirthDate">Data de Nascimento:</label>
                 <input id="inputBirthDate" type="date" class="form-control input-style-date">
@@ -55,18 +55,18 @@
                 <p class=" subtitulo">Perfil</p>
                 <section class="block-check-privacy">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="privacyOption" id="privacyPrivate" onclick="togglePrivacy()">
+                        <input class="form-check-input" type="radio" name="privacyOption" id="privacyPrivate" onclick="alterarPrivacidade()">
                         <label class="form-check-label font-color" for="privacyPrivate">Privado</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="privacyOption" id="privacyPublic" checked onclick="togglePrivacy()">
+                        <input class="form-check-input" type="radio" name="privacyOption" id="privacyPublic" checked onclick="alterarPrivacidade()">
                         <label class="form-check-label font-color" for="privacyPublic">Público</label>
                     </div>
                 </section>
                 
                 <div class="container-buttons">
                     <button id="buttonSave" class="btn btn-save-account" onclick="saveData()">Salvar Alterações</button>
-                    <button class="btn btn-left-account">Sair</button>
+                    <button class="btn btn-left-account" onclick="logout()">Sair</button>
                 </div>
             </div>
         </div>

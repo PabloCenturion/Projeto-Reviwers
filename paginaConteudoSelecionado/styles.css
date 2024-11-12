@@ -634,6 +634,27 @@ border: 5px solid rgb(255, 255, 255);
 
 }
 
+.more-height{
+
+    height: 450px !important;
+
+
+}
+
+.container-stars{
+
+    display: flex;
+
+    align-items: center;
+    gap: 10px;
+}
+
+#star-count{
+
+    font-size: 18pt;
+
+}
+
 .title-rate{
     text-decoration: underline #d5d814;
     font-weight: 500;
